@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: ccl.jar xtc.jar rats.jar JFlex.jar junit.jar javacc.jar ja
+ vabdd.jar jhbasic.jar javancss.jar rats-runtime.jar TypeChef.jar Feat
+ ureCoPP.jar choco-solver-4.0.4-with-dependencies.jar JCParser.jar
+Main-Class: de.ovgu.spldev.pclocator.Main
+

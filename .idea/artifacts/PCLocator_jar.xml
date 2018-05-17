@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="PCLocator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PCLocator_jar</output-path>
+    <root id="root">
+      <element id="archive" name="PCLocator.jar">
+        <element id="module-output" name="PCLocator" />
+      </element>
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>
