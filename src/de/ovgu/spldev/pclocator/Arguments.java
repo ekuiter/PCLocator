@@ -80,13 +80,13 @@ class Arguments {
     String getUsage() {
         return "usage: PresenceConditionLocator [options...] location\n\n" +
                 "options:\n" +
-                "  --help       displays usage\n" +
-                "  --parser     choose a parser, possible values include:\n" +
+                "  --help         displays usage\n" +
+                "  --parser       choose a parser, possible values include:\n" +
                 "      typechef     use TypeChef parser\n" +
                 "      superc       use SuperC parser (default)\n" +
                 "      xtc          same as superc\n" +
                 "      featurecopp  use FeatureCoPP parser\n" +
-                "  --locator    choose a location algorithm, possible values include:\n" +
+                "  --locator      choose a location algorithm, possible values include:\n" +
                 "      default              same as deduceNotFound (default)\n" +
                 "      simple               returns raw presence conditions found by the parser\n" +
                 "      mockSystemHeaders    like simple, but replaces system headers such as\n" +
@@ -95,7 +95,9 @@ class Arguments {
                 "                           presence conditions for preprocessor lines\n" +
                 "      deduceNotFound       like ignorePreprocessor, but deduces missing\n" +
                 "                           presence conditions from surrounding lines\n" +
-                "  --annotator  override the default annotator, possible values include:\n" +
+                "      kmax                 like deduceNotFound, but considers build system\n" +
+                "                           constraints, requires --kmaxfile and --projectroot\n" +
+                "  --annotator    override the default annotator, possible values include:\n" +
                 "      typechef     annotate file with TypeChef parser\n" +
                 "      superc       annotate file with SuperC parser\n" +
                 "      xtc          same as superc\n" +
@@ -103,11 +105,15 @@ class Arguments {
                 "      equivalent   whether TypeChef and SuperC yield the same results\n" +
                 "      all          annotate file with TypeChef, SuperC, FeatureCoPP and\n" + "" +
                 "                   equivalence checker (default)\n" +
-                "  -I           pass additional include directory to the parser\n" +
-                "  --configure  pass a feature model in DIMACS format for deriving\n" +
-                "               concrete configurations instead of presence conditions\n" +
-                "  --timelimit  time limit for deriving a configuration space\n" +
-                "               of form \"WWd XXh YYm ZZs\" (default: no time limit)\n\n" +
+                "  -I             pass additional include directory to the parser\n" +
+                "  --configure    pass a feature model in DIMACS format for deriving\n" +
+                "                 concrete configurations instead of presence conditions\n" +
+                "  --timelimit    time limit for deriving a configuration space\n" +
+                "                 of form \"WWd XXh YYm ZZs\" (default: no time limit)\n" +
+                "  --kmaxfile     pass a Kmax presence condition file (with unit_pc's and\n" +
+                "                 subdir_pc's) to consider build system constraints\n" +
+                "  --projectroot  when specifying a --kmaxfile, the project root directory\n" +
+                "                 relative to the unit_pc's/subdir_pc's must be specified\n\n" +
                 "The location can have the form\n" +
                 "  <file>:<line>  in which case only the given line will be analyzed, or\n" +
                 "  <file>         in which case a tabular analysis of all lines in the file\n" +
@@ -149,10 +155,16 @@ class Arguments {
         if (locator == null)
             return "default";
 
-        String[] allowedArgs = {"simple", "mockSystemHeaders", "ignorePreprocessor", "deduceNotFound", "default"};
-        if (allowed(locator, allowedArgs))
+        String[] allowedArgs = {"simple", "mockSystemHeaders", "ignorePreprocessor", "deduceNotFound", "kmax", "default"};
+        if (allowed(locator, allowedArgs)) {
+            if (locator.equals("kmax")) {
+                if (get("--kmaxfile") == null)
+                    throw new RuntimeException("--kmaxfile has to be specified when using --locator kmax");
+                if (get("--projectroot") == null)
+                    throw new RuntimeException("--projectroot has to be specified when using --locator kmax");
+            }
             return locator;
-        else
+        } else
             throw new RuntimeException("invalid locator " + locator);
     }
 
@@ -165,6 +177,29 @@ class Arguments {
 
     String getTimeLimit() {
         return get("--timelimit");
+    }
+
+    String getKmaxFilePath() {
+        String kmaxFilePath = get("--kmaxfile");
+        if (kmaxFilePath != null) {
+            if (get("--projectroot") == null)
+                throw new RuntimeException("--projectroot has to be specified when using --kmaxfile");
+            if (!getLocatorKind().equals("kmax"))
+                throw new RuntimeException("--locator kmax has to be specified when using --kmaxfile");
+            return PresenceConditionLocator.validateFilePath(kmaxFilePath);
+        }
+        return null;
+    }
+
+    String getProjectRootPath() {
+        String projectRootPath = get("--projectroot");
+        if (projectRootPath != null) {
+            if (get("--kmaxfile") == null)
+                throw new RuntimeException("--kmaxfile has to be specified when using --projectroot");
+            if (!getLocatorKind().equals("kmax"))
+                throw new RuntimeException("--locator kmax has to be specified when using --projectroot");
+        }
+        return projectRootPath;
     }
 
     public static String getJarDirectory() {

@@ -17,8 +17,11 @@ import java.util.stream.Collectors;
 
 public abstract class PresenceCondition {
     abstract public String toString();
+
     abstract public boolean isPresent();
+
     abstract public boolean isBoolean();
+
     abstract protected FeatureExpr getFeatureExpr();
 
     public final static PresenceCondition TRUE =
@@ -58,6 +61,28 @@ public abstract class PresenceCondition {
                     return null;
                 }
             };
+
+    public static PresenceCondition fromDNF(String formula) {
+        if (formula.equals("1"))
+            return TRUE;
+        else if (formula.equals("0"))
+            return new TypeChefPresenceCondition(FeatureExprFactory.False());
+
+        FeatureExpr featureExpr = FeatureExprFactory.False();
+
+        String[] clauses = formula.split(" \\|\\| ");
+        for (String clause : clauses) {
+            FeatureExpr subExpr = FeatureExprFactory.True();
+            String[] literals = clause.split(" && ");
+            for (String literal : literals) {
+                FeatureExpr varExpr = FeatureExprFactory.createDefinedExternal(literal.replaceAll("^!", ""));
+                subExpr = subExpr.and(literal.startsWith("!") ? varExpr.not() : varExpr);
+            }
+            featureExpr = featureExpr.or(subExpr);
+        }
+
+        return new TypeChefPresenceCondition(featureExpr);
+    }
 
     public boolean equivalentTo(PresenceCondition other) {
         FeatureExpr featureExpr = getFeatureExpr(), otherFeatureExpr = other.getFeatureExpr();
@@ -108,7 +133,7 @@ public abstract class PresenceCondition {
                 .collect(Collectors.toSet());
     }
 
-    public static Set<SingleFeatureExpr> getInterestingFeatures(String dimacsFilePath)  {
+    public static Set<SingleFeatureExpr> getInterestingFeatures(String dimacsFilePath) {
         return getInterestingFeatures(Source.fromFile(dimacsFilePath, "UTF-8"));
     }
 
@@ -149,8 +174,12 @@ public abstract class PresenceCondition {
     }
 
     public PresenceCondition and(PresenceCondition presenceCondition) {
-        if (!isPresent())
-            throw new RuntimeException("can not \"and\" constrain a PC which is not present");
+        if (!isPresent() && !presenceCondition.isPresent())
+            return NOT_FOUND;
+        else if (!isPresent())
+            return presenceCondition;
+        else if (!presenceCondition.isPresent())
+            return this;
 
         return fromFeatureExpr(getFeatureExpr().and(presenceCondition.getFeatureExpr()));
     }

@@ -143,19 +143,33 @@ public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotat
         return locatePresenceCondition(filePath, line);
     }
 
-    public boolean isValidLocation(String location) {
+    public static boolean isValidLocation(String location) {
         return location.split(":").length >= 2;
     }
 
-    public PresenceCondition locatePresenceCondition(String location) {
+    private static String[] getLocationParts(String location) {
         String[] parts = location.split(":");
         if (parts.length < 2)
             throw new RuntimeException("\"" + location + "\" is not a valid location of form <file>:<line>");
+        return parts;
+    }
 
+    public PresenceCondition locatePresenceCondition(String location) {
+        String[] parts = getLocationParts(location);
         String filePath = String.join(":", Arrays.copyOf(parts, parts.length - 1));
         String lineString = parts[parts.length - 1];
 
         return locatePresenceCondition(filePath, lineString);
+    }
+
+    public static String getFilePathFromLocation(String location) {
+        String filePath;
+        if (isValidLocation(location)) {
+            String[] parts = getLocationParts(location);
+            filePath = String.join(":", Arrays.copyOf(parts, parts.length - 1));
+        } else
+            filePath = location;
+        return validateFilePath(filePath);
     }
 
     public HashMap<Integer, PresenceCondition> annotate(String filePath) {

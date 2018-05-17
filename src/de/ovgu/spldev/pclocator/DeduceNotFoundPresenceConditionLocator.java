@@ -48,6 +48,7 @@ public class DeduceNotFoundPresenceConditionLocator extends IgnorePreprocessorPr
 
     protected HashMap<Integer, PresenceCondition> modifyPresenceConditions
             (HashMap<Integer, PresenceCondition> locatedPresenceConditions, String[] lineContents) {
+        locatedPresenceConditions = super.modifyPresenceConditions(locatedPresenceConditions, lineContents);
 
         // deduce forward, replacing all not found PCs on a level after the first found PC, e.g.
         // #ifdef A
