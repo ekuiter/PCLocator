@@ -1,7 +1,7 @@
 # PCLocator
 
-PCLocator is a tool to analyze presence conditions in variable software systems
-written in the programming language C.
+PCLocator is a Java tool to analyze presence conditions in variable software
+systems written in the programming language C.
 
 A presence condition describes under which circumstances a file or block of code
 is included in the compiled product. A naive, but slow solution is enumerating
@@ -13,7 +13,7 @@ integrates the following tools:
 - [TypeChef](https://github.com/ckaestne/TypeChef) and
   [xtc](https://github.com/paulgazz/xtc), variability-aware C parsers
 - [FeatureCoPP](https://dl.acm.org/citation.cfm?id=3001876), a tool for physical
-  separation of annotated features
+  separation of annotated features that includes a cpp parser
 - [Kmax](https://github.com/paulgazz/kmax), a variability-aware analyzer
   Kconfig/Kbuild Makefiles
 
@@ -34,11 +34,14 @@ PCLocator requires Java 1.8. Run it with:
 java -jar PCLocator.jar <arguments>
 ```
 
-If you don't provide any arguments, all available options are explained.
+If you don't provide any arguments, detailed usage information will be printed.
 
 ### Examples
 
-Extract a single presence condition for the line `<line>` in a C file `<file>`:
+#### Presence condition
+
+Extract a single presence condition for the line `<line>` in a C file `<file>`
+(using the default parser):
 
 ```
 java -jar PCLocator.jar <file>:<line>
@@ -46,7 +49,11 @@ java -jar PCLocator.jar <file>:<line>
 
 Leave off the `<line>` to get a tabular overview of all presence conditions.
 
-Derive the satisfying configuration space from a feature model in the DIMACS format:
+#### Configuration space
+
+Derive the satisfying configuration space from a feature model in the DIMACS
+format (see [here](http://people.sc.fsu.edu/~jburkardt/data/cnf/cnf.html) and
+[here](https://github.com/ckaestne/TypeChef/blob/master/FeatureExprLib/src/main/scala/de/fosd/typechef/featureexpr/FeatureModelFactory.scala)):
 
 ```
 java -jar PCLocator.jar --configure <dimacs_file> <file>:<line>
@@ -54,20 +61,24 @@ java -jar PCLocator.jar --configure <dimacs_file> <file>:<line>
 
 Only features declared in the DIMACS file are considered when deriving
 configurations to prevent compiler-specific macros being added to the
-configuration.
+configuration. Some DIMACS files are included in the `scripts` directory.
+
+#### Build system
 
 To consider build system information in projects which use Kconfig/Kbuild, you
-can use Kmax. PCLocator takes a Kmax unit_pc file (including presence conditions
-for every directory and file in the project). Have a look at
+can use Kmax. PCLocator takes a Kmax `unit_pc` file (including presence
+conditions for every directory and file in the project). Have a look at
 [kmax-vm](https://github.com/ekuiter/kmax-vm) if you want to generate such a
-file. Some files for Busybox and Linux are included in the JAR distribution of
-PCLocator.
+file. Some files for Busybox and Linux are included in the `scripts` directory.
 
 Run the analysis with
 
 ```
-java -jar PCLocator.jar --kmax --kmaxfile <unit_pc_file> --projectroot <source_root> <file>:<line>
+java -jar PCLocator.jar --locator kmax --kmaxfile <unit_pc_file> --projectroot <root_directory> <file>:<line>
 ```
+
+`<root_directory>` should be the directory the entries in the `unit_pc` file
+refer to, i.e. the root directory of the analyzed project.
 
 ## Manual library setup
 
