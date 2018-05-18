@@ -2,6 +2,7 @@ package xtc.lang.cpp;
 
 import de.ovgu.spldev.pclocator.PresenceConditionLocator;
 import de.ovgu.spldev.pclocator.TrackErrorStream;
+import de.ovgu.spldev.pclocator.TypeChefPresenceCondition;
 import xtc.lang.cpp.PresenceConditionManager.PresenceCondition;
 import xtc.parser.ParseException;
 import xtc.tree.GNode;
@@ -23,6 +24,14 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
         this.options = options;
     }
 
+    public de.ovgu.spldev.pclocator.PresenceCondition getTrue() {
+        return TypeChefPresenceCondition.TRUE;
+    }
+
+    public de.ovgu.spldev.pclocator.PresenceCondition fromDNF(String formula) {
+        return de.ovgu.spldev.pclocator.PresenceCondition.typeChefFromDNF(formula);
+    }
+
     private void addIncludeDirectories(ArrayList<String> args) {
         if (options == null || options.getIncludeDirectories() == null)
             return;
@@ -40,7 +49,7 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
                 presenceCondition == null
                         ? SuperCPresenceCondition.NOT_FOUND
                         : (presenceCondition.isTrue()
-                        ? SuperCPresenceCondition.TRUE
+                        ? getTrue()
                         : new SuperCPresenceCondition(presenceCondition, presenceConditionManager));
         _locatedPresenceConditions.put(line, superCPresenceCondition);
     }

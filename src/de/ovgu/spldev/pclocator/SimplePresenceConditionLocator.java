@@ -18,6 +18,8 @@ public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotat
         HashMap<Integer, PresenceCondition> locatePresenceConditions(String filePath, int[] lines);
         String getName();
         void setOptions(Options options);
+        PresenceCondition getTrue();
+        PresenceCondition fromDNF(String formula);
     }
 
     public static class Options {

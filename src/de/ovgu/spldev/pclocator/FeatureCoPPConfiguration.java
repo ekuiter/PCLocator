@@ -14,7 +14,6 @@ public class FeatureCoPPConfiguration extends Configuration {
     public FeatureCoPPConfiguration(HashMap<String, IntVar> macros) {
         macroTable = FeatureModule.FeatureOccurrence.makeMacroTable(macros);
         macros.forEach((feature, var) -> booleanTable.put(feature, var.isBool()));
-        this.macroTable = macroTable;
     }
 
     public String toString() {

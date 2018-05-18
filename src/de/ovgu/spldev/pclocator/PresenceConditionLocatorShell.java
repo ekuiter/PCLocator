@@ -32,7 +32,7 @@ public class PresenceConditionLocatorShell {
             return new DeduceNotFoundPresenceConditionLocator(implementation, options);
         else if (kind.equals("kmax")) {
             String filePath = PresenceConditionLocator.getFilePathFromLocation(args.getLocation());
-            KmaxFileGrepper kmaxFileGrepper = new KmaxFileGrepper(args.getKmaxFilePath(), args.getProjectRootPath(), filePath);
+            KmaxFileGrepper kmaxFileGrepper = new KmaxFileGrepper(implementation, args.getKmaxFilePath(), args.getProjectRootPath(), filePath);
             return new KmaxPresenceConditionLocator(implementation, options, kmaxFileGrepper);
         } else
             return new PresenceConditionLocator(implementation, options);

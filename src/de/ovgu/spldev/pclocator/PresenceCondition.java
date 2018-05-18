@@ -2,6 +2,7 @@ package de.ovgu.spldev.pclocator;
 
 import de.fosd.typechef.featureexpr.*;
 import de.fosd.typechef.lexer.FeatureExprLib;
+import de.ovgu.spldev.featurecopp.splmodel.FeatureTree;
 import scala.Function1;
 import scala.Option;
 import scala.Tuple2;
@@ -24,25 +25,6 @@ public abstract class PresenceCondition {
 
     abstract protected FeatureExpr getFeatureExpr();
 
-    public final static PresenceCondition TRUE =
-            new PresenceCondition() {
-                public String toString() {
-                    return "true";
-                }
-
-                public boolean isPresent() {
-                    return true;
-                }
-
-                public boolean isBoolean() {
-                    return true;
-                }
-
-                protected FeatureExpr getFeatureExpr() {
-                    return FeatureExprFactory.True();
-                }
-            };
-
     public final static PresenceCondition NOT_FOUND =
             new PresenceCondition() {
                 public String toString() {
@@ -62,11 +44,11 @@ public abstract class PresenceCondition {
                 }
             };
 
-    public static PresenceCondition fromDNF(String formula) {
+    public static PresenceCondition typeChefFromDNF(String formula) {
         if (formula.equals("1"))
-            return TRUE;
+            return TypeChefPresenceCondition.TRUE;
         else if (formula.equals("0"))
-            return new TypeChefPresenceCondition(FeatureExprFactory.False());
+            return TypeChefPresenceCondition.FALSE;
 
         FeatureExpr featureExpr = FeatureExprFactory.False();
 
@@ -84,13 +66,40 @@ public abstract class PresenceCondition {
         return new TypeChefPresenceCondition(featureExpr);
     }
 
+    public static PresenceCondition featureCoPPFromDNF(String formula) {
+        if (formula.equals("1"))
+            return FeatureCoPPPresenceCondition.TRUE;
+        else if (formula.equals("0"))
+            return FeatureCoPPPresenceCondition.FALSE;
+
+        FeatureTree.Node topNode = null;
+
+        String[] clauses = formula.split(" \\|\\| ");
+        for (String clause : clauses) {
+            FeatureTree.Node subNode = null;
+            String[] literals = clause.split(" && ");
+            for (String literal : literals) {
+                FeatureTree.Node macroNode = new FeatureTree.Macro(null, null, literal.replaceAll("^!", ""));
+                macroNode.setEmbracedByParentheses();
+                FeatureTree.Node varNode = new FeatureTree.Defined(null, macroNode, "defined");
+                varNode = literal.startsWith("!") ? new FeatureTree.UnaryLogNeg(null, varNode, "!") : varNode;
+                subNode = subNode == null ? varNode : new FeatureTree.LogAnd(subNode.clone(), varNode, "&&");
+            }
+            topNode = topNode == null ? subNode : new FeatureTree.LogOr(topNode.clone(), subNode, "||");
+        }
+
+        FeatureTree featureTree = new FeatureTree();
+        if (topNode != null)
+            topNode.setEmbracedByParentheses();
+        featureTree.setRoot(topNode);
+        return new FeatureCoPPPresenceCondition(featureTree);
+    }
+
     public boolean equivalentTo(PresenceCondition other) {
         FeatureExpr featureExpr = getFeatureExpr(), otherFeatureExpr = other.getFeatureExpr();
         if (featureExpr == null || otherFeatureExpr == null)
             return featureExpr == otherFeatureExpr;
         if (featureExpr == NOT_FOUND || otherFeatureExpr == NOT_FOUND)
-            return featureExpr == otherFeatureExpr;
-        if (featureExpr == TRUE || otherFeatureExpr == TRUE)
             return featureExpr == otherFeatureExpr;
         return featureExpr.equivalentTo(otherFeatureExpr);
     }
@@ -180,6 +189,8 @@ public abstract class PresenceCondition {
             return presenceCondition;
         else if (!presenceCondition.isPresent())
             return this;
+        if (presenceCondition instanceof FeatureCoPPPresenceCondition)
+            throw new UnsupportedOperationException("can not \"and\" a TypeChef PC and a FeatureCoPP PC");
 
         return fromFeatureExpr(getFeatureExpr().and(presenceCondition.getFeatureExpr()));
     }

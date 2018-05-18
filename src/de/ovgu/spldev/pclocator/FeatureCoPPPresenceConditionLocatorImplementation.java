@@ -43,6 +43,14 @@ public class FeatureCoPPPresenceConditionLocatorImplementation implements Presen
     public void setOptions(SimplePresenceConditionLocator.Options options) {
     }
 
+    public de.ovgu.spldev.pclocator.PresenceCondition getTrue() {
+        return FeatureCoPPPresenceCondition.TRUE;
+    }
+
+    public PresenceCondition fromDNF(String formula) {
+        return PresenceCondition.featureCoPPFromDNF(formula);
+    }
+
     private HashMap<String, FeatureModule> getFeatureTable() {
         try {
             return (HashMap<String, FeatureModule>) featureTableField.get(FeatureTable.class);
@@ -138,11 +146,8 @@ public class FeatureCoPPPresenceConditionLocatorImplementation implements Presen
 
         // A feature occurence models a block of #ifdef variability. It spans multiple lines and
         // can contain other feature occurences. First we flatten all feature occurences.
-        for (Map.Entry<String, FeatureModule> entry : featureTable.entrySet()) {
-            String presenceCondition = entry.getKey();
-            FeatureModule featureModule = entry.getValue();
-            allFeatureOccurences.addAll(getFeatureOccurences(featureModule));
-        }
+        for (Map.Entry<String, FeatureModule> entry : featureTable.entrySet())
+            allFeatureOccurences.addAll(getFeatureOccurences(entry.getValue()));
 
         HashMap<Integer, PresenceCondition> locatedPresenceConditions = new HashMap<>();
         for (int line : lines)

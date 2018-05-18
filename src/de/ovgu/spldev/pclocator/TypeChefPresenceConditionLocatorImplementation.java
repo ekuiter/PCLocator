@@ -31,6 +31,14 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
         this.options = options;
     }
 
+    public de.ovgu.spldev.pclocator.PresenceCondition getTrue() {
+        return TypeChefPresenceCondition.TRUE;
+    }
+
+    public PresenceCondition fromDNF(String formula) {
+        return PresenceCondition.typeChefFromDNF(formula);
+    }
+
     private String getPostIncludes() {
         if (options == null || options.getIncludeDirectories() == null)
             return "";

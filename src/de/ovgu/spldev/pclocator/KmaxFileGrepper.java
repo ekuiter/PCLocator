@@ -24,8 +24,8 @@ public class KmaxFileGrepper {
         escaper = builder.build();
     }
 
-    public KmaxFileGrepper(String kmaxFilePath, String projectRootPath, String filePath) {
-        kmaxPresenceCondition = locatePresenceCondition(Paths.get(kmaxFilePath), Paths.get(projectRootPath), Paths.get(filePath));
+    public KmaxFileGrepper(PresenceConditionLocator.Implementation implementation, String kmaxFilePath, String projectRootPath, String filePath) {
+        kmaxPresenceCondition = locatePresenceCondition(implementation, Paths.get(kmaxFilePath), Paths.get(projectRootPath), Paths.get(filePath));
     }
 
     private String run(String... args) {
@@ -55,7 +55,8 @@ public class KmaxFileGrepper {
         return run("/bin/sh", "-c", String.format(command, (Object[]) args));
     }
 
-    private PresenceCondition locatePresenceCondition(Path kmaxFilePath, Path projectRootPath, Path filePath) {
+    private PresenceCondition locatePresenceCondition(PresenceConditionLocator.Implementation implementation,
+                                                      Path kmaxFilePath, Path projectRootPath, Path filePath) {
         if (!filePath.toString().endsWith(".c"))
             throw new RuntimeException("file " + filePath + " is not a C file");
         if (!Files.exists(filePath))
@@ -68,7 +69,7 @@ public class KmaxFileGrepper {
 
         if (result.length() == 0)
             return PresenceCondition.NOT_FOUND;
-        return TypeChefPresenceCondition.fromDNF(result);
+        return implementation.fromDNF(result);
     }
 
     public PresenceCondition modifyPresenceCondition(PresenceCondition presenceCondition) {
