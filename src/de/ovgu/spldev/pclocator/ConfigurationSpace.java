@@ -1,5 +1,6 @@
 package de.ovgu.spldev.pclocator;
 
+import java.util.Collections;
 import java.util.Iterator;
 
 public abstract class ConfigurationSpace implements Iterable<Configuration> {
@@ -10,6 +11,12 @@ public abstract class ConfigurationSpace implements Iterable<Configuration> {
     }
 
     abstract public Iterator<Configuration> iterator();
+
+    public static ConfigurationSpace EMPTY = new ConfigurationSpace(null) {
+        public Iterator<Configuration> iterator() {
+            return Collections.emptyIterator();
+        }
+    };
 
     public String toString() {
         StringBuilder s = new StringBuilder();

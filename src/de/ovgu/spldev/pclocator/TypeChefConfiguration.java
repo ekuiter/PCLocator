@@ -19,7 +19,7 @@ public class TypeChefConfiguration extends Configuration {
         disabledFeatures = JavaConverters.asJavaCollection(satisfiableAssignment._2());
     }
 
-    public TypeChefConfiguration() {
+    private TypeChefConfiguration() {
         enabledFeatures = Collections.emptyList();
         disabledFeatures = Collections.emptyList();
     }
@@ -29,7 +29,15 @@ public class TypeChefConfiguration extends Configuration {
                 public String toString() {
                     return "";
                 }
+
+                public boolean isPresent() {
+                    return false;
+                }
             };
+
+    public boolean isPresent() {
+        return true;
+    }
 
     private String[] getFeatureNames(Collection<SingleFeatureExpr> features) {
         return features.stream().map(SingleFeatureExpr::feature).toArray(String[]::new);
@@ -43,13 +51,13 @@ public class TypeChefConfiguration extends Configuration {
         return getFeatureNames(disabledFeatures);
     }
 
-    public PresenceCondition toPresenceCondition() {
+    public TypeChefPresenceCondition toPresenceCondition() {
         FeatureExpr featureExpr = FeatureExprFactory.True();
         for (SingleFeatureExpr enabledFeature : enabledFeatures)
             featureExpr = featureExpr.and(enabledFeature);
         for (SingleFeatureExpr disabledFeature : disabledFeatures)
             featureExpr = featureExpr.andNot(disabledFeature);
-        return PresenceCondition.fromFeatureExpr(featureExpr);
+        return new TypeChefPresenceCondition(featureExpr);
     }
 
     public String toString() {

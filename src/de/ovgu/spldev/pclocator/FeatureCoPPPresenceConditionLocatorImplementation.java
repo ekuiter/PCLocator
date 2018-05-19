@@ -48,7 +48,7 @@ public class FeatureCoPPPresenceConditionLocatorImplementation implements Presen
     }
 
     public PresenceCondition fromDNF(String formula) {
-        return PresenceCondition.featureCoPPFromDNF(formula);
+        return FeatureCoPPPresenceCondition.fromDNF(formula);
     }
 
     private HashMap<String, FeatureModule> getFeatureTable() {

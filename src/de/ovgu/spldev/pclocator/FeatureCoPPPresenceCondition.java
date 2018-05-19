@@ -1,6 +1,5 @@
 package de.ovgu.spldev.pclocator;
 
-import de.fosd.typechef.featureexpr.FeatureExpr;
 import de.ovgu.spldev.featurecopp.splmodel.FeatureTree;
 
 public class FeatureCoPPPresenceCondition extends PresenceCondition {
@@ -22,8 +21,52 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
         FALSE = new FeatureCoPPPresenceCondition(featureTree);
     }
 
+    public static FeatureCoPPPresenceCondition NOT_FOUND =
+            new FeatureCoPPPresenceCondition() {
+                public String toString() {
+                    return "";
+                }
+
+                public boolean isPresent() {
+                    return false;
+                }
+            };
+
     public FeatureCoPPPresenceCondition(FeatureTree featureTree) {
         this.featureTree = featureTree;
+    }
+
+    private FeatureCoPPPresenceCondition() {
+        this.featureTree = null;
+    }
+
+    public static FeatureCoPPPresenceCondition fromDNF(String formula) {
+        if (formula.equals("1"))
+            return TRUE;
+        else if (formula.equals("0"))
+            return FALSE;
+
+        FeatureTree.Node topNode = null;
+
+        String[] clauses = formula.split(" \\|\\| ");
+        for (String clause : clauses) {
+            FeatureTree.Node subNode = null;
+            String[] literals = clause.split(" && ");
+            for (String literal : literals) {
+                FeatureTree.Node macroNode = new FeatureTree.Macro(null, null, literal.replaceAll("^!", ""));
+                macroNode.setEmbracedByParentheses();
+                FeatureTree.Node varNode = new FeatureTree.Defined(null, macroNode, "defined");
+                varNode = literal.startsWith("!") ? new FeatureTree.UnaryLogNeg(null, varNode, "!") : varNode;
+                subNode = subNode == null ? varNode : new FeatureTree.LogAnd(subNode.clone(), varNode, "&&");
+            }
+            topNode = topNode == null ? subNode : new FeatureTree.LogOr(topNode.clone(), subNode, "||");
+        }
+
+        FeatureTree featureTree = new FeatureTree();
+        if (topNode != null)
+            topNode.setEmbracedByParentheses();
+        featureTree.setRoot(topNode);
+        return new FeatureCoPPPresenceCondition(featureTree);
     }
 
     public String toString() {
@@ -36,15 +79,9 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
         return featureTree != null;
     }
 
-    public boolean isBoolean() {
-        return true;
-    }
-
-    protected FeatureExpr getFeatureExpr() {
-        throw new UnsupportedOperationException("not implemented for FeatureCoPP");
-    }
-
     public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
+        if (!isPresent())
+            return ConfigurationSpace.EMPTY;
         return new FeatureCoPPConfigurationSpace(this, dimacsFilePath, timeLimit);
     }
 
@@ -52,25 +89,16 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
         return featureTree;
     }
 
-    public PresenceCondition not() {
-        throw new UnsupportedOperationException("not implemented for FeatureCoPP");
-    }
-
-    public PresenceCondition and(PresenceCondition presenceCondition) {
+    public FeatureCoPPPresenceCondition and(FeatureCoPPPresenceCondition presenceCondition) {
         if (!isPresent() && !presenceCondition.isPresent())
             return NOT_FOUND;
         else if (!isPresent())
             return presenceCondition;
         else if (!presenceCondition.isPresent())
             return this;
-        if (!(presenceCondition instanceof FeatureCoPPPresenceCondition))
-            throw new UnsupportedOperationException("can not \"and\" a TypeChef PC and a FeatureCoPP PC");
 
         FeatureTree andFeatureTree = new FeatureTree();
-        andFeatureTree.setRoot(new FeatureTree.LogAnd(
-                featureTree.getRoot(),
-                ((FeatureCoPPPresenceCondition) presenceCondition).featureTree.getRoot(),
-                "&&"));
+        andFeatureTree.setRoot(new FeatureTree.LogAnd(featureTree.getRoot(), presenceCondition.featureTree.getRoot(), "&&"));
 
         return new FeatureCoPPPresenceCondition(andFeatureTree);
     }

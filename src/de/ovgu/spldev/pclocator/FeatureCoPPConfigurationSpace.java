@@ -17,11 +17,13 @@ import java.util.function.Function;
 public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
     private FeatureCoPPPresenceCondition presenceCondition;
     private String timeLimit;
+    private DimacsFileReader dimacsFileReader;
 
     public FeatureCoPPConfigurationSpace(FeatureCoPPPresenceCondition featureCoPPPresenceCondition, String dimacsFilePath, String timeLimit) {
         super(dimacsFilePath);
         presenceCondition = featureCoPPPresenceCondition;
         this.timeLimit = timeLimit;
+        dimacsFileReader = new DimacsFileReader(dimacsFilePath);
     }
 
     class ConfigurationIterator implements Iterator<Configuration> {
@@ -39,7 +41,7 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
                 throw new RuntimeException(e);
             }
 
-            Set<SingleFeatureExpr> interestingFeatures = PresenceCondition.getInterestingFeatures(dimacsFilePath);
+            Set<SingleFeatureExpr> interestingFeatures = dimacsFileReader.getInterestingFeatures();
             for (SingleFeatureExpr interestingFeature : interestingFeatures) {
                 IntVar var = macros.get(interestingFeature.feature());
                 if (var != null)
@@ -51,7 +53,7 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
                     }
             }
 
-            postFeatureModel(dimacsFilePath, model);
+            postFeatureModel(model);
 
             solver = model.getSolver();
             if (timeLimit != null)
@@ -59,11 +61,10 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
             hasNext = solver.solve();
         }
 
-        private void postFeatureModel(String dimacsFilePath, Model model) {
+        private void postFeatureModel(Model model) {
             Tuple3<scala.collection.immutable.Map<String, Object>,
                     List<scala.collection.immutable.List<Object>>,
-                    Object>
-                    dimacsData = PresenceCondition.loadDimacsData(dimacsFilePath);
+                    Object> dimacsData = dimacsFileReader.loadDimacsData();
 
             HashMap<Integer, IntVar> dimacsToChocoVar = new HashMap<>();
             Function<? super Object, ?> literalToVar = literal -> dimacsToChocoVar.get(Math.abs((int) literal));

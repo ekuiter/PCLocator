@@ -2,6 +2,7 @@ package xtc.lang.cpp;
 
 import de.fosd.typechef.featureexpr.FeatureExpr;
 import de.fosd.typechef.featureexpr.FeatureExprFactory;
+import de.ovgu.spldev.pclocator.TypeChefPresenceCondition;
 import net.sf.javabdd.BDD;
 import xtc.lang.cpp.PresenceConditionManager.PresenceCondition;
 
@@ -10,7 +11,7 @@ import java.util.List;
 /**
  * A presence condition for a line of code.
  */
-public class SuperCPresenceCondition extends de.ovgu.spldev.pclocator.PresenceCondition {
+public class SuperCPresenceCondition extends TypeChefPresenceCondition {
     private PresenceCondition presenceCondition;
     private PresenceConditionManager presenceConditionManager;
     private boolean isBoolean = true;
@@ -62,7 +63,6 @@ public class SuperCPresenceCondition extends de.ovgu.spldev.pclocator.PresenceCo
                         varName = vars.getName(i).replaceFirst("\\(defined (.*)\\)", "$1");
                     else {
                         // this presence condition does not solely consist of Boolean features (defined ...)
-
                         isBoolean = false;
                         continue;
                     }

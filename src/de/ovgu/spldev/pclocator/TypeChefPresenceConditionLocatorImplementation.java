@@ -36,7 +36,7 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
     }
 
     public PresenceCondition fromDNF(String formula) {
-        return PresenceCondition.typeChefFromDNF(formula);
+        return TypeChefPresenceCondition.fromDNF(formula);
     }
 
     private String getPostIncludes() {

@@ -27,13 +27,24 @@ public class PresenceConditionEquivalenceChecker implements AnnotatedFile.FileAn
         HashMap<Integer, String> annotations = new HashMap<>();
 
         for (Map.Entry<Integer, PresenceCondition> entry : locatedPresenceConditionsA.entrySet()) {
-            int line = entry.getKey();
-            PresenceCondition presenceConditionA = entry.getValue(),
-                    presenceConditionB = locatedPresenceConditionsB.get(line);
             ArrayList<String> messages = new ArrayList<>();
-            if (!presenceConditionA.equivalentTo(presenceConditionB))
+            int line = entry.getKey();
+            PresenceCondition rawPresenceConditionA = entry.getValue(),
+                    rawPresenceConditionB = locatedPresenceConditionsB.get(line);
+            if (!rawPresenceConditionA.isPresent() && !rawPresenceConditionB.isPresent()) ;
+            else if (rawPresenceConditionA.isPresent() ^ rawPresenceConditionB.isPresent())
                 messages.add("not equivalent");
-            if (!presenceConditionA.isBoolean() || !presenceConditionB.isBoolean())
+            else if (!(entry.getValue() instanceof TypeChefPresenceCondition) ||
+                    !(locatedPresenceConditionsB.get(line) instanceof TypeChefPresenceCondition))
+                messages.add("can not compare");
+            else {
+                TypeChefPresenceCondition presenceConditionA = (TypeChefPresenceCondition) rawPresenceConditionA,
+                        presenceConditionB = (TypeChefPresenceCondition) rawPresenceConditionB;
+                if (!presenceConditionA.equivalentTo(presenceConditionB))
+                    messages.add("not equivalent");
+            }
+            if (rawPresenceConditionA instanceof TypeChefPresenceCondition && !((TypeChefPresenceCondition) rawPresenceConditionA).isBoolean() ||
+                    rawPresenceConditionB instanceof TypeChefPresenceCondition && !((TypeChefPresenceCondition) rawPresenceConditionB).isBoolean())
                 messages.add("not Boolean");
             annotations.put(line, String.join(", ", messages));
         }
