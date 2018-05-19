@@ -18,7 +18,10 @@ import scala.reflect.ClassTag;
 
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TypeChefPresenceConditionLocatorImplementation implements PresenceConditionLocator.Implementation, EnforceTreeHelper, ASTNavigation {
     private PresenceConditionLocator.Options options;
@@ -78,7 +81,9 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
 
     public HashMap<Integer, PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {
         HashMap<Integer, PresenceCondition> locatedPresenceConditions = new HashMap<>();
-        PrintStream out = System.out, err = System.err;
+        for (int line : lines)
+            locatedPresenceConditions.put(line, TypeChefPresenceCondition.NOT_FOUND);
+        PrintStream out = System.out;
 
         System.setOut(new SilentStream());
 
@@ -89,7 +94,6 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
             opt.parseOptions(args);
             ast = parse(opt, FeatureExprLib.featureModelFactory().empty());
         } finally {
-            System.setErr(err);
             System.setOut(out);
         }
 

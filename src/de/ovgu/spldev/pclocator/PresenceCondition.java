@@ -10,7 +10,7 @@ public abstract class PresenceCondition {
     public static PresenceCondition NOT_FOUND =
             new PresenceCondition() {
                 public String toString() {
-                    return "";
+                    return "?";
                 }
 
                 public boolean isPresent() {
@@ -18,24 +18,20 @@ public abstract class PresenceCondition {
                 }
 
                 public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
-                    return ConfigurationSpace.EMPTY;
+                    return ConfigurationSpace.NOT_FOUND;
                 }
             };
 
     public void print() {
-        if (this.toString().length() == 0)
-            System.err.println("not found");
+        if (!isPresent())
+            Log.error("no presence condition found");
         else
             System.out.println(this);
     }
 
     public PresenceCondition and(PresenceCondition that) {
-        if (!isPresent() && !that.isPresent())
-            return NOT_FOUND;
-        else if (!isPresent())
-            return that;
-        else if (!that.isPresent())
-            return this;
+        if (!isPresent() || !that.isPresent())
+            return NOT_FOUND; // propagate any failures from the parser
 
         if (this instanceof TypeChefPresenceCondition && that instanceof TypeChefPresenceCondition)
             return ((TypeChefPresenceCondition) this).and((TypeChefPresenceCondition) that);

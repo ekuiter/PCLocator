@@ -15,7 +15,7 @@ public class ConfigurationSpaceLocator implements AnnotatedFile.FileAnnotator {
     }
 
     public String getName() {
-        return presenceConditionLocator.getName() + " configuration";
+        return presenceConditionLocator.getName() + " config";
     }
 
     public HashMap<Integer, ConfigurationSpace> annotate(String filePath) {

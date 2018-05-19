@@ -6,6 +6,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Gets presence conditions from a Kmax result file. Requires a shell with basic commands (cat, grep, cut),
@@ -13,10 +16,18 @@ import java.util.Arrays;
  * locate presence conditions, but in practice the "grep" approach works fine even for the Linux kernel.
  */
 public class KmaxFileGrepper {
-    private PresenceCondition[] kmaxPresenceConditions;
+    PresenceConditionLocator.Implementation implementation;
+    String kmaxFilePath;
+    String projectRootPath;
+    String filePath;
+    private PresenceCondition[] kmaxPresenceConditions = null;
+    private static HashMap<String, Boolean> notified = new HashMap<>();
 
     public KmaxFileGrepper(PresenceConditionLocator.Implementation implementation, String kmaxFilePath, String projectRootPath, String filePath) {
-        kmaxPresenceConditions = locatePresenceConditions(implementation, Paths.get(kmaxFilePath), Paths.get(projectRootPath), Paths.get(filePath));
+        this.implementation = implementation;
+        this.kmaxFilePath = kmaxFilePath;
+        this.projectRootPath = projectRootPath;
+        this.filePath = filePath;
     }
 
     private ArrayList<String> searchKmaxFile(Path kmaxFilePath, Path objectFile) {
@@ -67,7 +78,18 @@ public class KmaxFileGrepper {
         return searchKmaxFile(kmaxFilePath, objectFile).stream().map(implementation::fromDNF).toArray(PresenceCondition[]::new);
     }
 
+    public void locatePresenceConditions() {
+        if (kmaxPresenceConditions == null) {
+            kmaxPresenceConditions = locatePresenceConditions(implementation, Paths.get(kmaxFilePath), Paths.get(projectRootPath), Paths.get(filePath));
+            if (!notified.getOrDefault(kmaxFilePath, false))
+                Log.notice("Kmax presence condition: %s",
+                        Stream.of(kmaxPresenceConditions).map(PresenceCondition::toString).collect(Collectors.joining("&&")));
+            notified.put(kmaxFilePath, true);
+        }
+    }
+
     public PresenceCondition modifyPresenceCondition(PresenceCondition presenceCondition) {
+        locatePresenceConditions();
         for (int i = kmaxPresenceConditions.length - 1; i >= 0; i--)
             presenceCondition = kmaxPresenceConditions[i].and(presenceCondition);
         return presenceCondition;

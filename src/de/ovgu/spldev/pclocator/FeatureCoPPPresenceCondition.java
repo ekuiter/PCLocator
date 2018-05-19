@@ -24,7 +24,7 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
     public static FeatureCoPPPresenceCondition NOT_FOUND =
             new FeatureCoPPPresenceCondition() {
                 public String toString() {
-                    return "";
+                    return "?";
                 }
 
                 public boolean isPresent() {
@@ -81,7 +81,7 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
 
     public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
         if (!isPresent())
-            return ConfigurationSpace.EMPTY;
+            return ConfigurationSpace.NOT_FOUND;
         return new FeatureCoPPConfigurationSpace(this, dimacsFilePath, timeLimit);
     }
 
@@ -90,12 +90,8 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
     }
 
     public FeatureCoPPPresenceCondition and(FeatureCoPPPresenceCondition presenceCondition) {
-        if (!isPresent() && !presenceCondition.isPresent())
+        if (!isPresent() || !presenceCondition.isPresent())
             return NOT_FOUND;
-        else if (!isPresent())
-            return presenceCondition;
-        else if (!presenceCondition.isPresent())
-            return this;
 
         FeatureTree andFeatureTree = new FeatureTree();
         andFeatureTree.setRoot(new FeatureTree.LogAnd(featureTree.getRoot(), presenceCondition.featureTree.getRoot(), "&&"));

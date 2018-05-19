@@ -19,7 +19,7 @@ public class AnnotatedFile {
     private ArrayList<FileAnnotator> fileAnnotators = new ArrayList<>();
     private HashMap<FileAnnotator, Map<Integer, Object>> annotations = null;
     private HashMap<FileAnnotator, Measurement> measurements = null;
-    public static int columnWidth = 30;
+    public static int columnWidth = 25;
 
     AnnotatedFile(String filePath) {
         this.filePath = PresenceConditionLocator.validateFilePath(filePath);
@@ -42,7 +42,7 @@ public class AnnotatedFile {
                     annotations.put(fileAnnotator, fileAnnotator.annotate(filePath));
                     measurements.put(fileAnnotator, fileAnnotator.getLastMeasurement());
                 } catch (Exception e) {
-                    System.err.println(e);
+                    Log.error("%s", e);
                 }
             }
         }
@@ -51,12 +51,13 @@ public class AnnotatedFile {
     private void printDivider(boolean header) {
         StringBuffer s1 = new StringBuffer(), s2 = new StringBuffer();
         for (FileAnnotator fileAnnotator : fileAnnotators) {
-            s1.append(String.format("%-30s | ", fileAnnotator.getName()));
-            s2.append("--------------------------------+");
+            String name = fileAnnotator.getName();
+            s1.append(String.format("%-25s | ", name.substring(0, Math.min(columnWidth, name.length()))));
+            s2.append("---------------------------+");
         }
         if (header)
-            System.out.format("%4s | %-50s | %s\n", "#", "line of code", s1);
-        System.out.format("-----+----------------------------------------------------+%s\n", s2);
+            System.out.format("%4s | %-40s | %s\n", "#", "line of code", s1);
+        System.out.format("-----+------------------------------------------+%s\n", s2);
     }
 
     public void print() {
@@ -79,11 +80,11 @@ public class AnnotatedFile {
                     } catch (Exception e) {
                         annotationString = e.toString();
                     }
-                    s.append(String.format("%-30s | ",
-                            annotationString.substring(0, Math.min(30, annotationString.length())).replace('\n', ' ')));
+                    s.append(String.format("%-25s | ",
+                            annotationString.substring(0, Math.min(columnWidth, annotationString.length())).replace('\n', ' ')));
                 }
-                System.out.format("%4d | %-50s | %s\n", line,
-                        lineContent.substring(0, Math.min(50, lineContent.length())), s);
+                System.out.format("%4d | %-40s | %s\n", line,
+                        lineContent.substring(0, Math.min(40, lineContent.length())), s);
             }
 
             printDivider(false);
@@ -92,10 +93,10 @@ public class AnnotatedFile {
                 String measurementString =
                         measurements.get(fileAnnotator) != null ? measurements.get(fileAnnotator).toString() :
                         annotations.get(fileAnnotator) != null ? "" : "FAILED";
-                s.append(String.format("%-30s | ",
-                        measurementString.substring(0, Math.min(30, measurementString.length()))));
+                s.append(String.format("%-25s | ",
+                        measurementString.substring(0, Math.min(columnWidth, measurementString.length()))));
             }
-            System.out.format("%4s | %-50s | %s\n", "", "", s);
+            System.out.format("%4s | %-40s | %s\n", "", "", s);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

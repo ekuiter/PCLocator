@@ -27,7 +27,7 @@ public class TypeChefConfiguration extends Configuration {
     public final static TypeChefConfiguration NOT_FOUND =
             new TypeChefConfiguration() {
                 public String toString() {
-                    return "";
+                    return "?";
                 }
 
                 public boolean isPresent() {

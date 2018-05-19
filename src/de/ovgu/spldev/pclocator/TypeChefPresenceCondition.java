@@ -13,7 +13,7 @@ import scala.collection.immutable.List;
  */
 public class TypeChefPresenceCondition extends PresenceCondition {
     private FeatureExpr featureExpr;
-    boolean notified = false;
+    boolean warned = false;
 
     public static TypeChefPresenceCondition TRUE = new TypeChefPresenceCondition(FeatureExprFactory.True());
     public static TypeChefPresenceCondition FALSE = new TypeChefPresenceCondition(FeatureExprFactory.False());
@@ -21,7 +21,7 @@ public class TypeChefPresenceCondition extends PresenceCondition {
     public static TypeChefPresenceCondition NOT_FOUND =
             new TypeChefPresenceCondition() {
                 public String toString() {
-                    return "";
+                    return "?";
                 }
 
                 public boolean isPresent() {
@@ -100,10 +100,10 @@ public class TypeChefPresenceCondition extends PresenceCondition {
                 : TypeChefConfiguration.NOT_FOUND;
     }
 
-    private void notifyIgnoringNonBoolean() {
-        if (!notified)
-            Log.notice("ignoring non-Boolean expressions in presence condition %s", this);
-        notified = true;
+    private void warnIgnoringNonBoolean() {
+        if (!warned)
+            Log.warning("ignoring non-Boolean expressions in presence condition %s", this);
+        warned = true;
     }
 
     public TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath) {
@@ -112,33 +112,29 @@ public class TypeChefPresenceCondition extends PresenceCondition {
 
     public TypeChefPresenceCondition not() {
         if (!isPresent())
-            throw new RuntimeException("can not \"not\" constrain a PC which is not present");
+            return NOT_FOUND;
 
         if (!isBoolean())
-            notifyIgnoringNonBoolean();
+            warnIgnoringNonBoolean();
 
         return new TypeChefPresenceCondition(getFeatureExpr().not());
     }
 
     public TypeChefPresenceCondition and(TypeChefPresenceCondition that) {
-        if (!isPresent() && !that.isPresent())
+        if (!isPresent() || !that.isPresent())
             return NOT_FOUND;
-        else if (!isPresent())
-            return that;
-        else if (!that.isPresent())
-            return this;
 
         if (!isBoolean())
-            notifyIgnoringNonBoolean();
+            warnIgnoringNonBoolean();
         if (!that.isBoolean())
-            that.notifyIgnoringNonBoolean();
+            that.warnIgnoringNonBoolean();
 
         return new TypeChefPresenceCondition(getFeatureExpr().and(that.getFeatureExpr()));
     }
 
     public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
         if (!isPresent())
-            return ConfigurationSpace.EMPTY;
+            return ConfigurationSpace.NOT_FOUND;
         return new TypeChefConfigurationSpace(this, dimacsFilePath, timeLimit);
     }
 }

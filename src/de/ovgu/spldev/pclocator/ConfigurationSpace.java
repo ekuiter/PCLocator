@@ -12,9 +12,17 @@ public abstract class ConfigurationSpace implements Iterable<Configuration> {
 
     abstract public Iterator<Configuration> iterator();
 
-    public static ConfigurationSpace EMPTY = new ConfigurationSpace(null) {
+    public static ConfigurationSpace NOT_FOUND = new ConfigurationSpace(null) {
         public Iterator<Configuration> iterator() {
             return Collections.emptyIterator();
+        }
+
+        public String toString() {
+            return "?";
+        }
+
+        public void print() {
+            Log.error("no configuration space found");
         }
     };
 

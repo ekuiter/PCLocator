@@ -5,7 +5,7 @@ public class Main {
         try {
             new PresenceConditionLocatorShell().run(args);
         } catch (Exception e) {
-            System.err.println(e);
+            Log.error("%s", e);
             System.exit(1);
         }
     }

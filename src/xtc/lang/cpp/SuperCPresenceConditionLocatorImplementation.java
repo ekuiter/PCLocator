@@ -105,6 +105,8 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
 
     public HashMap<Integer, de.ovgu.spldev.pclocator.PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {
         _locatedPresenceConditions = new HashMap<>();
+        for (int line : lines)
+            _locatedPresenceConditions.put(line, SuperCPresenceCondition.NOT_FOUND);
         PrintStream err = System.err;
         TrackErrorStream trackErrorStream = new TrackErrorStream(System.err);
         System.setErr(trackErrorStream);

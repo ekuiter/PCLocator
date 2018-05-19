@@ -110,7 +110,7 @@ public class PresenceConditionLocatorShell {
         try {
             analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, timeLimit);
         } catch (Exception e) {
-            System.err.println(e);
+            Log.error("%s", e);
             System.exit(1);
         }
     }
