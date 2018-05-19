@@ -7,7 +7,7 @@ public class KmaxPresenceConditionLocator extends DeduceNotFoundPresenceConditio
     KmaxFileGrepper kmaxFileGrepper;
 
     public String getName() {
-        return super.getName() + " + kmax";
+        return super.getName() + " + Kmax";
     }
 
     KmaxPresenceConditionLocator(Implementation implementation, Options options, KmaxFileGrepper kmaxFileGrepper) {

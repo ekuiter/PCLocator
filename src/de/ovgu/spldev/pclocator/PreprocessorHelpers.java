@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 
 public class PreprocessorHelpers {
     // see https://gcc.gnu.org/onlinedocs/cpp/The-preprocessing-language.html
+    // Preprocessor directives may span multiple lines (using '\' at the end of a line),
+    // but that usually only concerns macros, which we are not interested in here.
     protected static boolean isPreprocessorLine(String lineContent) {
         return lineContent.matches("\\s*#.*");
     }

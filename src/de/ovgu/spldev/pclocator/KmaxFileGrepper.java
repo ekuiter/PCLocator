@@ -1,8 +1,5 @@
 package de.ovgu.spldev.pclocator;
 
-import com.google.common.escape.Escaper;
-import com.google.common.escape.Escapers;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,14 +13,7 @@ import java.util.Arrays;
  * locate presence conditions, but in practice the "grep" approach works fine even for the Linux kernel.
  */
 public class KmaxFileGrepper {
-    private static Escaper escaper;
     private PresenceCondition[] kmaxPresenceConditions;
-
-    static {
-        Escapers.Builder builder = Escapers.builder();
-        builder.addEscape('\'', "'\"'\"'");
-        escaper = builder.build();
-    }
 
     public KmaxFileGrepper(PresenceConditionLocator.Implementation implementation, String kmaxFilePath, String projectRootPath, String filePath) {
         kmaxPresenceConditions = locatePresenceConditions(implementation, Paths.get(kmaxFilePath), Paths.get(projectRootPath), Paths.get(filePath));
@@ -36,6 +26,9 @@ public class KmaxFileGrepper {
             componentSearches.add("subdir_pc " + component + " ");
         ArrayList<String> results = new ArrayList<>();
 
+        // Scan the Kmax result file linearly for all path components occuring in the object file to
+        // be searched for. This may be sped up by sorting the file first and then doing binary search,
+        // but was tested and works fine for Kmax result files < 2 MiB.
         try {
             Files.lines(kmaxFilePath)
                     .filter(line -> {

@@ -1,6 +1,6 @@
 # PCLocator
 
-PCLocator is a Java tool to analyze presence conditions in variable software
+PCLocator is a Java tool that analyzes presence conditions in variable software
 systems written in the programming language C.
 
 A presence condition describes under which circumstances a file or block of code
@@ -47,7 +47,8 @@ Extract a single presence condition for the line `<line>` in a C file `<file>`
 java -jar PCLocator.jar <file>:<line>
 ```
 
-Leave off the `<line>` to get a tabular overview of all presence conditions.
+Leave off the `<line>` to get a tabular overview of all presence conditions
+using all parsers.
 
 #### Configuration space
 

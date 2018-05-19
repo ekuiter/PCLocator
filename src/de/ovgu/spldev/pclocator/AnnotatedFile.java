@@ -15,10 +15,10 @@ public class AnnotatedFile {
         Measurement getLastMeasurement();
     }
 
-    String filePath;
-    ArrayList<FileAnnotator> fileAnnotators = new ArrayList<>();
-    HashMap<FileAnnotator, Map<Integer, Object>> annotations = null;
-    HashMap<FileAnnotator, Measurement> measurements = null;
+    private String filePath;
+    private ArrayList<FileAnnotator> fileAnnotators = new ArrayList<>();
+    private HashMap<FileAnnotator, Map<Integer, Object>> annotations = null;
+    private HashMap<FileAnnotator, Measurement> measurements = null;
     public static int columnWidth = 30;
 
     AnnotatedFile(String filePath) {
