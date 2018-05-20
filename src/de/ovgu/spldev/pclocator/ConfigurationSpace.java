@@ -12,19 +12,27 @@ public abstract class ConfigurationSpace implements Iterable<Configuration> {
 
     abstract public Iterator<Configuration> iterator();
 
-    public static ConfigurationSpace NOT_FOUND = new ConfigurationSpace(null) {
-        public Iterator<Configuration> iterator() {
-            return Collections.emptyIterator();
-        }
+    public static ConfigurationSpace getNotFound(PresenceCondition presenceCondition) {
+        ConfigurationSpace notFound = new ConfigurationSpace(null) {
+            public Iterator<Configuration> iterator() {
+                return Collections.emptyIterator();
+            }
 
-        public String toString() {
-            return "?";
-        }
+            public String toString() {
+                return "?";
+            }
 
-        public void print() {
-            Log.error("no configuration space found");
-        }
-    };
+            public void print() {
+                Log.error("no configuration space found");
+            }
+        };
+        Log.history(notFound)
+                .add("No configuration space found. " +
+                        "This is because no presence condition has been located. " +
+                        "Below is some context for how the presence condition has been located: ")
+                .reference(presenceCondition);
+        return notFound;
+    }
 
     public String toString() {
         StringBuilder s = new StringBuilder();
@@ -36,8 +44,15 @@ public abstract class ConfigurationSpace implements Iterable<Configuration> {
         return s.toString().trim();
     }
 
-    public void print() {
-        for (Configuration configuration : this)
-            System.out.println(configuration);
+    public void print(boolean isExplain) {
+        if (isExplain)
+            System.out.println(history());
+        else
+            for (Configuration configuration : this)
+                System.out.println(configuration);
+    }
+
+    public Log.History history() {
+        return Log.history(this);
     }
 }

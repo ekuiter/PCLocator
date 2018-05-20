@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,7 +20,6 @@ public class KmaxFileGrepper {
     String projectRootPath;
     String filePath;
     private PresenceCondition[] kmaxPresenceConditions = null;
-    private static HashMap<String, Boolean> notified = new HashMap<>();
 
     public KmaxFileGrepper(PresenceConditionLocator.Implementation implementation, String kmaxFilePath, String projectRootPath, String filePath) {
         this.implementation = implementation;
@@ -81,11 +79,14 @@ public class KmaxFileGrepper {
     public void locatePresenceConditions() {
         if (kmaxPresenceConditions == null) {
             kmaxPresenceConditions = locatePresenceConditions(implementation, Paths.get(kmaxFilePath), Paths.get(projectRootPath), Paths.get(filePath));
-            if (!notified.getOrDefault(kmaxFilePath, false))
-                Log.notice("Kmax presence condition: %s",
-                        Stream.of(kmaxPresenceConditions).map(PresenceCondition::toString).collect(Collectors.joining("&&")));
-            notified.put(kmaxFilePath, true);
+            Log.history(this).add("This presence condition has been located by Kmax. " +
+                    "It originates from the build system and applies to the whole file.");
         }
+    }
+
+    public String toString() {
+        locatePresenceConditions();
+        return Stream.of(kmaxPresenceConditions).map(PresenceCondition::toString).collect(Collectors.joining("&&"));
     }
 
     public PresenceCondition modifyPresenceCondition(PresenceCondition presenceCondition) {

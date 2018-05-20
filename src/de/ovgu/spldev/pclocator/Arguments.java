@@ -113,7 +113,9 @@ class Arguments {
                 "  --kmaxfile     pass a Kmax presence condition file (with unit_pc's and\n" +
                 "                 subdir_pc's) to consider build system constraints\n" +
                 "  --projectroot  when specifying a --kmaxfile, the project root directory\n" +
-                "                 relative to the unit_pc's/subdir_pc's must be specified\n\n" +
+                "                 relative to the unit_pc's/subdir_pc's must be specified\n" +
+                "  --explain      prints an explanation for how the presence condition\n" +
+                "                 or configuration space was located\n\n" +
                 "The location can have the form\n" +
                 "  <file>:<line>  in which case only the given line will be analyzed, or\n" +
                 "  <file>         in which case a tabular analysis of all lines in the file\n" +
@@ -124,10 +126,24 @@ class Arguments {
         return has("--help", true);
     }
 
+    boolean isAnnotating() {
+        return !PresenceConditionLocator.isValidLocation(getLocation());
+    }
+
+    boolean isExplain() {
+        boolean isExplain = has("--explain");
+        if (isAnnotating() && isExplain)
+            throw new RuntimeException("only individual lines can be explained");
+        return isExplain;
+    }
+
     String getParserKind() {
         String parser = get("--parser");
         if (parser == null)
             return "superc";
+
+        if (isAnnotating())
+            throw new RuntimeException("use --annotator to specify parsers when annotating a whole file");
 
         String[] allowedArgs = {"typechef", "superc", "xtc", "featurecopp"};
         if (allowed(parser, allowedArgs))
@@ -140,6 +156,9 @@ class Arguments {
         String[] annotators = getMany("--annotator");
         if (annotators.length == 0)
             return new String[]{"all"};
+
+        if (!isAnnotating())
+            throw new RuntimeException("only a whole file can be annotated, not individual lines");
 
         String[] allowedArgs = {"typechef", "superc", "xtc", "featurecopp", "equivalent", "all"};
         for (String annotator : annotators) {

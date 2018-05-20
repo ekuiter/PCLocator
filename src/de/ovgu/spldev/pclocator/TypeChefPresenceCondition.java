@@ -15,20 +15,6 @@ public class TypeChefPresenceCondition extends PresenceCondition {
     private FeatureExpr featureExpr;
     boolean warned = false;
 
-    public static TypeChefPresenceCondition TRUE = new TypeChefPresenceCondition(FeatureExprFactory.True());
-    public static TypeChefPresenceCondition FALSE = new TypeChefPresenceCondition(FeatureExprFactory.False());
-
-    public static TypeChefPresenceCondition NOT_FOUND =
-            new TypeChefPresenceCondition() {
-                public String toString() {
-                    return "?";
-                }
-
-                public boolean isPresent() {
-                    return false;
-                }
-            };
-
     public TypeChefPresenceCondition(FeatureExpr featureExpr) {
         this.featureExpr = featureExpr;
     }
@@ -37,11 +23,49 @@ public class TypeChefPresenceCondition extends PresenceCondition {
         this.featureExpr = null;
     }
 
+    public static TypeChefPresenceCondition getNotFound(Integer line) {
+        TypeChefPresenceCondition notFound = new TypeChefPresenceCondition() {
+            public String toString() {
+                return "?";
+            }
+
+            public boolean isPresent() {
+                return false;
+            }
+        };
+        notFound.history(line).add(notFoundHistory);
+        return notFound;
+    }
+
+    public static TypeChefPresenceCondition getNotFound() {
+        return getNotFound(null);
+    }
+
+    public static TypeChefPresenceCondition getTrue(Integer line) {
+        TypeChefPresenceCondition presenceCondition = new TypeChefPresenceCondition(FeatureExprFactory.True());
+        presenceCondition.history(line).add(trueHistory);
+        return presenceCondition;
+    }
+
+    public static TypeChefPresenceCondition getTrue() {
+        return getTrue(null);
+    }
+
+    public static TypeChefPresenceCondition getFalse(Integer line) {
+        TypeChefPresenceCondition presenceCondition = new TypeChefPresenceCondition(FeatureExprFactory.False());
+        presenceCondition.history(line).add(falseHistory);
+        return presenceCondition;
+    }
+
+    public static TypeChefPresenceCondition getFalse() {
+        return getFalse(null);
+    }
+
     public static TypeChefPresenceCondition fromDNF(String formula) {
         if (formula.equals("1"))
-            return TRUE;
+            return getTrue();
         else if (formula.equals("0"))
-            return FALSE;
+            return getFalse();
 
         FeatureExpr featureExpr = FeatureExprFactory.False();
 
@@ -56,6 +80,10 @@ public class TypeChefPresenceCondition extends PresenceCondition {
             featureExpr = featureExpr.or(subExpr);
         }
 
+        return new TypeChefPresenceCondition(featureExpr);
+    }
+
+    public PresenceCondition clone() {
         return new TypeChefPresenceCondition(featureExpr);
     }
 
@@ -86,7 +114,7 @@ public class TypeChefPresenceCondition extends PresenceCondition {
 
     public TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath, boolean preferDisabledFeatures) {
         if (!isPresent())
-            return TypeChefConfiguration.NOT_FOUND;
+            return TypeChefConfiguration.getNotFound(this);
 
         DimacsFileReader dimacsFileReader = new DimacsFileReader(dimacsFilePath);
         Option<Tuple2<List<SingleFeatureExpr>, List<SingleFeatureExpr>>> satisfiableAssignment =
@@ -95,14 +123,24 @@ public class TypeChefPresenceCondition extends PresenceCondition {
                         JavaConverters.asScalaSet(dimacsFileReader.getInterestingFeatures()).toSet(),
                         preferDisabledFeatures);
 
-        return !satisfiableAssignment.isEmpty()
-                ? new TypeChefConfiguration(satisfiableAssignment.get())
-                : TypeChefConfiguration.NOT_FOUND;
+        TypeChefConfiguration satisfyingConfiguration =
+                !satisfiableAssignment.isEmpty()
+                        ? new TypeChefConfiguration(satisfiableAssignment.get())
+                        : TypeChefConfiguration.getNotFound(this);
+        if (!satisfiableAssignment.isEmpty())
+            satisfyingConfiguration.history()
+                    .add("This satisfying configuration has been located by TypeChef " +
+                            "from the presence condition and the given feature model. " +
+                            "Below is some context for how the presence condition has been located: ")
+                    .reference(this);
+        return satisfyingConfiguration;
     }
 
     private void warnIgnoringNonBoolean() {
         if (!warned)
-            Log.warning("ignoring non-Boolean expressions in presence condition %s", this);
+            history().add("This presence condition has non-Boolean sub-expressions. " +
+                    "These sub-expressions will be ignored when deriving configurations " +
+                    "because they are not supported by the SAT solver.");
         warned = true;
     }
 
@@ -112,7 +150,7 @@ public class TypeChefPresenceCondition extends PresenceCondition {
 
     public TypeChefPresenceCondition not() {
         if (!isPresent())
-            return NOT_FOUND;
+            return getNotFound(getLine());
 
         if (!isBoolean())
             warnIgnoringNonBoolean();
@@ -122,19 +160,27 @@ public class TypeChefPresenceCondition extends PresenceCondition {
 
     public TypeChefPresenceCondition and(TypeChefPresenceCondition that) {
         if (!isPresent() || !that.isPresent())
-            return NOT_FOUND;
+            return getNotFound(getLine() == null ? that.getLine() : getLine());
 
         if (!isBoolean())
             warnIgnoringNonBoolean();
         if (!that.isBoolean())
             that.warnIgnoringNonBoolean();
 
-        return new TypeChefPresenceCondition(getFeatureExpr().and(that.getFeatureExpr()));
+        TypeChefPresenceCondition presenceCondition = new TypeChefPresenceCondition(getFeatureExpr().and(that.getFeatureExpr()));
+        presenceCondition.history(getLine() == null ? that.getLine() : getLine());
+        return presenceCondition;
     }
 
     public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
         if (!isPresent())
-            return ConfigurationSpace.NOT_FOUND;
-        return new TypeChefConfigurationSpace(this, dimacsFilePath, timeLimit);
+            return ConfigurationSpace.getNotFound(this);
+        TypeChefConfigurationSpace configurationSpace = new TypeChefConfigurationSpace(this, dimacsFilePath, timeLimit);
+        configurationSpace.history()
+                .add("This configuration space has been located by TypeChef " +
+                        "from the presence condition and the given feature model. " +
+                        "Below is some context for how the presence condition has been located: ")
+                .reference(this);
+        return configurationSpace;
     }
 }

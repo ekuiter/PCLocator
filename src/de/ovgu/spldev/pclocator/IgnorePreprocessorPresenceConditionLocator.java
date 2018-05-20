@@ -16,4 +16,9 @@ public class IgnorePreprocessorPresenceConditionLocator extends MockSystemHeader
             return false;
         return PreprocessorHelpers.isPreprocessorLine(lineContent);
     }
+
+    protected String lineNotAvailableHistory() {
+        return "This line contains a preprocessor directive. " +
+                "Because the parser might return inconsistent results, these lines are ignored.";
+    }
 }

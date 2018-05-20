@@ -5,25 +5,44 @@ public abstract class PresenceCondition {
 
     abstract public boolean isPresent();
 
+    abstract public PresenceCondition clone();
+
     abstract public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit);
 
-    public static PresenceCondition NOT_FOUND =
-            new PresenceCondition() {
-                public String toString() {
-                    return "?";
-                }
+    protected static String notFoundHistory = "In the beginning, we start with no presence condition.";
+    protected static String trueHistory = null;
+    protected static String falseHistory = null;
 
-                public boolean isPresent() {
-                    return false;
-                }
+    public static PresenceCondition getNotFound(Integer line) {
+        PresenceCondition notFound = new PresenceCondition() {
+            public String toString() {
+                return "?";
+            }
 
-                public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
-                    return ConfigurationSpace.NOT_FOUND;
-                }
-            };
+            public boolean isPresent() {
+                return false;
+            }
 
-    public void print() {
-        if (!isPresent())
+            public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
+                return ConfigurationSpace.getNotFound(this);
+            }
+
+            public PresenceCondition clone() {
+                return getNotFound();
+            }
+        };
+        notFound.history(line).add(notFoundHistory);
+        return notFound;
+    }
+
+    public static PresenceCondition getNotFound() {
+        return getNotFound(null);
+    }
+
+    public void print(boolean isExplain) {
+        if (isExplain)
+            System.out.println(history());
+        else if (!isPresent())
             Log.error("no presence condition found");
         else
             System.out.println(this);
@@ -31,7 +50,7 @@ public abstract class PresenceCondition {
 
     public PresenceCondition and(PresenceCondition that) {
         if (!isPresent() || !that.isPresent())
-            return NOT_FOUND; // propagate any failures from the parser
+            return getNotFound(); // propagate any failures from the parser
 
         if (this instanceof TypeChefPresenceCondition && that instanceof TypeChefPresenceCondition)
             return ((TypeChefPresenceCondition) this).and((TypeChefPresenceCondition) that);
@@ -39,5 +58,17 @@ public abstract class PresenceCondition {
             return ((FeatureCoPPPresenceCondition) this).and((FeatureCoPPPresenceCondition) that);
         else
             throw new RuntimeException("can not \"and\" constrain PCs which different types");
+    }
+
+    public Log.History history(Integer line) {
+        return Log.history(this, line);
+    }
+
+    public Log.History history() {
+        return Log.history(this);
+    }
+
+    public Integer getLine() {
+        return ((Log.PresenceConditionHistory) history()).getLine();
     }
 }

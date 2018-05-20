@@ -19,8 +19,15 @@ public class KmaxPresenceConditionLocator extends DeduceNotFoundPresenceConditio
             (HashMap<Integer, PresenceCondition> locatedPresenceConditions, String[] lineContents) {
         locatedPresenceConditions = super.modifyPresenceConditions(locatedPresenceConditions, lineContents);
 
-        for (Map.Entry<Integer, PresenceCondition> entry : locatedPresenceConditions.entrySet())
-            locatedPresenceConditions.put(entry.getKey(), kmaxFileGrepper.modifyPresenceCondition(entry.getValue()));
+        for (Map.Entry<Integer, PresenceCondition> entry : locatedPresenceConditions.entrySet()) {
+            PresenceCondition modifiedPresenceCondition = kmaxFileGrepper.modifyPresenceCondition(entry.getValue());
+            modifiedPresenceCondition.history()
+                    .include(entry.getValue())
+                    .include(kmaxFileGrepper)
+                    .add("This presence condition combines the presence condition from the parser above " +
+                            "and the presence condition located by Kmax.");
+            locatedPresenceConditions.put(entry.getKey(), modifiedPresenceCondition);
+        }
 
         return locatedPresenceConditions;
     }

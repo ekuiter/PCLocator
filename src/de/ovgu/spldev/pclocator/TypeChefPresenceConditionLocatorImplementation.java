@@ -35,7 +35,7 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
     }
 
     public de.ovgu.spldev.pclocator.PresenceCondition getTrue() {
-        return TypeChefPresenceCondition.TRUE;
+        return TypeChefPresenceCondition.getTrue();
     }
 
     public PresenceCondition fromDNF(String formula) {
@@ -81,8 +81,6 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
 
     public HashMap<Integer, PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {
         HashMap<Integer, PresenceCondition> locatedPresenceConditions = new HashMap<>();
-        for (int line : lines)
-            locatedPresenceConditions.put(line, TypeChefPresenceCondition.NOT_FOUND);
         PrintStream out = System.out;
 
         System.setOut(new SilentStream());
@@ -112,10 +110,13 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
                             break;
                     if (elem.getPositionFrom().getLine() == line) {
                         FeatureExpr featureExpr = env.featureExpr(elem);
-                        locatedPresenceConditions.put(line,
-                                featureExpr.isTautology()
-                                        ? TypeChefPresenceCondition.TRUE
-                                        : new TypeChefPresenceCondition(featureExpr));
+                        TypeChefPresenceCondition presenceCondition = featureExpr.isTautology()
+                                ? TypeChefPresenceCondition.getTrue()
+                                : new TypeChefPresenceCondition(featureExpr);
+                        presenceCondition.history(line)
+                                .include(locatedPresenceConditions.get(line))
+                                .add("This presence condition has been located by TypeChef.");
+                        locatedPresenceConditions.put(line, presenceCondition);
                         if ((line = lineSupplier.next()) == -1)
                             break;
                     }

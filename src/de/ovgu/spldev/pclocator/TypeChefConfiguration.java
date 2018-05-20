@@ -24,16 +24,23 @@ public class TypeChefConfiguration extends Configuration {
         disabledFeatures = Collections.emptyList();
     }
 
-    public final static TypeChefConfiguration NOT_FOUND =
-            new TypeChefConfiguration() {
-                public String toString() {
-                    return "?";
-                }
+    public final static TypeChefConfiguration getNotFound(PresenceCondition presenceCondition) {
+        TypeChefConfiguration notFound = new TypeChefConfiguration() {
+            public String toString() {
+                return "?";
+            }
 
-                public boolean isPresent() {
-                    return false;
-                }
-            };
+            public boolean isPresent() {
+                return false;
+            }
+        };
+        Log.history(notFound)
+                .include(presenceCondition)
+                .add("No satisfying configuration found. " +
+                "This means that either no presence condition has been located " +
+                "or that no satisfying configuration exists.");
+        return notFound;
+    }
 
     public boolean isPresent() {
         return true;

@@ -21,6 +21,10 @@ public class SuperCPresenceCondition extends TypeChefPresenceCondition {
         this.presenceConditionManager = presenceConditionManager;
     }
 
+    public de.ovgu.spldev.pclocator.PresenceCondition clone() {
+        return new SuperCPresenceCondition(presenceCondition, presenceConditionManager);
+    }
+
     public String toString() {
         return presenceCondition != null
                 ? presenceCondition.toString().replace("defined", "").replace(" ", "")

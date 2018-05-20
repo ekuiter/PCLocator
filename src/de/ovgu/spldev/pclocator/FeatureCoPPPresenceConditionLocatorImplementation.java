@@ -44,7 +44,7 @@ public class FeatureCoPPPresenceConditionLocatorImplementation implements Presen
     }
 
     public de.ovgu.spldev.pclocator.PresenceCondition getTrue() {
-        return FeatureCoPPPresenceCondition.TRUE;
+        return FeatureCoPPPresenceCondition.getTrue();
     }
 
     public PresenceCondition fromDNF(String formula) {
@@ -151,15 +151,23 @@ public class FeatureCoPPPresenceConditionLocatorImplementation implements Presen
 
         HashMap<Integer, PresenceCondition> locatedPresenceConditions = new HashMap<>();
         for (int line : lines)
-            locatedPresenceConditions.put(line, FeatureCoPPPresenceCondition.NOT_FOUND);
+            locatedPresenceConditions.put(line, FeatureCoPPPresenceCondition.getNotFound(line));
         Set<Integer> linesSet = Arrays.stream(lines).boxed().collect(Collectors.toSet());
 
         // Now we save presence conditions. Because nested occurences can override the presence
         // conditions of outer occurences, we first sort by the nesting level.
         allFeatureOccurences.stream().sorted(new LevelComparator()).forEach(featureOccurrence -> {
             for (int line = featureOccurrence.getBeginLine(); line <= featureOccurrence.getEndLine(); line++)
-                if (linesSet.contains(line))
-                    locatedPresenceConditions.put(line, new FeatureCoPPPresenceCondition(getNestedFeatureTree(featureOccurrence)));
+                if (linesSet.contains(line)) {
+                    FeatureCoPPPresenceCondition presenceCondition =
+                            new FeatureCoPPPresenceCondition(getNestedFeatureTree(featureOccurrence));
+                    presenceCondition.history(line)
+                            .include(locatedPresenceConditions.get(line))
+                            .add(!locatedPresenceConditions.get(line).isPresent()
+                                    ? "This presence condition has been located by FeatureCoPP."
+                                    : "Because of nested conditionals, the presence condition has been refined by FeatureCoPP.", presenceCondition);
+                    locatedPresenceConditions.put(line, presenceCondition);
+                }
         });
 
         return locatedPresenceConditions;

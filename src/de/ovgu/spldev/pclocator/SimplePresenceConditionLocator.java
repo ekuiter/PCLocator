@@ -80,6 +80,10 @@ public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotat
         return false;
     }
 
+    protected String lineNotAvailableHistory() {
+        return null;
+    }
+
     protected HashMap<Integer, PresenceCondition> modifyPresenceConditions
             (HashMap<Integer, PresenceCondition> locatedPresenceConditions, String[] lineContents) {
         return locatedPresenceConditions;
@@ -120,7 +124,12 @@ public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotat
             IntStream
                     .rangeClosed(1, lineContents.length)
                     .filter(line -> lineNotAvailable(lineContents[line - 1]))
-                    .forEach(line -> locatedPresenceConditions.put(line, PresenceCondition.NOT_FOUND));
+                    .forEach(line -> {
+                        PresenceCondition notFound = PresenceCondition.getNotFound(line);
+                        if (lineNotAvailableHistory() != null)
+                            notFound.history().add(lineNotAvailableHistory());
+                        locatedPresenceConditions.put(line, notFound);
+                    });
 
             return modifyPresenceConditions(locatedPresenceConditions, lineContents);
         } catch (IOException e) {

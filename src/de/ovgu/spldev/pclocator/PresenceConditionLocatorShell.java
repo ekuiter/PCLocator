@@ -76,13 +76,13 @@ public class PresenceConditionLocatorShell {
 
     private void analyze(SimplePresenceConditionLocator presenceConditionLocator,
                          AnnotatedFile.FileAnnotator[] fileAnnotators, String location,
-                         String dimacsFilePath, String timeLimit) {
+                         String dimacsFilePath, String timeLimit, boolean isExplain) {
         if (PresenceConditionLocator.isValidLocation(location)) {
             PresenceCondition presenceCondition = presenceConditionLocator.locatePresenceCondition(location);
             if (dimacsFilePath != null)
-                presenceCondition.getSatisfyingConfigurationSpace(dimacsFilePath, timeLimit).print();
+                presenceCondition.getSatisfyingConfigurationSpace(dimacsFilePath, timeLimit).print(isExplain);
             else
-                presenceCondition.print();
+                presenceCondition.print(isExplain);
         } else {
             AnnotatedFile annotatedFile = new AnnotatedFile(location);
             for (AnnotatedFile.FileAnnotator fileAnnotator : fileAnnotators)
@@ -100,6 +100,7 @@ public class PresenceConditionLocatorShell {
         String location = args.getLocation(),
                 dimacsFilePath = args.getDimacsFilePath(),
                 timeLimit = args.getTimeLimit();
+        boolean isExplain = args.isExplain();
         args.ensureValidUsage();
 
         if (args.isHelp() || location == null) {
@@ -108,7 +109,7 @@ public class PresenceConditionLocatorShell {
         }
 
         try {
-            analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, timeLimit);
+            analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, timeLimit, isExplain);
         } catch (Exception e) {
             Log.error("%s", e);
             System.exit(1);

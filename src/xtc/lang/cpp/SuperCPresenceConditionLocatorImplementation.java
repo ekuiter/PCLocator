@@ -24,7 +24,7 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
     }
 
     public de.ovgu.spldev.pclocator.PresenceCondition getTrue() {
-        return SuperCPresenceCondition.TRUE;
+        return SuperCPresenceCondition.getTrue();
     }
 
     public de.ovgu.spldev.pclocator.PresenceCondition fromDNF(String formula) {
@@ -46,10 +46,14 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
                 translationUnit, line, presenceConditionManager.new PresenceCondition(true));
         de.ovgu.spldev.pclocator.PresenceCondition superCPresenceCondition =
                 presenceCondition == null
-                        ? SuperCPresenceCondition.NOT_FOUND
+                        ? SuperCPresenceCondition.getNotFound(line)
                         : (presenceCondition.isTrue()
-                        ? getTrue()
+                        ? SuperCPresenceCondition.getTrue(line)
                         : new SuperCPresenceCondition(presenceCondition, presenceConditionManager));
+        if (presenceCondition != null)
+            superCPresenceCondition.history(line)
+                    .include(_locatedPresenceConditions.get(line))
+                    .add("This presence condition has been located by SuperC.");
         _locatedPresenceConditions.put(line, superCPresenceCondition);
     }
 
@@ -106,7 +110,7 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
     public HashMap<Integer, de.ovgu.spldev.pclocator.PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {
         _locatedPresenceConditions = new HashMap<>();
         for (int line : lines)
-            _locatedPresenceConditions.put(line, SuperCPresenceCondition.NOT_FOUND);
+            _locatedPresenceConditions.put(line, SuperCPresenceCondition.getNotFound(line));
         PrintStream err = System.err;
         TrackErrorStream trackErrorStream = new TrackErrorStream(System.err);
         System.setErr(trackErrorStream);
