@@ -127,7 +127,7 @@ class Arguments {
     }
 
     boolean isAnnotating() {
-        return !PresenceConditionLocator.isValidLocation(getLocation());
+        return getLocation() != null && !PresenceConditionLocator.isValidLocation(getLocation());
     }
 
     boolean isExplain() {
@@ -242,6 +242,8 @@ class Arguments {
 
     String[] getIncludeDirectories() {
         String[] includeDirectories = getMany("-I");
+        for (int i = 0; i < includeDirectories.length; i++)
+            includeDirectories[i] = Paths.get(includeDirectories[i]).toAbsolutePath().toString();
         if (!getLocatorKind().equals("simple")) {
             includeDirectories = Arrays.copyOf(includeDirectories, includeDirectories.length + 1);
             includeDirectories[includeDirectories.length - 1] = getMockDirectory();

@@ -86,6 +86,8 @@ public class KmaxFileGrepper {
 
     public String toString() {
         locatePresenceConditions();
+        if (kmaxPresenceConditions.length == 0)
+            return "True";
         return Stream.of(kmaxPresenceConditions).map(PresenceCondition::toString).collect(Collectors.joining("&&"));
     }
 

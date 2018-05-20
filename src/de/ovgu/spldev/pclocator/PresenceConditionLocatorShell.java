@@ -93,20 +93,21 @@ public class PresenceConditionLocatorShell {
 
     public void run(String[] _args) {
         Arguments args = new Arguments(_args);
-        PresenceConditionLocator.Implementation implementation = getPresenceConditionLocatorImplementation(args);
-        PresenceConditionLocator.Options options = getPresenceConditionLocatorOptions(args);
-        SimplePresenceConditionLocator presenceConditionLocator = getPresenceConditionLocator(args, implementation, options);
-        AnnotatedFile.FileAnnotator[] fileAnnotators = getFileAnnotators(args, options);
         String location = args.getLocation(),
                 dimacsFilePath = args.getDimacsFilePath(),
                 timeLimit = args.getTimeLimit();
         boolean isExplain = args.isExplain();
-        args.ensureValidUsage();
 
         if (args.isHelp() || location == null) {
             System.out.println(args.getUsage());
             return;
         }
+
+        PresenceConditionLocator.Implementation implementation = getPresenceConditionLocatorImplementation(args);
+        PresenceConditionLocator.Options options = getPresenceConditionLocatorOptions(args);
+        SimplePresenceConditionLocator presenceConditionLocator = getPresenceConditionLocator(args, implementation, options);
+        AnnotatedFile.FileAnnotator[] fileAnnotators = getFileAnnotators(args, options);
+        args.ensureValidUsage();
 
         try {
             analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, timeLimit, isExplain);

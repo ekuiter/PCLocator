@@ -81,6 +81,52 @@ java -jar PCLocator.jar --locator kmax --kmaxfile <unit_pc_file> --projectroot <
 `<root_directory>` should be the directory the entries in the `unit_pc` file
 refer to, i.e. the root directory of the analyzed project.
 
+#### Explanation
+
+When analyzing individual lines, add `--explain` to the command line to get an
+explanation for how the presence condition for the analyzed line has been
+located.
+
+### Analyses
+
+### Variability Bugs Database
+
+To analyze the VBDB (Abal et. al ASE14), build PCLocator and `cd` into
+`scripts/vbdb`.
+
+Use `vbdb_annotate.sh` to produce a file containing presence
+conditions and configurations for each file and quickly assess the results.
+
+Use `vbdb.sh` to locate presence conditions and `vbdb_configure.sh` to derive
+configurations. Just pass them the location and any additional arguments, e.g.:
+
+```
+./vbdb.sh --explain splc18challengecase/vbdb/linux/simple/8c82962.c:58
+```
+
+`vbdb_configure.sh` takes as first argument the feature model:
+
+```
+./vbdb_configure.sh linux.dimacs splc18challengecase/vbdb/linux/simple/8c82962.c:58
+```
+
+Use `vbdb_challenge.sh` to derive configurations given in the challenge. It
+takes as first argument a time limit like `1s`.
+
+#### BusyBox
+
+To analyze BusyBox, build PCLocator and `cd` into `scripts/busybox`. Use
+`busybox.sh` to locate presence conditions and `busybox_configure.sh` to derive
+configurations. Just pass them the location and any additional arguments, e.g.:
+
+```
+./busybox.sh --parser typechef busybox-1.18.5/modutils/modprobe.c:1
+```
+
+The Kmax files have been generated using
+[kmax-vm](https://github.com/ekuiter/kmax-vm). The DIMACS file from the
+[TypeChef BusyBox analysis] are used.
+
 ## Manual library setup
 
 Setting up the `lib` folder can be a little involved, because the integrated

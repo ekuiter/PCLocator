@@ -10,4 +10,4 @@ if [ $# -eq 0 ]; then
     ARGS=--help
 fi
 
-java -jar ../PCLocator.jar $ARGS
+java -jar ../PCLocator.jar --configure $ARGS
