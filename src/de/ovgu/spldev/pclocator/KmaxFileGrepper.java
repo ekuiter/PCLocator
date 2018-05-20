@@ -62,6 +62,8 @@ public class KmaxFileGrepper {
 
     private PresenceCondition[] locatePresenceConditions(PresenceConditionLocator.Implementation implementation,
                                                              Path kmaxFilePath, Path projectRootPath, Path filePath) {
+        projectRootPath = projectRootPath.toAbsolutePath().normalize();
+        filePath = filePath.toAbsolutePath().normalize();
         if (!filePath.toString().endsWith(".c"))
             throw new RuntimeException("file " + filePath + " is not a C file");
         if (!Files.exists(filePath))

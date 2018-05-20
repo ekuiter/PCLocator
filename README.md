@@ -89,7 +89,7 @@ located.
 
 ### Analyses
 
-### Variability Bugs Database
+#### Variability Bugs Database
 
 To analyze the VBDB (Abal et. al ASE14), build PCLocator and `cd` into
 `scripts/vbdb`.
@@ -125,7 +125,9 @@ configurations. Just pass them the location and any additional arguments, e.g.:
 
 The Kmax files have been generated using
 [kmax-vm](https://github.com/ekuiter/kmax-vm). The DIMACS file from the
-[TypeChef BusyBox analysis] are used.
+[TypeChef BusyBox
+analysis](https://github.com/ckaestne/TypeChef-BusyboxAnalysis/blob/master/busybox/featureModel.dimacs)
+are used.
 
 ## Manual library setup
 

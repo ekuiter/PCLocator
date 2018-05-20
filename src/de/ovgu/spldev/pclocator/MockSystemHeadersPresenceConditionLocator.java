@@ -1,18 +1,18 @@
 package de.ovgu.spldev.pclocator;
 
+
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class MockSystemHeadersPresenceConditionLocator extends SimplePresenceConditionLocator {
     boolean isFeatureCoPPImplementation = false;
     ArrayList<String> mockFiles = new ArrayList<>();
+    HashSet<Path> seenFilePaths = new HashSet<>();
 
     MockSystemHeadersPresenceConditionLocator(Implementation implementation, Options options) {
         super(implementation, options);
@@ -22,31 +22,52 @@ public class MockSystemHeadersPresenceConditionLocator extends SimplePresenceCon
 
     // We assume that system header files (#include <...>) do not include variability
     // and therefore may be safely ignored.
-    protected String modifyFilePath(String filePath) {
+    protected String modifyFilePath(String filePathString) {
         if (isFeatureCoPPImplementation)
-            return filePath;
+            return filePathString;
+        Path filePath = Paths.get(filePathString);
+        Options options = _implementation.getOptions();
+        ArrayList<String> includeDirectories = options != null
+                ? new ArrayList<>(Arrays.asList(options.getIncludeDirectories()))
+                : new ArrayList<>();
+        includeDirectories.remove(Arguments.getMockDirectory());
 
-        try (Stream<String> lineContentsStream = Files.lines(Paths.get(filePath))) {
+        processFile(filePath, includeDirectories);
+
+        return filePathString;
+    }
+
+    private void processFile(Path filePath, ArrayList<String> includeDirectories) {
+        seenFilePaths.add(filePath.toAbsolutePath().normalize());
+        ArrayList<String> currentIncludeDirectories = (ArrayList<String>) includeDirectories.clone();
+        currentIncludeDirectories.add(filePath.getParent().toAbsolutePath().normalize().toString());
+
+        try (Stream<String> lineContentsStream = Files.lines(filePath)) {
             lineContentsStream.forEach(line -> {
-                String mockFile = PreprocessorHelpers.getSystemIncludeFile(line);
-                if (mockFile != null) {
-                    Path newFilePath = Paths.get(Arguments.getMockDirectory(), mockFile);
+                String systemIncludeFile = PreprocessorHelpers.getSystemIncludeFile(line),
+                        userIncludeFile = PreprocessorHelpers.getUserIncludeFile(line);
+                if (systemIncludeFile != null) {
+                    Path newFilePath = Paths.get(Arguments.getMockDirectory(), systemIncludeFile);
                     try {
                         Files.createDirectories(newFilePath.getParent());
                         Files.createFile(newFilePath);
-                        mockFiles.add(mockFile);
+                        mockFiles.add(systemIncludeFile);
                     } catch (FileAlreadyExistsException ignored) {
-                        mockFiles.add(mockFile);
+                        mockFiles.add(systemIncludeFile);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 }
+                if (userIncludeFile != null)
+                    for (String directoryString : currentIncludeDirectories) {
+                        Path userIncludeFilePath = Paths.get(directoryString).resolve(userIncludeFile);
+                        if (userIncludeFilePath.toFile().exists() && !seenFilePaths.contains(userIncludeFilePath))
+                            processFile(userIncludeFilePath, includeDirectories);
+                    }
             });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        return filePath;
     }
 
     protected HashMap<Integer, PresenceCondition> modifyPresenceConditions

@@ -32,4 +32,10 @@ public class PreprocessorHelpers {
         Matcher matcher = pattern.matcher(lineContent);
         return matcher.find() ? matcher.group(1) : null;
     }
+
+    protected static String getUserIncludeFile(String lineContent) {
+        Pattern pattern = Pattern.compile("\\s*#\\s*include\\s*\"(.*)\"\\s*");
+        Matcher matcher = pattern.matcher(lineContent);
+        return matcher.find() ? matcher.group(1) : null;
+    }
 }

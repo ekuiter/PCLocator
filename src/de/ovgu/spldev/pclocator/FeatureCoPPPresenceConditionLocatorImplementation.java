@@ -40,6 +40,10 @@ public class FeatureCoPPPresenceConditionLocatorImplementation implements Presen
         return "FeatureCoPP";
     }
 
+    public PresenceConditionLocator.Options getOptions() {
+        return null;
+    }
+
     public void setOptions(SimplePresenceConditionLocator.Options options) {
     }
 

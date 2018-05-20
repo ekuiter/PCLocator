@@ -19,6 +19,10 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
         return "SuperC";
     }
 
+    public PresenceConditionLocator.Options getOptions() {
+        return options;
+    }
+
     public void setOptions(PresenceConditionLocator.Options options) {
         this.options = options;
     }

@@ -30,6 +30,10 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
         return "TypeChef";
     }
 
+    public PresenceConditionLocator.Options getOptions() {
+        return options;
+    }
+
     public void setOptions(PresenceConditionLocator.Options options) {
         this.options = options;
     }
