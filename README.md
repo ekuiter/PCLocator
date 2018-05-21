@@ -50,6 +50,10 @@ java -jar PCLocator.jar <file>:<line>
 Leave off the `<line>` to get a tabular overview of all presence conditions
 using all parsers.
 
+To account for platform-specific macro usage, it is suggested to generate a
+platform header file with `echo - | gcc -dM - -E -std=gnu99` and pass it
+with `--platform`.
+
 #### Configuration space
 
 Derive the satisfying configuration space from a feature model in the DIMACS

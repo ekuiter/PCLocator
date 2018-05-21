@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class PresenceConditionLocatorShell {
     private PresenceConditionLocator.Options getPresenceConditionLocatorOptions(Arguments args) {
-        return new PresenceConditionLocator.Options(args.getIncludeDirectories());
+        return new PresenceConditionLocator.Options(args.getIncludeDirectories(), args.getPlatformHeaderFilePath());
     }
 
     private PresenceConditionLocator.Implementation getPresenceConditionLocatorImplementation(Arguments args) {

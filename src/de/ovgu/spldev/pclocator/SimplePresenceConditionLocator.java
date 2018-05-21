@@ -25,17 +25,23 @@ public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotat
 
     public static class Options {
         private String[] includeDirectories;
+        private String platformHeaderFilePath;
 
         public Options() {
             this.includeDirectories = new String[]{};
         }
 
-        public Options(String[] includeDirectories) {
+        public Options(String[] includeDirectories, String platformHeaderFilePath) {
             this.includeDirectories = includeDirectories;
+            this.platformHeaderFilePath = platformHeaderFilePath;
         }
 
         public String[] getIncludeDirectories() {
             return includeDirectories;
+        }
+
+        public String getPlatformHeaderFilePath() {
+            return platformHeaderFilePath;
         }
     }
 

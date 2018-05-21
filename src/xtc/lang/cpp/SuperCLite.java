@@ -28,6 +28,8 @@ public class SuperCLite extends Tool {
      */
     List<String> sysdirs;
 
+    StringReader commandline;
+
     /**
      * Preprocessor support for token-creation.
      */
@@ -67,6 +69,8 @@ public class SuperCLite extends Tool {
                         "Add a quote directory to the header file search path.").
                 bool("nostdinc", "nostdinc", false,
                         "Don't use the standard include paths.").
+                bool("nobuiltins", "nobuiltins", false,
+                        "Disable gcc built-in macros.").
                 word("D", "D", true, "Define a macro.").
                 word("U", "U", true, "Undefine a macro.  Occurs after all -D arguments "
                         + "which is a departure from gnu cpp.").
@@ -148,6 +152,68 @@ public class SuperCLite extends Tool {
                 }
             }
         }
+
+        // Make one large file for command-line/builtin stuff.
+        StringBuilder commandlinesb;
+
+        commandlinesb = new StringBuilder();
+
+        if (! runtime.test("nobuiltins")) {
+            commandlinesb.append(Builtins.builtin);
+        }
+
+        for (Object o : runtime.getList("D")) {
+            if (o instanceof String) {
+                String s, name, definition;
+
+                s = (String) o;
+
+                // Truncate at first newline according to gcc spec.
+                if (s.indexOf("\n") >= 0) {
+                    s = s.substring(0, s.indexOf("\n"));
+                }
+                if (s.indexOf("=") >= 0) {
+                    name = s.substring(0, s.indexOf("="));
+                    definition = s.substring(s.indexOf("=") + 1);
+                }
+                else {
+                    name = s;
+                    // The default for command-line defined guard macros.
+                    definition = "1";
+                }
+                commandlinesb.append("#define " + name + " " + definition + "\n");
+            }
+        }
+
+        for (Object o : runtime.getList("U")) {
+            if (o instanceof String) {
+                String s, name, definition;
+
+                s = (String) o;
+                // Truncate at first newline according to gcc spec.
+                if (s.indexOf("\n") >= 0) {
+                    s = s.substring(0, s.indexOf("\n"));
+                }
+                name = s;
+                commandlinesb.append("#undef " + name + "\n");
+            }
+        }
+
+        for (Object o : runtime.getList("include")) {
+            if (o instanceof String) {
+                String filename;
+
+                filename = (String) o;
+                commandlinesb.append("#include \"" + filename + "\"\n");
+            }
+        }
+
+        if (commandlinesb.length() > 0) {
+            commandline = new StringReader(commandlinesb.toString());
+
+        } else {
+            commandline = null;
+        }
     }
 
     public Node parse(Reader in, File file) throws IOException, ParseException {
@@ -167,6 +233,37 @@ public class SuperCLite extends Tool {
         conditionEvaluator = new ConditionEvaluator(expressionParser,
                 presenceConditionManager,
                 macroTable);
+
+        if (null != commandline) {
+            Syntax syntax;
+
+            try {
+                commandline.reset();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            fileManager = new HeaderFileManager(commandline,
+                    new File("<command-line>"),
+                    iquote, I, sysdirs, tokenCreator, null);
+            fileManager.showErrors(runtime.test("showErrors"));
+
+            preprocessor = new Preprocessor(fileManager,
+                    macroTable,
+                    presenceConditionManager,
+                    conditionEvaluator,
+                    tokenCreator);
+
+            ((Preprocessor) preprocessor)
+                    .showErrors(runtime.test("showErrors"));
+
+            do {
+                syntax = preprocessor.next();
+            } while (syntax.kind() != Syntax.Kind.EOF);
+
+            commandline = null;
+        }
 
         fileManager = new HeaderFileManager(in, file, iquote, I, sysdirs,
                 tokenCreator, null,

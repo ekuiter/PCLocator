@@ -18,10 +18,7 @@ import scala.reflect.ClassTag;
 
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class TypeChefPresenceConditionLocatorImplementation implements PresenceConditionLocator.Implementation, EnforceTreeHelper, ASTNavigation {
     private PresenceConditionLocator.Options options;
@@ -91,9 +88,16 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
 
         TranslationUnit ast = null;
         try {
-            String[] args = {"--postIncludes=" + getPostIncludes(), filePath};
+            ArrayList<String> args = new ArrayList<>();
+            args.add("--postIncludes=" + getPostIncludes());
+            if (options.getPlatformHeaderFilePath() != null) {
+                args.add("-h");
+                args.add(options.getPlatformHeaderFilePath());
+            } else
+                Arguments.warnPlatformHeader();
+            args.add(filePath);
             FrontendOptionsWithConfigFiles opt = new FrontendOptionsWithConfigFiles();
-            opt.parseOptions(args);
+            opt.parseOptions(args.toArray(new String[0]));
             ast = parse(opt, FeatureExprLib.featureModelFactory().empty());
         } finally {
             System.setOut(out);

@@ -1,5 +1,6 @@
 package xtc.lang.cpp;
 
+import de.ovgu.spldev.pclocator.Arguments;
 import de.ovgu.spldev.pclocator.PresenceConditionLocator;
 import de.ovgu.spldev.pclocator.TrackErrorStream;
 import xtc.lang.cpp.PresenceConditionManager.PresenceCondition;
@@ -102,13 +103,19 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
         args.add("-no-exit");
         args.add("-silent");
         args.add("-showErrors");
+        args.add("-nobuiltins");
+        if (options.getPlatformHeaderFilePath() != null) {
+            args.add("-include");
+            args.add(options.getPlatformHeaderFilePath());
+        } else
+            Arguments.warnPlatformHeader();
         addIncludeDirectories(args);
         for (int line : lines) {
             args.add("-locatePresenceCondition");
             args.add(Integer.toString(line));
         }
         args.add(filePath);
-        return args.toArray(new String[args.size()]);
+        return args.toArray(new String[0]);
     }
 
     public HashMap<Integer, de.ovgu.spldev.pclocator.PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {

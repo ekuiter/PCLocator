@@ -6,9 +6,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class Arguments {
+public class Arguments {
     String[] args;
     String[] unusedArgs;
+    static boolean warnedPlatformHeader = false;
 
     Arguments(String[] args) {
         this.args = args;
@@ -78,7 +79,7 @@ class Arguments {
     }
 
     String getUsage() {
-        return "usage: PresenceConditionLocator [options...] location\n\n" +
+        return "usage: java -jar PCLocator.jar [options...] location\n\n" +
                 "options:\n" +
                 "  --help         displays usage\n" +
                 "  --parser       choose a parser, possible values include:\n" +
@@ -106,6 +107,8 @@ class Arguments {
                 "      all          annotate file with TypeChef, SuperC, FeatureCoPP and\n" + "" +
                 "                   equivalence checker (default)\n" +
                 "  -I             pass additional include directory to the parser\n" +
+                "  --platform     pass additional header file to the parser,\n" +
+                "                 generate this using: echo - | gcc -dM - -E -std=gnu99\n" +
                 "  --configure    pass a feature model in DIMACS format for deriving\n" +
                 "                 concrete configurations instead of presence conditions\n" +
                 "  --timelimit    time limit for deriving a configuration space\n" +
@@ -249,6 +252,19 @@ class Arguments {
             includeDirectories[includeDirectories.length - 1] = getMockDirectory();
         }
         return includeDirectories;
+    }
+
+    String getPlatformHeaderFilePath() {
+        String platformHeaderFilePath = get("--platform");
+        if (platformHeaderFilePath != null)
+            return PresenceConditionLocator.validateFilePath(platformHeaderFilePath);
+        return null;
+    }
+
+    public static void warnPlatformHeader() {
+        if (!warnedPlatformHeader)
+            Log.warning("no platform header supplied, see --help");
+        warnedPlatformHeader = true;
     }
 
     String getLocation() {
