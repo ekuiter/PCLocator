@@ -12,4 +12,4 @@ if [ $# -eq 0 ]; then
     ARGS=--help
 fi
 
-java -jar ../PCLocator.jar -I busybox-1.18.5/include --locator kmax --kmaxfile busybox-1.18.5.kmax --projectroot busybox-1.18.5 --configure busybox-1.18.5.dimacs $ARGS
+java -jar ../PCLocator.jar -I busybox-1.18.5/include --platform platform.h --locator kmax --kmaxfile busybox-1.18.5.kmax --projectroot busybox-1.18.5 --configure busybox-1.18.5.dimacs $ARGS
