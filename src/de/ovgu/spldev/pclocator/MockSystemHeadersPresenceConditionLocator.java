@@ -97,9 +97,12 @@ public class MockSystemHeadersPresenceConditionLocator extends SimplePresenceCon
             return locatedPresenceConditions;
 
         for (Map.Entry<Integer, PresenceCondition> entry : locatedPresenceConditions.entrySet()) {
-            entry.getValue().history().add("Mocked out the following header files: %s. " +
-                    "This is done because the parser needs these files to be present, " +
-                    "but their content is not relevant for variability.", String.join(", ", mockFiles));
+            if (mockFiles.isEmpty())
+                entry.getValue().history().add("Mocked out no header files.");
+            else
+                entry.getValue().history().add("Mocked out the following header files: %s. " +
+                        "This is done because the parser needs these files to be present, " +
+                        "but their content is not relevant for variability.", String.join(", ", mockFiles));
         }
 
         return locatedPresenceConditions;

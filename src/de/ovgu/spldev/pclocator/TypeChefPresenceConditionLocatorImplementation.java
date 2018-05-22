@@ -18,6 +18,8 @@ import scala.reflect.ClassTag;
 
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class TypeChefPresenceConditionLocatorImplementation implements PresenceConditionLocator.Implementation, EnforceTreeHelper, ASTNavigation {
@@ -81,12 +83,14 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
     }
 
     public HashMap<Integer, PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {
+        Path _filePath = Paths.get(filePath).toAbsolutePath().normalize();
         HashMap<Integer, PresenceCondition> locatedPresenceConditions = new HashMap<>();
         PrintStream out = System.out;
 
         System.setOut(new SilentStream());
 
         TranslationUnit ast = null;
+        String arguments;
         try {
             ArrayList<String> args = new ArrayList<>();
             args.add("--postIncludes=" + getPostIncludes());
@@ -95,9 +99,10 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
                 args.add(options.getPlatformHeaderFilePath());
             } else
                 Arguments.warnPlatformHeader();
-            args.add(filePath);
+            args.add(_filePath.toString());
             FrontendOptionsWithConfigFiles opt = new FrontendOptionsWithConfigFiles();
             opt.parseOptions(args.toArray(new String[0]));
+            arguments = String.join(" ", args);
             ast = parse(opt, FeatureExprLib.featureModelFactory().empty());
         } finally {
             System.setOut(out);
@@ -111,8 +116,8 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
         int line = lineSupplier.next();
 
         if (line != -1)
-            for (AST elem : getAllASTElems(ast))
-                if (elem.hasPosition()) {
+            for (AST elem : getAllASTElems(ast)) {
+                if (elem.hasPosition() && elem.getPositionFrom().getFile().equals("file " + _filePath.toString())) {
                     while (line < elem.getPositionFrom().getLine())
                         if ((line = lineSupplier.next()) == -1)
                             break;
@@ -123,12 +128,13 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
                                 : new TypeChefPresenceCondition(featureExpr);
                         presenceCondition.history(line)
                                 .include(locatedPresenceConditions.get(line))
-                                .add("This presence condition has been located by TypeChef.");
+                                .add("This presence condition has been located by TypeChef using the following arguments: %s", arguments);
                         locatedPresenceConditions.put(line, presenceCondition);
                         if ((line = lineSupplier.next()) == -1)
                             break;
                     }
                 }
+            }
 
         while (lineSupplier.next() != -1) ;
         return locatedPresenceConditions;

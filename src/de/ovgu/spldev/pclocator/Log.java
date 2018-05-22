@@ -189,9 +189,13 @@ public class Log {
         protected String getFooter(int level) {
             String str;
             if (!((PresenceCondition) key).isPresent())
-                str = "The presence condition in line " + line + " could not be located.";
+                str = line != null
+                        ? "The presence condition in line " + line + " could not be located."
+                        : "The presence condition could not be located.";
             else
-                str = "Located the presence condition " + key + " in line " + line + ".";
+                str = line != null
+                        ? "Located the presence condition " + key + " in line " + line + "."
+                        : "Located the presence condition " + key + ".";
             return String.format("%s%s\n\n", indent(level), str);
         }
 

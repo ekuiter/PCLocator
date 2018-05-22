@@ -9,12 +9,16 @@ import xtc.tree.GNode;
 import xtc.tree.Node;
 
 import java.io.PrintStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SuperCPresenceConditionLocatorImplementation implements PresenceConditionLocator.Implementation {
     private HashMap<Integer, de.ovgu.spldev.pclocator.PresenceCondition> _locatedPresenceConditions;
     private PresenceConditionLocator.Options options;
+    private String arguments;
+    private Path _filePath;
 
     public String getName() {
         return "SuperC";
@@ -58,7 +62,7 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
         if (presenceCondition != null)
             superCPresenceCondition.history(line)
                     .include(_locatedPresenceConditions.get(line))
-                    .add("This presence condition has been located by SuperC.");
+                    .add("This presence condition has been located by SuperC using the following arguments: %s", arguments);
         _locatedPresenceConditions.put(line, superCPresenceCondition);
     }
 
@@ -67,7 +71,7 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
         if (n == null)
             throw new ParseException("could not parse input file");
         else if (n.isToken()) {
-            if (n.hasLocation() && n.getLocation().line == line)
+            if (n.hasLocation() && n.getLocation().file.equals(_filePath.toString()) && n.getLocation().line == line)
                 return presenceCondition;
         } else {
             if (n instanceof GNode
@@ -98,7 +102,7 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
         return null;
     }
 
-    private String[] buildArgs(String filePath, int[] lines) {
+    private String[] buildArgs(int[] lines) {
         ArrayList<String> args = new ArrayList<>();
         args.add("-no-exit");
         args.add("-silent");
@@ -111,24 +115,27 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
             Arguments.warnPlatformHeader();
         addIncludeDirectories(args);
         for (int line : lines) {
-            args.add("-locatePresenceCondition");
+            args.add("-pc");
             args.add(Integer.toString(line));
         }
-        args.add(filePath);
+        args.add(_filePath.toString());
         return args.toArray(new String[0]);
     }
 
     public HashMap<Integer, de.ovgu.spldev.pclocator.PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {
+        _filePath = Paths.get(filePath).toAbsolutePath().normalize();
         _locatedPresenceConditions = new HashMap<>();
         for (int line : lines)
             _locatedPresenceConditions.put(line, SuperCPresenceCondition.getNotFound(line));
+        String[] args = buildArgs(lines);
         PrintStream err = System.err;
         TrackErrorStream trackErrorStream = new TrackErrorStream(System.err);
         System.setErr(trackErrorStream);
 
         try {
             SuperCLite superCLite = new SuperCLite(this);
-            superCLite.run(buildArgs(filePath, lines));
+            arguments = String.join(" ", args);
+            superCLite.run(args);
         } finally {
             System.setErr(err);
         }

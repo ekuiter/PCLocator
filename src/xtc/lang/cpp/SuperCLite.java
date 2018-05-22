@@ -79,7 +79,7 @@ public class SuperCLite extends Tool {
                 // Output and debugging
                         bool("showErrors", "showErrors", false,
                         "Emit preprocessing and parsing errors to standard err.").
-                word("locatePresenceCondition", "locatePresenceCondition", true,
+                word("pc", "pc", true,
                         "Locate a line of code in the AST.")
         ;
     }
@@ -311,7 +311,7 @@ public class SuperCLite extends Tool {
 
         initialParsingContext.free();
 
-        for (Object o : runtime.getList("locatePresenceCondition")) {
+        for (Object o : runtime.getList("pc")) {
             if (o instanceof String) {
                 int line = Integer.parseInt((String) o);
                 _superCPresenceConditionLocatorImplementation.locatePresenceCondition(
