@@ -7,7 +7,7 @@ public abstract class PresenceCondition {
 
     abstract public PresenceCondition clone();
 
-    abstract public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit);
+    abstract public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, Integer limit, String timeLimit);
 
     protected static String notFoundHistory = "In the beginning, we start with no presence condition.";
     protected static String trueHistory = null;
@@ -23,7 +23,7 @@ public abstract class PresenceCondition {
                 return false;
             }
 
-            public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
+            public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, Integer limit, String timeLimit) {
                 return ConfigurationSpace.getNotFound(this);
             }
 

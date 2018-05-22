@@ -46,7 +46,7 @@ public class PresenceConditionLocatorShell {
     private AnnotatedFile.FileAnnotator extendPresenceConditionLocator(Arguments args, PresenceConditionLocator presenceConditionLocator) {
         String dimacsFilePath = args.getDimacsFilePath();
         return dimacsFilePath != null
-                ? new ConfigurationSpaceLocator(presenceConditionLocator, dimacsFilePath, args.getTimeLimit())
+                ? new ConfigurationSpaceLocator(presenceConditionLocator, dimacsFilePath, args.getLimit(), args.getTimeLimit())
                 : presenceConditionLocator;
     }
 
@@ -78,11 +78,11 @@ public class PresenceConditionLocatorShell {
 
     private void analyze(PresenceConditionLocator presenceConditionLocator,
                          AnnotatedFile.FileAnnotator[] fileAnnotators, String location,
-                         String dimacsFilePath, String timeLimit, boolean isExplain) {
+                         String dimacsFilePath, Integer limit, String timeLimit, boolean isExplain) {
         if (PresenceConditionLocator.isValidLocation(location)) {
             PresenceCondition presenceCondition = presenceConditionLocator.locatePresenceCondition(location);
             if (dimacsFilePath != null)
-                presenceCondition.getSatisfyingConfigurationSpace(dimacsFilePath, timeLimit).print(isExplain);
+                presenceCondition.getSatisfyingConfigurationSpace(dimacsFilePath, limit, timeLimit).print(isExplain);
             else
                 presenceCondition.print(isExplain);
         } else {
@@ -98,6 +98,7 @@ public class PresenceConditionLocatorShell {
         String location = args.getLocation(),
                 dimacsFilePath = args.getDimacsFilePath(),
                 timeLimit = args.getTimeLimit();
+        Integer limit = args.getLimit();
         boolean isExplain = args.isExplain();
 
         if (args.isHelp() || location == null) {
@@ -120,7 +121,7 @@ public class PresenceConditionLocatorShell {
         args.ensureValidUsage();
 
         try {
-            analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, timeLimit, isExplain);
+            analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, limit, timeLimit, isExplain);
         } catch (Exception e) {
             Log.error("%s", e);
             System.exit(1);

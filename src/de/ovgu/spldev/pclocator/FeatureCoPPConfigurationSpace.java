@@ -16,12 +16,14 @@ import java.util.function.Function;
 
 public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
     private FeatureCoPPPresenceCondition presenceCondition;
+    private Integer limit;
     private String timeLimit;
     private DimacsFileReader dimacsFileReader;
 
-    public FeatureCoPPConfigurationSpace(FeatureCoPPPresenceCondition featureCoPPPresenceCondition, String dimacsFilePath, String timeLimit) {
+    public FeatureCoPPConfigurationSpace(FeatureCoPPPresenceCondition featureCoPPPresenceCondition, String dimacsFilePath, Integer limit, String timeLimit) {
         super(dimacsFilePath);
         presenceCondition = featureCoPPPresenceCondition;
+        this.limit = limit;
         this.timeLimit = timeLimit;
         dimacsFileReader = new DimacsFileReader(dimacsFilePath);
     }
@@ -30,6 +32,7 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
         private HashMap<String, IntVar> macros = new HashMap<>();
         Solver solver;
         boolean hasNext;
+        private int count = 0;
 
         ConfigurationIterator() {
             FeatureTree featureTree = presenceCondition.getFeatureTree();
@@ -93,6 +96,8 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
         }
 
         public boolean hasNext() {
+            if (limit != null && count >= limit)
+                return false;
             return hasNext;
         }
 
@@ -102,6 +107,7 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
 
             Configuration configuration = new FeatureCoPPConfiguration(macros);
             hasNext = solver.solve();
+            count++;
             return configuration;
         }
     }

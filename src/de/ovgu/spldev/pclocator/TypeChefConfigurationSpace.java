@@ -7,11 +7,13 @@ import java.util.NoSuchElementException;
 
 public class TypeChefConfigurationSpace extends ConfigurationSpace {
     private TypeChefPresenceCondition initialPresenceCondition;
+    private Integer limit;
     private Long timeLimit;
 
-    public TypeChefConfigurationSpace(TypeChefPresenceCondition presenceCondition, String dimacsFilePath, String timeLimit) {
+    public TypeChefConfigurationSpace(TypeChefPresenceCondition presenceCondition, String dimacsFilePath, Integer limit, String timeLimit) {
         super(dimacsFilePath);
         initialPresenceCondition = presenceCondition;
+        this.limit = limit;
         this.timeLimit = timeLimit != null ? TimeUtils.convertInMilliseconds(timeLimit) : null;
     }
 
@@ -19,9 +21,11 @@ public class TypeChefConfigurationSpace extends ConfigurationSpace {
         private TypeChefPresenceCondition nextPresenceCondition = initialPresenceCondition;
         private TypeChefConfiguration nextTypeChefConfiguration = initialPresenceCondition.getSatisfyingConfiguration(dimacsFilePath);
         private Measurement begin = new Measurement();
+        private int count = 0;
 
         public boolean hasNext() {
-            if (timeLimit != null && new Measurement().difference(begin).time > timeLimit)
+            if (timeLimit != null && new Measurement().difference(begin).time > timeLimit ||
+                    limit != null && count >= limit)
                 return false;
             return nextTypeChefConfiguration.isPresent();
         }
@@ -33,6 +37,7 @@ public class TypeChefConfigurationSpace extends ConfigurationSpace {
             TypeChefConfiguration currentConfiguration = nextTypeChefConfiguration;
             nextPresenceCondition = currentPresenceCondition.and(currentConfiguration.toPresenceCondition().not());
             nextTypeChefConfiguration = nextPresenceCondition.getSatisfyingConfiguration(dimacsFilePath);
+            count++;
             return currentConfiguration;
         }
     }

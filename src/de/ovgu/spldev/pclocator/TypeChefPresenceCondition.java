@@ -185,10 +185,10 @@ public class TypeChefPresenceCondition extends PresenceCondition {
         return presenceCondition;
     }
 
-    public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
+    public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, Integer limit, String timeLimit) {
         if (!isPresent())
             return ConfigurationSpace.getNotFound(this);
-        TypeChefConfigurationSpace configurationSpace = new TypeChefConfigurationSpace(this, dimacsFilePath, timeLimit);
+        TypeChefConfigurationSpace configurationSpace = new TypeChefConfigurationSpace(this, dimacsFilePath, limit, timeLimit);
         configurationSpace.history()
                 .add("This configuration space has been located by TypeChef " +
                         "from the presence condition and the given feature model. " +

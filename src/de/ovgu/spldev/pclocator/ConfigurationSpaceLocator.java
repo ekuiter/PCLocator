@@ -6,11 +6,13 @@ import java.util.Map;
 public class ConfigurationSpaceLocator implements AnnotatedFile.FileAnnotator {
     private PresenceConditionLocator presenceConditionLocator;
     private String dimacsFilePath, timeLimit;
+    private Integer limit;
     protected Measurement _lastMeasurement;
 
-    public ConfigurationSpaceLocator(PresenceConditionLocator presenceConditionLocator, String dimacsFilePath, String timeLimit) {
+    public ConfigurationSpaceLocator(PresenceConditionLocator presenceConditionLocator, String dimacsFilePath, Integer limit, String timeLimit) {
         this.presenceConditionLocator = presenceConditionLocator;
         this.dimacsFilePath = dimacsFilePath;
+        this.limit = limit;
         this.timeLimit = timeLimit;
     }
 
@@ -24,7 +26,7 @@ public class ConfigurationSpaceLocator implements AnnotatedFile.FileAnnotator {
         Measurement begin = new Measurement();
         HashMap<Integer, PresenceCondition> locatedPresenceConditions = presenceConditionLocator.annotate(filePath);
         for (Map.Entry<Integer, PresenceCondition> entry : locatedPresenceConditions.entrySet())
-            locatedConfigurations.put(entry.getKey(), entry.getValue().getSatisfyingConfigurationSpace(dimacsFilePath, timeLimit));
+            locatedConfigurations.put(entry.getKey(), entry.getValue().getSatisfyingConfigurationSpace(dimacsFilePath, limit, timeLimit));
         _lastMeasurement = new Measurement().difference(begin);
 
         return locatedConfigurations;

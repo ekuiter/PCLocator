@@ -104,10 +104,10 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
         return featureTree != null;
     }
 
-    public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, String timeLimit) {
+    public ConfigurationSpace getSatisfyingConfigurationSpace(String dimacsFilePath, Integer limit, String timeLimit) {
         if (!isPresent())
             return ConfigurationSpace.getNotFound(this);
-        FeatureCoPPConfigurationSpace configurationSpace = new FeatureCoPPConfigurationSpace(this, dimacsFilePath, timeLimit);
+        FeatureCoPPConfigurationSpace configurationSpace = new FeatureCoPPConfigurationSpace(this, dimacsFilePath, limit, timeLimit);
         configurationSpace.history()
                 .add("This configuration space has been located by FeatureCoPP " +
                         "from the presence condition and the given feature model. " +

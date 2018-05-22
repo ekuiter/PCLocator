@@ -113,6 +113,8 @@ public class Arguments {
                 "                 generate this using: echo - | gcc -dM - -E -std=gnu99\n" +
                 "  --configure    pass a feature model in DIMACS format for deriving\n" +
                 "                 concrete configurations instead of presence conditions\n" +
+                "  --limit        maximum number of configurations to be derived\n" +
+                "                 (default: no limit)\n" +
                 "  --timelimit    time limit for deriving a configuration space\n" +
                 "                 of form \"WWd XXh YYm ZZs\" (default: no time limit)\n" +
                 "  --kmaxfile     pass a Kmax presence condition file (with unit_pc's and\n" +
@@ -197,6 +199,11 @@ public class Arguments {
         if (dimacsFilePath != null)
             return PresenceConditionLocator.validateFilePath(dimacsFilePath);
         return null;
+    }
+
+    Integer getLimit() {
+        String limit = get("--limit");
+        return limit != null ? Integer.parseInt(limit) : null;
     }
 
     String getTimeLimit() {
