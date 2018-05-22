@@ -104,8 +104,8 @@ public class Arguments {
                 "      xtc          same as superc\n" +
                 "      featurecopp  annotate file with FeatureCoPP parser\n" +
                 "      equivalent   whether TypeChef and SuperC yield the same results\n" +
-                "      all          annotate file with TypeChef, SuperC, FeatureCoPP and\n" + "" +
-                "                   equivalence checker (default)\n" +
+                "      all          annotate file with TypeChef, SuperC and\n" +
+                "                   FeatureCoPP (default)\n" +
                 "  -I             pass additional include directory to the parser\n" +
                 "  --platform     pass additional header file to the parser,\n" +
                 "                 generate this using: echo - | gcc -dM - -E -std=gnu99\n" +

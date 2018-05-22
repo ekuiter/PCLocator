@@ -21,6 +21,7 @@ import java.io.PrintStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.concurrent.*;
 
 public class TypeChefPresenceConditionLocatorImplementation implements PresenceConditionLocator.Implementation, EnforceTreeHelper, ASTNavigation {
     private PresenceConditionLocator.Options options;
@@ -103,7 +104,17 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
             FrontendOptionsWithConfigFiles opt = new FrontendOptionsWithConfigFiles();
             opt.parseOptions(args.toArray(new String[0]));
             arguments = String.join(" ", args);
-            ast = parse(opt, FeatureExprLib.featureModelFactory().empty());
+
+            // Execute TypeChef in a separate thread because it uses a recursive descent parser
+            // which might stack-overflow for complex files (e.g., Busybox).
+            // If you encounter a stack overflow, consider using -Xss... to increase the stack size.
+            ExecutorService executor = Executors.newSingleThreadExecutor();
+            Future<TranslationUnit> future = executor.submit(
+                    () -> parse(opt, FeatureExprLib.featureModelFactory().empty()));
+            executor.shutdown();
+            ast = future.get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
         } finally {
             System.setOut(out);
         }

@@ -66,7 +66,6 @@ public class PresenceConditionLocatorShell {
                 fileAnnotators.add(extendPresenceConditionLocator(args, typeChef));
                 fileAnnotators.add(extendPresenceConditionLocator(args, superC));
                 fileAnnotators.add(extendPresenceConditionLocator(args, featureCoPP));
-                fileAnnotators.add(equivalenceChecker);
             } else
                 fileAnnotators.add(extendPresenceConditionLocator(args, superC));
         }
