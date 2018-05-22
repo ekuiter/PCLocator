@@ -6,11 +6,11 @@ import java.util.Map;
 
 public class PresenceConditionEquivalenceChecker implements AnnotatedFile.FileAnnotator {
     private String name;
-    private SimplePresenceConditionLocator presenceConditionLocatorA, presenceConditionLocatorB;
+    private PresenceConditionLocator presenceConditionLocatorA, presenceConditionLocatorB;
 
     PresenceConditionEquivalenceChecker(String name,
-                                        SimplePresenceConditionLocator presenceConditionLocatorA,
-                                        SimplePresenceConditionLocator presenceConditionLocatorB) {
+                                        PresenceConditionLocator presenceConditionLocatorA,
+                                        PresenceConditionLocator presenceConditionLocatorB) {
         this.name = name;
         this.presenceConditionLocatorA = presenceConditionLocatorA;
         this.presenceConditionLocatorB = presenceConditionLocatorB;

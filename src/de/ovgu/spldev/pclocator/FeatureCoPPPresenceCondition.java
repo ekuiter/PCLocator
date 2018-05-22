@@ -87,6 +87,8 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
     }
 
     public PresenceCondition clone() {
+        if (!isPresent())
+            return getNotFound(getLine());
         return new FeatureCoPPPresenceCondition(featureTree);
     }
 

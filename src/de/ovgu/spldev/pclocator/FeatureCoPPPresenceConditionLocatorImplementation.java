@@ -44,15 +44,15 @@ public class FeatureCoPPPresenceConditionLocatorImplementation implements Presen
         return null;
     }
 
-    public void setOptions(SimplePresenceConditionLocator.Options options) {
+    public void setOptions(PresenceConditionLocator.Options options) {
     }
 
     public de.ovgu.spldev.pclocator.PresenceCondition getTrue() {
         return FeatureCoPPPresenceCondition.getTrue();
     }
 
-    public PresenceCondition fromDNF(String formula) {
-        return FeatureCoPPPresenceCondition.fromDNF(formula);
+    public PresenceCondition[] fromDNF(String formula) {
+        return new PresenceCondition[]{FeatureCoPPPresenceCondition.fromDNF(formula)};
     }
 
     private HashMap<String, FeatureModule> getFeatureTable() {

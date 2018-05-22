@@ -15,7 +15,7 @@ public class LineSupplier {
     int next() {
         int line = i < lines.length ? lines[i++] : -1;
         if (line != -1)
-            locatedPresenceConditions.put(line, PresenceCondition.getNotFound(line));
+            locatedPresenceConditions.put(line, TypeChefPresenceCondition.getNotFound(line));
         return line;
     }
 }

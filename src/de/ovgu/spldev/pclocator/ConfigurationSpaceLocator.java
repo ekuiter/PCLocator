@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConfigurationSpaceLocator implements AnnotatedFile.FileAnnotator {
-    private SimplePresenceConditionLocator presenceConditionLocator;
+    private PresenceConditionLocator presenceConditionLocator;
     private String dimacsFilePath, timeLimit;
     protected Measurement _lastMeasurement;
 
-    public ConfigurationSpaceLocator(SimplePresenceConditionLocator presenceConditionLocator, String dimacsFilePath, String timeLimit) {
+    public ConfigurationSpaceLocator(PresenceConditionLocator presenceConditionLocator, String dimacsFilePath, String timeLimit) {
         this.presenceConditionLocator = presenceConditionLocator;
         this.dimacsFilePath = dimacsFilePath;
         this.timeLimit = timeLimit;

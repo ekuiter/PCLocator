@@ -5,6 +5,9 @@ import xtc.lang.cpp.SuperCPresenceConditionLocatorImplementation;
 import java.util.ArrayList;
 
 public class PresenceConditionLocatorShell {
+    PresenceConditionLocator typeChef, featureCoPP, superC, merge;
+    AnnotatedFile.FileAnnotator equivalenceChecker;
+
     private PresenceConditionLocator.Options getPresenceConditionLocatorOptions(Arguments args) {
         return new PresenceConditionLocator.Options(args.getIncludeDirectories(), args.getPlatformHeaderFilePath());
     }
@@ -15,11 +18,13 @@ public class PresenceConditionLocatorShell {
             return new TypeChefPresenceConditionLocatorImplementation();
         else if (kind.equals("featurecopp"))
             return new FeatureCoPPPresenceConditionLocatorImplementation();
-        else
+        else if (kind.equals("xtc") || kind.equals("superc"))
             return new SuperCPresenceConditionLocatorImplementation();
+        else
+            throw new RuntimeException("unknown parser kind " + kind);
     }
 
-    private SimplePresenceConditionLocator getPresenceConditionLocator
+    private PresenceConditionLocator getPresenceConditionLocator
             (Arguments args, PresenceConditionLocator.Implementation implementation, PresenceConditionLocator.Options options) {
         String kind = args.getLocatorKind();
         if (kind.equals("simple"))
@@ -28,32 +33,26 @@ public class PresenceConditionLocatorShell {
             return new MockSystemHeadersPresenceConditionLocator(implementation, options);
         else if (kind.equals("ignorePreprocessor"))
             return new IgnorePreprocessorPresenceConditionLocator(implementation, options);
-        else if (kind.equals("deduceNotFound"))
-            return new DeduceNotFoundPresenceConditionLocator(implementation, options);
         else if (kind.equals("kmax")) {
             String filePath = PresenceConditionLocator.getFilePathFromLocation(args.getLocation());
             KmaxFileGrepper kmaxFileGrepper = new KmaxFileGrepper(implementation, args.getKmaxFilePath(), args.getProjectRootPath(), filePath);
             return new KmaxPresenceConditionLocator(implementation, options, kmaxFileGrepper);
-        } else
-            return new PresenceConditionLocator(implementation, options);
+        } else if (kind.equals("deduceNotFound"))
+            return new DeduceNotFoundPresenceConditionLocator(implementation, options);
+        else
+            throw new RuntimeException("unknown annotator kind " + kind);
     }
 
-    private AnnotatedFile.FileAnnotator extendPresenceConditionLocator(Arguments args, SimplePresenceConditionLocator presenceConditionLocator) {
+    private AnnotatedFile.FileAnnotator extendPresenceConditionLocator(Arguments args, PresenceConditionLocator presenceConditionLocator) {
         String dimacsFilePath = args.getDimacsFilePath();
-        if (dimacsFilePath != null)
-            return new ConfigurationSpaceLocator(presenceConditionLocator, dimacsFilePath, args.getTimeLimit());
-        else
-            return presenceConditionLocator;
+        return dimacsFilePath != null
+                ? new ConfigurationSpaceLocator(presenceConditionLocator, dimacsFilePath, args.getTimeLimit())
+                : presenceConditionLocator;
     }
 
     private AnnotatedFile.FileAnnotator[] getFileAnnotators(Arguments args, PresenceConditionLocator.Options options) {
         String[] kinds = args.getAnnotatorKinds();
         ArrayList<AnnotatedFile.FileAnnotator> fileAnnotators = new ArrayList<>();
-        SimplePresenceConditionLocator
-                typeChef = getPresenceConditionLocator(args, new TypeChefPresenceConditionLocatorImplementation(), options),
-                featureCoPP = getPresenceConditionLocator(args, new FeatureCoPPPresenceConditionLocatorImplementation(), options),
-                superC = getPresenceConditionLocator(args, new SuperCPresenceConditionLocatorImplementation(), options);
-        AnnotatedFile.FileAnnotator equivalenceChecker = new PresenceConditionEquivalenceChecker("TypeChef == SuperC", typeChef, superC);
 
         for (String kind : kinds) {
             if (kind.equals("typechef"))
@@ -66,14 +65,18 @@ public class PresenceConditionLocatorShell {
                 fileAnnotators.add(extendPresenceConditionLocator(args, typeChef));
                 fileAnnotators.add(extendPresenceConditionLocator(args, superC));
                 fileAnnotators.add(extendPresenceConditionLocator(args, featureCoPP));
-            } else
+            } else if (kind.equals("xtc") || kind.equals("superc"))
                 fileAnnotators.add(extendPresenceConditionLocator(args, superC));
+            else if (kind.equals("merge"))
+                fileAnnotators.add(extendPresenceConditionLocator(args, merge));
+            else
+                throw new RuntimeException("unknown annotator kind " + kind);
         }
 
         return fileAnnotators.toArray(new AnnotatedFile.FileAnnotator[0]);
     }
 
-    private void analyze(SimplePresenceConditionLocator presenceConditionLocator,
+    private void analyze(PresenceConditionLocator presenceConditionLocator,
                          AnnotatedFile.FileAnnotator[] fileAnnotators, String location,
                          String dimacsFilePath, String timeLimit, boolean isExplain) {
         if (PresenceConditionLocator.isValidLocation(location)) {
@@ -102,9 +105,17 @@ public class PresenceConditionLocatorShell {
             return;
         }
 
-        PresenceConditionLocator.Implementation implementation = getPresenceConditionLocatorImplementation(args);
         PresenceConditionLocator.Options options = getPresenceConditionLocatorOptions(args);
-        SimplePresenceConditionLocator presenceConditionLocator = getPresenceConditionLocator(args, implementation, options);
+        typeChef = getPresenceConditionLocator(args, new TypeChefPresenceConditionLocatorImplementation(), options);
+        featureCoPP = getPresenceConditionLocator(args, new FeatureCoPPPresenceConditionLocatorImplementation(), options);
+        superC = getPresenceConditionLocator(args, new SuperCPresenceConditionLocatorImplementation(), options);
+        merge = new MergePresenceConditionLocator(typeChef, superC, featureCoPP);
+        equivalenceChecker = new PresenceConditionEquivalenceChecker("TypeChef == SuperC", typeChef, superC);
+
+        PresenceConditionLocator presenceConditionLocator;
+        presenceConditionLocator = args.getParserKind().equals("merge")
+                ? merge
+                : getPresenceConditionLocator(args, getPresenceConditionLocatorImplementation(args), options);
         AnnotatedFile.FileAnnotator[] fileAnnotators = getFileAnnotators(args, options);
         args.ensureValidUsage();
 

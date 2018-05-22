@@ -1,50 +1,13 @@
 package de.ovgu.spldev.pclocator;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotator {
-    public interface Implementation {
-        /**
-         * Locates presence conditions for given lines in a file.
-         * The lines are expected to be unique and in ascending order.
-         */
-        HashMap<Integer, PresenceCondition> locatePresenceConditions(String filePath, int[] lines);
-        String getName();
-        Options getOptions();
-        void setOptions(Options options);
-        PresenceCondition getTrue();
-        PresenceCondition fromDNF(String formula);
-    }
-
-    public static class Options {
-        private String[] includeDirectories;
-        private String platformHeaderFilePath;
-
-        public Options() {
-            this.includeDirectories = new String[]{};
-        }
-
-        public Options(String[] includeDirectories, String platformHeaderFilePath) {
-            this.includeDirectories = includeDirectories;
-            this.platformHeaderFilePath = platformHeaderFilePath;
-        }
-
-        public String[] getIncludeDirectories() {
-            return includeDirectories;
-        }
-
-        public String getPlatformHeaderFilePath() {
-            return platformHeaderFilePath;
-        }
-    }
-
+public class SimplePresenceConditionLocator extends PresenceConditionLocator {
     protected Implementation _implementation;
     protected Measurement _lastMeasurement;
 
@@ -55,32 +18,6 @@ public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotat
 
     public String getName() {
         return _implementation.getName();
-    }
-
-    private static String getLineContent(String filePath, int line) {
-        try (Stream<String> lineContentsStream = Files.lines(Paths.get(filePath))) {
-            String[] lineContents = lineContentsStream.toArray(String[]::new);
-            if (line < 1 || line > lineContents.length)
-                return null;
-            else
-                return lineContents[line - 1];
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static String validateFilePath(String filePath) {
-        File file = new File(filePath);
-        if (!file.exists() || !file.isFile())
-            throw new RuntimeException("\"" + filePath + "\" is not a valid file");
-        return filePath;
-    }
-
-    private static String validateLine(String filePath, int line) {
-        String lineContent = getLineContent(filePath, line);
-        if (lineContent == null)
-            throw new RuntimeException("\"" + line + "\" is not a valid line number");
-        return lineContent;
     }
 
     protected boolean lineNotAvailable(String lineContent) {
@@ -142,56 +79,6 @@ public class SimplePresenceConditionLocator implements AnnotatedFile.FileAnnotat
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public PresenceCondition locatePresenceCondition(String filePath, int line) {
-        validateLine(filePath, line);
-        int[] lines = new int[]{line};
-        return locatePresenceConditions(validateFilePath(filePath)).get(line);
-    }
-
-    public PresenceCondition locatePresenceCondition(String filePath, String lineString) {
-        int line;
-        try {
-            line = Integer.parseInt(lineString);
-        } catch (NumberFormatException e) {
-            throw new RuntimeException("\"" + lineString + "\" is not a valid line number");
-        }
-
-        return locatePresenceCondition(filePath, line);
-    }
-
-    public static boolean isValidLocation(String location) {
-        return location.split(":").length >= 2;
-    }
-
-    private static String[] getLocationParts(String location) {
-        String[] parts = location.split(":");
-        if (parts.length < 2)
-            throw new RuntimeException("\"" + location + "\" is not a valid location of form <file>:<line>");
-        return parts;
-    }
-
-    public PresenceCondition locatePresenceCondition(String location) {
-        String[] parts = getLocationParts(location);
-        String filePath = String.join(":", Arrays.copyOf(parts, parts.length - 1));
-        String lineString = parts[parts.length - 1];
-
-        return locatePresenceCondition(filePath, lineString);
-    }
-
-    public static String getFilePathFromLocation(String location) {
-        String filePath;
-        if (isValidLocation(location)) {
-            String[] parts = getLocationParts(location);
-            filePath = String.join(":", Arrays.copyOf(parts, parts.length - 1));
-        } else
-            filePath = location;
-        return validateFilePath(filePath);
-    }
-
-    public HashMap<Integer, PresenceCondition> annotate(String filePath) {
-        return locatePresenceConditions(filePath);
     }
 
     public Measurement getLastMeasurement() {

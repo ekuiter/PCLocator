@@ -84,6 +84,8 @@ public class TypeChefPresenceCondition extends PresenceCondition {
     }
 
     public PresenceCondition clone() {
+        if (!isPresent())
+            return getNotFound(getLine());
         return new TypeChefPresenceCondition(featureExpr);
     }
 
@@ -110,6 +112,15 @@ public class TypeChefPresenceCondition extends PresenceCondition {
         if (featureExpr == null || otherFeatureExpr == null)
             return featureExpr == otherFeatureExpr;
         return featureExpr.equivalentTo(otherFeatureExpr);
+    }
+
+    public boolean implies(TypeChefPresenceCondition other) {
+        FeatureExpr featureExpr = getFeatureExpr(), otherFeatureExpr = other.getFeatureExpr();
+        if (otherFeatureExpr == null)
+            return true; // a formula consisting of nothing is implied by everything
+        else if (featureExpr == null)
+            return otherFeatureExpr.isTautology(); // a formula is implied from nothing if it is a tautology
+        return featureExpr.implies(otherFeatureExpr).isTautology();
     }
 
     public TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath, boolean preferDisabledFeatures) {

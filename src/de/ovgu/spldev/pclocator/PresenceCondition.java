@@ -28,7 +28,7 @@ public abstract class PresenceCondition {
             }
 
             public PresenceCondition clone() {
-                return getNotFound();
+                return getNotFound(line);
             }
         };
         notFound.history(line).add(notFoundHistory);
@@ -46,6 +46,11 @@ public abstract class PresenceCondition {
             Log.error("no presence condition found");
         else
             System.out.println(this);
+    }
+
+    public boolean compatible(PresenceCondition that) {
+        return this instanceof TypeChefPresenceCondition && that instanceof TypeChefPresenceCondition ||
+                this instanceof FeatureCoPPPresenceCondition && that instanceof FeatureCoPPPresenceCondition;
     }
 
     public PresenceCondition and(PresenceCondition that) {

@@ -36,8 +36,8 @@ public class SuperCPresenceConditionLocatorImplementation implements PresenceCon
         return SuperCPresenceCondition.getTrue();
     }
 
-    public de.ovgu.spldev.pclocator.PresenceCondition fromDNF(String formula) {
-        return SuperCPresenceCondition.fromDNF(formula);
+    public de.ovgu.spldev.pclocator.PresenceCondition[] fromDNF(String formula) {
+        return new de.ovgu.spldev.pclocator.PresenceCondition[]{SuperCPresenceCondition.fromDNF(formula)};
     }
 
     private void addIncludeDirectories(ArrayList<String> args) {

@@ -19,7 +19,9 @@ public class KmaxFileGrepper {
     String kmaxFilePath;
     String projectRootPath;
     String filePath;
-    private PresenceCondition[] kmaxPresenceConditions = null;
+    // save an outer list of presence conditions for path components, the inner list
+    // takes care of different types of presence conditions (TypeChef, FeatureCoPP)
+    private PresenceCondition[][] kmaxPresenceConditions = null;
 
     public KmaxFileGrepper(PresenceConditionLocator.Implementation implementation, String kmaxFilePath, String projectRootPath, String filePath) {
         this.implementation = implementation;
@@ -60,7 +62,7 @@ public class KmaxFileGrepper {
         return results;
     }
 
-    private PresenceCondition[] locatePresenceConditions(PresenceConditionLocator.Implementation implementation,
+    private PresenceCondition[][] locatePresenceConditions(PresenceConditionLocator.Implementation implementation,
                                                              Path kmaxFilePath, Path projectRootPath, Path filePath) {
         projectRootPath = projectRootPath.toAbsolutePath().normalize();
         filePath = filePath.toAbsolutePath().normalize();
@@ -75,7 +77,7 @@ public class KmaxFileGrepper {
 
         // Both unit_pc and subdir_pc are unique if present, but there might be a presence condition
         // for every single path component - find them and transform the DNF formulas into presence conditions.
-        return searchKmaxFile(kmaxFilePath, objectFile).stream().map(implementation::fromDNF).toArray(PresenceCondition[]::new);
+        return searchKmaxFile(kmaxFilePath, objectFile).stream().map(implementation::fromDNF).toArray(PresenceCondition[][]::new);
     }
 
     public void locatePresenceConditions() {
@@ -90,13 +92,15 @@ public class KmaxFileGrepper {
         locatePresenceConditions();
         if (kmaxPresenceConditions.length == 0)
             return "True";
-        return Stream.of(kmaxPresenceConditions).map(PresenceCondition::toString).collect(Collectors.joining("&&"));
+        return Stream.of(kmaxPresenceConditions).map(pcs -> pcs[0].toString()).collect(Collectors.joining("&&"));
     }
 
     public PresenceCondition modifyPresenceCondition(PresenceCondition presenceCondition) {
         locatePresenceConditions();
         for (int i = kmaxPresenceConditions.length - 1; i >= 0; i--)
-            presenceCondition = kmaxPresenceConditions[i].and(presenceCondition);
+            for (PresenceCondition kmaxPresenceCondition : kmaxPresenceConditions[i])
+                if (kmaxPresenceCondition.compatible(presenceCondition))
+                    presenceCondition = kmaxPresenceCondition.and(presenceCondition);
         return presenceCondition;
     }
 }

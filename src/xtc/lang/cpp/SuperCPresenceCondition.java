@@ -22,6 +22,8 @@ public class SuperCPresenceCondition extends TypeChefPresenceCondition {
     }
 
     public de.ovgu.spldev.pclocator.PresenceCondition clone() {
+        if (!isPresent())
+            return getNotFound(getLine());
         return new SuperCPresenceCondition(presenceCondition, presenceConditionManager);
     }
 

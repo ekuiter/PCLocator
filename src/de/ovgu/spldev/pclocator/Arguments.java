@@ -84,18 +84,19 @@ public class Arguments {
                 "  --help         displays usage\n" +
                 "  --parser       choose a parser, possible values include:\n" +
                 "      typechef     use TypeChef parser\n" +
-                "      superc       use SuperC parser (default)\n" +
+                "      superc       use SuperC parser\n" +
                 "      xtc          same as superc\n" +
                 "      featurecopp  use FeatureCoPP parser\n" +
+                "      merge        combines all the parsers above, prioritizes retrieval of a\n" +
+                "                   configuration over the correct presence condition (default)\n" +
                 "  --locator      choose a location algorithm, possible values include:\n" +
-                "      default              same as deduceNotFound (default)\n" +
                 "      simple               returns raw presence conditions found by the parser\n" +
                 "      mockSystemHeaders    like simple, but replaces system headers such as\n" +
                 "                           stdio.h with minimal mocks containing typedefs\n" +
                 "      ignorePreprocessor   like ignoreSystemHeaders, but does not return\n" +
                 "                           presence conditions for preprocessor lines\n" +
                 "      deduceNotFound       like ignorePreprocessor, but deduces missing\n" +
-                "                           presence conditions from surrounding lines\n" +
+                "                           presence conditions from surrounding lines (default)\n" +
                 "      kmax                 like deduceNotFound, but considers build system\n" +
                 "                           constraints, requires --kmaxfile and --projectroot\n" +
                 "  --annotator    override the default annotator, possible values include:\n" +
@@ -103,6 +104,7 @@ public class Arguments {
                 "      superc       annotate file with SuperC parser\n" +
                 "      xtc          same as superc\n" +
                 "      featurecopp  annotate file with FeatureCoPP parser\n" +
+                "      merge        annotate file with Merge parser\n" +
                 "      equivalent   whether TypeChef and SuperC yield the same results\n" +
                 "      all          annotate file with TypeChef, SuperC and\n" +
                 "                   FeatureCoPP (default)\n" +
@@ -143,12 +145,12 @@ public class Arguments {
     String getParserKind() {
         String parser = get("--parser");
         if (parser == null)
-            return "superc";
+            return "merge";
 
         if (isAnnotating())
             throw new RuntimeException("use --annotator to specify parsers when annotating a whole file");
 
-        String[] allowedArgs = {"typechef", "superc", "xtc", "featurecopp"};
+        String[] allowedArgs = {"typechef", "superc", "xtc", "featurecopp", "merge"};
         if (allowed(parser, allowedArgs))
             return parser;
         else
@@ -163,7 +165,7 @@ public class Arguments {
         if (!isAnnotating())
             throw new RuntimeException("only a whole file can be annotated, not individual lines");
 
-        String[] allowedArgs = {"typechef", "superc", "xtc", "featurecopp", "equivalent", "all"};
+        String[] allowedArgs = {"typechef", "superc", "xtc", "featurecopp", "merge", "equivalent", "all"};
         for (String annotator : annotators) {
             if (!allowed(annotator, allowedArgs))
                 throw new RuntimeException("invalid annotator " + annotator);
@@ -175,9 +177,9 @@ public class Arguments {
     String getLocatorKind() {
         String locator = get("--locator");
         if (locator == null)
-            return "default";
+            return "deduceNotFound";
 
-        String[] allowedArgs = {"simple", "mockSystemHeaders", "ignorePreprocessor", "deduceNotFound", "kmax", "default"};
+        String[] allowedArgs = {"simple", "mockSystemHeaders", "ignorePreprocessor", "deduceNotFound", "kmax"};
         if (allowed(locator, allowedArgs)) {
             if (locator.equals("kmax")) {
                 if (get("--kmaxfile") == null)

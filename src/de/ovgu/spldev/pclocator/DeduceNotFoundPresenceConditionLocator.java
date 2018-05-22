@@ -15,8 +15,7 @@ public class DeduceNotFoundPresenceConditionLocator extends IgnorePreprocessorPr
                                   IntStream lineRange, Predicate<String> isOpen, Predicate<String> isClose) {
         Stack<PresenceCondition> presenceConditionStack = new Stack<>();
         Stack<Integer> lineStack = new Stack<>();
-        PresenceCondition truePresenceCondition = _implementation.getTrue();
-        presenceConditionStack.push(truePresenceCondition);
+        presenceConditionStack.push(_implementation.getTrue());
         lineStack.push(null);
 
         IntConsumer setPresenceConditionToTopOfStack = line -> {
