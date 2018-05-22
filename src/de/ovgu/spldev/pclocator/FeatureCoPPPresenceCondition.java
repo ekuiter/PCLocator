@@ -89,7 +89,9 @@ public class FeatureCoPPPresenceCondition extends PresenceCondition {
     public PresenceCondition clone() {
         if (!isPresent())
             return getNotFound(getLine());
-        return new FeatureCoPPPresenceCondition(featureTree);
+        FeatureCoPPPresenceCondition presenceCondition = new FeatureCoPPPresenceCondition(featureTree);
+        presenceCondition.history(getLine());
+        return presenceCondition;
     }
 
     public String toString() {

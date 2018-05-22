@@ -86,7 +86,9 @@ public class TypeChefPresenceCondition extends PresenceCondition {
     public PresenceCondition clone() {
         if (!isPresent())
             return getNotFound(getLine());
-        return new TypeChefPresenceCondition(featureExpr);
+        TypeChefPresenceCondition presenceCondition = new TypeChefPresenceCondition(featureExpr);
+        presenceCondition.history(getLine());
+        return presenceCondition;
     }
 
     public String toString() {
