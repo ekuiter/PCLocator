@@ -41,7 +41,7 @@ If you don't provide any arguments, detailed usage information will be printed.
 #### Presence condition
 
 Extract a single presence condition for the line `<line>` in a C file `<file>`
-(using the default parser):
+(using the default parser, a combination of the tools above):
 
 ```
 java -jar PCLocator.jar <file>:<line>

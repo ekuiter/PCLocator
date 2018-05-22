@@ -5,6 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -24,26 +27,39 @@ public class MergePresenceConditionLocator extends PresenceConditionLocator {
 
     public HashMap<Integer, PresenceCondition> locatePresenceConditions(String filePath, int[] lines) {
         HashMap<Integer, PresenceCondition> locatedPresenceConditions = new HashMap<>(),
-                typeChefPresenceConditions = new HashMap<>(), superCPresenceConditions = new HashMap<>(),
-                featureCoPPPresenceConditions = new HashMap<>();
+                typeChefPresenceConditions, superCPresenceConditions, featureCoPPPresenceConditions;
+
+        // Locate presence conditions with TypeChef, SuperC and FeatureCoPP.
+        // These are independent tasks which can be parallelized.
+        ExecutorService executor = Executors.newCachedThreadPool();
+        ArrayList<Callable<HashMap<Integer, PresenceCondition>>> tasks = new ArrayList<>();
+        Function<PresenceConditionLocator, Callable<HashMap<Integer, PresenceCondition>>> locatePresenceConditionsTasks =
+                presenceConditionLocator -> () -> {
+                    try {
+                        return presenceConditionLocator.locatePresenceConditions(filePath);
+                    } catch (Exception e) {
+                        Log.error("%s", e);
+                    }
+                    return new HashMap<>();
+                };
+
+        tasks.add(locatePresenceConditionsTasks.apply(typeChef));
+        tasks.add(locatePresenceConditionsTasks.apply(superC));
+        tasks.add(locatePresenceConditionsTasks.apply(featureCoPP));
 
         Measurement begin = new Measurement();
         try {
-            typeChefPresenceConditions = typeChef.locatePresenceConditions(filePath);
-        } catch (Exception e) {
-            Log.error("%s", e);
-        }
-
-        try {
-            superCPresenceConditions = superC.locatePresenceConditions(filePath);
-        } catch (Exception e) {
-            Log.error("%s", e);
-        }
-
-        try {
-            featureCoPPPresenceConditions = featureCoPP.locatePresenceConditions(filePath);
-        } catch (Exception e) {
-            Log.error("%s", e);
+            List<Future<HashMap<Integer, PresenceCondition>>> futures = executor.invokeAll(tasks);
+            typeChefPresenceConditions = futures.get(0).get();
+            superCPresenceConditions = futures.get(1).get();
+            featureCoPPPresenceConditions = futures.get(1).get();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        } finally {
+            executor.shutdown();
         }
         _lastMeasurement = new Measurement().difference(begin);
 
