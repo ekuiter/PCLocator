@@ -17,7 +17,7 @@ integrates the following tools:
 - [Kmax](https://github.com/paulgazz/kmax), a variability-aware analyzer
   Kconfig/Kbuild Makefiles
 
-This tool addresses the [this challenge
+This tool addresses [this challenge
 case](https://github.com/paulgazz/splc18challengecase) of the SPLC 2018
 Challenge Track.
 
@@ -46,7 +46,7 @@ If you don't provide any arguments, detailed usage information will be printed.
 PCLocator comes with a virtual machine for reproducible results. (It does not
 have to be used though.) To use it, install
 [Vagrant](https://www.vagrantup.com/). The JAR distribution ships with a
-`Vagrantfile`, so just run `vagrant up` while in thedistribution folder. You
+`Vagrantfile`, so just run `vagrant up` while in the distribution folder. You
 will be prompted to install the `hashicorp/precise64` box, a Ubuntu VM. As
 provider, we used VirtualBox.
 

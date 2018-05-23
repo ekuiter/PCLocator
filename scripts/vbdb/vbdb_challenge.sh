@@ -45,8 +45,8 @@ else
             $CC -E $line $FILE > $PREPROCESSED_FILE
             echo >> $CFG_LOG_FILE
             echo "Trying to compile to $COMPILED_FILE". >> $CFG_LOG_FILE
-            echo $CC $line $FILE -o $COMPILED_FILE >> $CFG_LOG_FILE
-            $CC $line $FILE -o $COMPILED_FILE >> $CFG_LOG_FILE 2>&1
+            echo $CC -std=c99 $line $FILE -o $COMPILED_FILE >> $CFG_LOG_FILE
+            $CC -std=c99 $line $FILE -o $COMPILED_FILE >> $CFG_LOG_FILE 2>&1
             if [ $? -ne 0 ]; then
                 echo "Compilation failed." >> $CFG_LOG_FILE
             fi
