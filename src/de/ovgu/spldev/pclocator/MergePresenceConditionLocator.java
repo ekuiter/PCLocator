@@ -52,7 +52,7 @@ public class MergePresenceConditionLocator extends PresenceConditionLocator {
             List<Future<HashMap<Integer, PresenceCondition>>> futures = executor.invokeAll(tasks);
             typeChefPresenceConditions = futures.get(0).get();
             superCPresenceConditions = futures.get(1).get();
-            featureCoPPPresenceConditions = futures.get(1).get();
+            featureCoPPPresenceConditions = futures.get(2).get();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new RuntimeException(e);
