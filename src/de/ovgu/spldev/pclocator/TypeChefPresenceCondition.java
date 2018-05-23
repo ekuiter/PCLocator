@@ -2,11 +2,14 @@ package de.ovgu.spldev.pclocator;
 
 import de.fosd.typechef.featureexpr.FeatureExpr;
 import de.fosd.typechef.featureexpr.FeatureExprFactory;
+import de.fosd.typechef.featureexpr.FeatureModel;
 import de.fosd.typechef.featureexpr.SingleFeatureExpr;
 import scala.Option;
 import scala.Tuple2;
 import scala.collection.JavaConverters;
 import scala.collection.immutable.List;
+
+import java.util.Set;
 
 /**
  * A feature expression for a line of code.
@@ -125,16 +128,13 @@ public class TypeChefPresenceCondition extends PresenceCondition {
         return featureExpr.implies(otherFeatureExpr).isTautology();
     }
 
-    private TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath, boolean preferDisabledFeatures) {
+    private TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath, boolean preferDisabledFeatures, FeatureModel featureModel, Set<SingleFeatureExpr> interestingFeatures) {
         if (!isPresent())
             return TypeChefConfiguration.getNotFound(this);
 
-        DimacsFileReader dimacsFileReader = new DimacsFileReader(dimacsFilePath);
         Option<Tuple2<List<SingleFeatureExpr>, List<SingleFeatureExpr>>> satisfiableAssignment =
                 getFeatureExpr().getSatisfiableAssignment(
-                        dimacsFileReader.getFeatureModel(),
-                        JavaConverters.asScalaSet(dimacsFileReader.getInterestingFeatures()).toSet(),
-                        preferDisabledFeatures);
+                        featureModel, JavaConverters.asScalaSet(interestingFeatures).toSet(), preferDisabledFeatures);
 
         TypeChefConfiguration satisfyingConfiguration =
                 !satisfiableAssignment.isEmpty()
@@ -158,7 +158,12 @@ public class TypeChefPresenceCondition extends PresenceCondition {
     }
 
     public TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath) {
-        return getSatisfyingConfiguration(dimacsFilePath, true);
+        DimacsFileReader dimacsFileReader = new DimacsFileReader(dimacsFilePath);
+        return getSatisfyingConfiguration(dimacsFilePath, true, dimacsFileReader.getFeatureModel(), dimacsFileReader.getInterestingFeatures());
+    }
+
+    public TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath, FeatureModel featureModel, Set<SingleFeatureExpr> interestingFeatures) {
+        return getSatisfyingConfiguration(dimacsFilePath, true, featureModel, interestingFeatures);
     }
 
     public TypeChefPresenceCondition not() {
