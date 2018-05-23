@@ -25,9 +25,9 @@ public class MockSystemHeadersPresenceConditionLocator extends SimplePresenceCon
             "clock_t time_t clockid_t timer_t div_t ldiv_t lldiv_t FILE fpos_t sigset_t pid_t float_t double_t " +
             "jmp_buf sigjmp_buf";
 
-    // More typedefs, specifically added for analyzing Busybox.
+    // More typedefs, specifically added for analyzing VBDB/Busybox.
     String customTypes = "uid_t mode_t gid_t off_t DIR socklen_t ssize_t sa_family_t nfds_t speed_t context_t " +
-            "security_context_t";
+            "security_context_t pthread_mutexattr_t pthread_mutex_t";
 
     String[] types = (standardTypes + " " + customTypes).split(" ");
 

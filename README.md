@@ -17,6 +17,10 @@ integrates the following tools:
 - [Kmax](https://github.com/paulgazz/kmax), a variability-aware analyzer
   Kconfig/Kbuild Makefiles
 
+This tool addresses the [this challenge
+case](https://github.com/paulgazz/splc18challengecase) of the SPLC 2018
+Challenge Track.
+
 ## Getting started
 
 The easiest way to set up PCLocator is to download a prepared JAR distribution
@@ -114,8 +118,22 @@ configurations. Just pass them the location and any additional arguments, e.g.:
 ./vbdb_configure.sh linux.dimacs splc18challengecase/vbdb/linux/simple/8c82962.c:58
 ```
 
-Use `vbdb_challenge.sh` to derive configurations given in the challenge. It
-takes as first argument a time limit like `1s`.
+Use `vbdb_challenge.sh` to tackle the challenge. It takes as first argument the
+program location to analyze (see `locations.txt` for reference), any other
+arguments are propagated to PCLocator. It will enumerate configurations that
+include the given program locations and generate some files in the `challenge`
+directory: the preprocessed C file, the compilation result (if any) and a log
+file containing any errors (a log file for each configuration and an additional
+log file containing all errors PCLocator returned).
+
+Note that by default, like with the `*_configure.sh` scripts, the *entire*
+configuration space is enumerated. To sample, say, just one configuration, pass
+`--limit 1``. (Or ``--timelimit 1s`` to limit configuration space deduction to
+one second. Note that the preprocessing/compilation steps may take much longer.)
+
+For convenience, `vbdb_challenge_peek.sh` enumerates every location given in the
+challenge and analyzes only one configuration using `vbdb_challenge.sh`. It
+takes no arguments.
 
 #### BusyBox
 
