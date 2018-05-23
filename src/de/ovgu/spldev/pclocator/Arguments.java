@@ -129,7 +129,8 @@ public class Arguments {
                 "                 of form \"WWd XXh YYm ZZs\" (default: no time limit)\n" +
                 "  --format       choose a configuration output format, possible values include:\n" +
                 "      human      output enabled features in a human-readable format (default)\n" +
-                "      flags      output configuration as -D flags which can be passed to GCC\n\n" +
+                "      flags      output configuration as -D flags which can be passed to GCC\n" +
+                "      config     output a .config file usable with the Kbuild build system\n\n" +
                 "The location can have the form\n" +
                 "  <file>:<line>  in which case only the given line will be analyzed, or\n" +
                 "  <file>         in which case a tabular analysis of all lines in the file\n" +
@@ -159,7 +160,7 @@ public class Arguments {
         if (getDimacsFilePath() == null)
             throw new RuntimeException("--configure has to be specified when using --format");
 
-        String[] allowedArgs = {"human", "flags"};
+        String[] allowedArgs = {"human", "flags", "config"};
         if (allowed(format, allowedArgs))
             return format;
         else

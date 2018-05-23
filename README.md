@@ -119,17 +119,24 @@ configurations. Just pass them the location and any additional arguments, e.g.:
 ```
 
 Use `vbdb_challenge.sh` to tackle the challenge. It takes as first argument the
-program location to analyze (see `locations.txt` for reference), any other
-arguments are propagated to PCLocator. It will enumerate configurations that
-include the given program locations and generate some files in the `challenge`
-directory: the preprocessed C file, the compilation result (if any) and a log
-file containing any errors (a log file for each configuration and an additional
-log file containing all errors PCLocator returned).
+program location to analyze (see `locations.txt` for reference), any following
+arguments are propagated to PCLocator, e.g.
+
+```
+./vbdb_challenge.sh splc18challengecase/vbdb/marlin/simple/2d22902.c:11 --limit 1
+```
+
+It will enumerate configurations that include the given program locations and
+generate some files in the `challenge` directory: the preprocessed C file, the
+compilation result (if any) and a log file containing any errors (a log file for
+each configuration and an additional log file containing all errors PCLocator
+returned).
 
 Note that by default, like with the `*_configure.sh` scripts, the *entire*
 configuration space is enumerated. To sample, say, just one configuration, pass
-`--limit 1``. (Or ``--timelimit 1s`` to limit configuration space deduction to
-one second. Note that the preprocessing/compilation steps may take much longer.)
+``--limit 1`` like above. (Or ``--timelimit 1s`` to limit configuration space
+deduction to one second. Note that the preprocessing/compilation steps may take
+much longer.)
 
 For convenience, `vbdb_challenge_peek.sh` enumerates every location given in the
 challenge and analyzes only one configuration using `vbdb_challenge.sh`. It
@@ -149,7 +156,12 @@ The Kmax files have been generated using
 [kmax-vm](https://github.com/ekuiter/kmax-vm). The DIMACS file from the
 [TypeChef BusyBox
 analysis](https://github.com/ckaestne/TypeChef-BusyboxAnalysis/blob/master/busybox/featureModel.dimacs)
-are used.
+is used.
+
+Note that we analyze BusyBox 1.18.5 here because a feature model was freely
+available. For newer versions, check out
+[KBuildMiner](https://github.com/ckaestne/KBuildMiner/) to transform KConfig
+files to a feature model.
 
 ## Manual library setup
 

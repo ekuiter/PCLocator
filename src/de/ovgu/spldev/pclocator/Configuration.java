@@ -14,6 +14,8 @@ public abstract class Configuration {
             return toHumanString();
         else if (formatKind.equals("flags"))
             return toFlagsString();
+        else if (formatKind.equals("config"))
+            return toConfigString();
         else
             throw new RuntimeException("unknown format kind " + formatKind);
     }
@@ -24,6 +26,7 @@ public abstract class Configuration {
 
     abstract public String toHumanString();
     abstract public String toFlagsString();
+    abstract public String toConfigString();
 
     public Log.History history() {
         return Log.history(this);

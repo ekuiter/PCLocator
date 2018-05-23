@@ -75,4 +75,15 @@ public class TypeChefConfiguration extends Configuration {
     public String toFlagsString() {
         return joinToFlags(Stream.of(getEnabledFeatureNames()));
     }
+
+    public String toConfigString() {
+        // Unlike with the -D flags, here we also include disabled features to provide a hint to
+        // "make oldconfig" on which features to exclude. All other features (non-Boolean features)
+        // are not considered by our tool and will be filled in by "yes "" | make oldconfig".
+        Stream<String> enabledFeatures = Stream.of(getEnabledFeatureNames()).map(feature -> feature + "=y"),
+                disabledFeatures = Stream.of(getDisabledFeatureNames()).map(feature -> feature + "=n");
+
+        // append a newline character so that multiple .configs are distinguishable when --limit 1 is not used
+        return String.join("\n", Stream.concat(enabledFeatures, disabledFeatures).toArray(String[]::new)) + "\n";
+    }
 }

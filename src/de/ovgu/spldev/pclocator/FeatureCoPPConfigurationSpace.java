@@ -13,6 +13,7 @@ import scala.collection.immutable.List;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
     private FeatureCoPPPresenceCondition presenceCondition;
@@ -33,6 +34,7 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
         Solver solver;
         boolean hasNext;
         private int count = 0;
+        Set<String> interestingFeatureNames;
 
         ConfigurationIterator() {
             FeatureTree featureTree = presenceCondition.getFeatureTree();
@@ -45,6 +47,7 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
             }
 
             Set<SingleFeatureExpr> interestingFeatures = dimacsFileReader.getInterestingFeatures();
+            interestingFeatureNames = interestingFeatures.stream().map(SingleFeatureExpr::feature).collect(Collectors.toSet());
             for (SingleFeatureExpr interestingFeature : interestingFeatures) {
                 IntVar var = macros.get(interestingFeature.feature());
                 if (var != null)
@@ -105,7 +108,7 @@ public class FeatureCoPPConfigurationSpace extends ConfigurationSpace {
             if (!hasNext())
                 throw new NoSuchElementException();
 
-            Configuration configuration = new FeatureCoPPConfiguration(macros);
+            Configuration configuration = new FeatureCoPPConfiguration(macros, interestingFeatureNames);
             hasNext = solver.solve();
             count++;
             return configuration;

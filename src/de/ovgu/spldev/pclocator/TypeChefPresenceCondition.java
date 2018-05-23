@@ -125,7 +125,7 @@ public class TypeChefPresenceCondition extends PresenceCondition {
         return featureExpr.implies(otherFeatureExpr).isTautology();
     }
 
-    public TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath, boolean preferDisabledFeatures) {
+    private TypeChefConfiguration getSatisfyingConfiguration(String dimacsFilePath, boolean preferDisabledFeatures) {
         if (!isPresent())
             return TypeChefConfiguration.getNotFound(this);
 
