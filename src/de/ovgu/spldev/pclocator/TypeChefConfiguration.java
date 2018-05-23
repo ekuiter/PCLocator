@@ -10,6 +10,7 @@ import scala.collection.immutable.List;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.stream.Stream;
 
 public class TypeChefConfiguration extends Configuration {
     private Collection<SingleFeatureExpr> enabledFeatures, disabledFeatures;
@@ -67,7 +68,11 @@ public class TypeChefConfiguration extends Configuration {
         return new TypeChefPresenceCondition(featureExpr);
     }
 
-    public String toString() {
+    public String toHumanString() {
         return Arrays.toString(getEnabledFeatureNames());
+    }
+
+    public String toFlagsString() {
+        return joinToFlags(Stream.of(getEnabledFeatureNames()));
     }
 }

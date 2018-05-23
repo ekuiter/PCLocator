@@ -16,10 +16,17 @@ public class FeatureCoPPConfiguration extends Configuration {
         macros.forEach((feature, var) -> booleanTable.put(feature, var.isBool()));
     }
 
-    public String toString() {
+    public String toHumanString() {
         ArrayList<String> exprs = new ArrayList<>();
         for (Map.Entry<String, String> entry : macroTable.entrySet())
             exprs.add(booleanTable.get(entry.getKey()) ? entry.getKey() : entry.toString());
         return "[" + String.join(", ", exprs) + "]";
+    }
+
+    public String toFlagsString() {
+        ArrayList<String> exprs = new ArrayList<>();
+        for (Map.Entry<String, String> entry : macroTable.entrySet())
+            exprs.add(booleanTable.get(entry.getKey()) ? entry.getKey() : entry.toString());
+        return joinToFlags(exprs.stream());
     }
 }

@@ -81,14 +81,24 @@ public class Arguments {
     String getUsage() {
         return "usage: java -jar PCLocator.jar [options...] location\n\n" +
                 "options:\n" +
-                "  --help         displays usage\n" +
-                "  --parser       choose a parser, possible values include:\n" +
+                "  --help         displays usage\n\n" +
+                "mode of operation:\n" +
+                "  --parser       choose a parser (for <file>:<line> locations):\n" +
                 "      typechef     use TypeChef parser\n" +
                 "      superc       use SuperC parser\n" +
                 "      xtc          same as superc\n" +
                 "      featurecopp  use FeatureCoPP parser\n" +
                 "      merge        combines all the parsers above, prioritizes retrieval of a\n" +
                 "                   configuration over the correct presence condition (default)\n" +
+                "  --annotator    override the default annotator (for <file> locations):\n" +
+                "      typechef     annotate file with TypeChef parser\n" +
+                "      superc       annotate file with SuperC parser\n" +
+                "      xtc          same as superc\n" +
+                "      featurecopp  annotate file with FeatureCoPP parser\n" +
+                "      merge        annotate file with Merge parser\n" +
+                "      equivalent   whether TypeChef and SuperC yield the same results\n" +
+                "      all          annotate file with TypeChef, SuperC and\n" +
+                "                   FeatureCoPP (default)\n" +
                 "  --locator      choose a location algorithm, possible values include:\n" +
                 "      simple               returns raw presence conditions found by the parser\n" +
                 "      mockSystemHeaders    like simple, but replaces system headers such as\n" +
@@ -99,30 +109,27 @@ public class Arguments {
                 "                           presence conditions from surrounding lines (default)\n" +
                 "      kmax                 like deduceNotFound, but considers build system\n" +
                 "                           constraints, requires --kmaxfile and --projectroot\n" +
-                "  --annotator    override the default annotator, possible values include:\n" +
-                "      typechef     annotate file with TypeChef parser\n" +
-                "      superc       annotate file with SuperC parser\n" +
-                "      xtc          same as superc\n" +
-                "      featurecopp  annotate file with FeatureCoPP parser\n" +
-                "      merge        annotate file with Merge parser\n" +
-                "      equivalent   whether TypeChef and SuperC yield the same results\n" +
-                "      all          annotate file with TypeChef, SuperC and\n" +
-                "                   FeatureCoPP (default)\n" +
+                "  --explain      prints an explanation for how the presence condition\n" +
+                "                 or configuration space was located\n\n" +
+                "parser options:\n" +
                 "  -I             pass additional include directory to the parser\n" +
                 "  --platform     pass additional header file to the parser,\n" +
-                "                 generate this using: echo - | gcc -dM - -E -std=gnu99\n" +
+                "                 generate this using: echo - | gcc -dM - -E -std=gnu99\n\n" +
+                "Kmax options:\n" +
+                "  --kmaxfile     pass a Kmax presence condition file (with unit_pc's and\n" +
+                "                 subdir_pc's) to consider build system constraints\n" +
+                "  --projectroot  when specifying a --kmaxfile, the project root directory\n" +
+                "                 relative to the unit_pc's/subdir_pc's must be specified\n\n" +
+                "configuration options:\n" +
                 "  --configure    pass a feature model in DIMACS format for deriving\n" +
                 "                 concrete configurations instead of presence conditions\n" +
                 "  --limit        maximum number of configurations to be derived\n" +
                 "                 (default: no limit)\n" +
                 "  --timelimit    time limit for deriving a configuration space\n" +
                 "                 of form \"WWd XXh YYm ZZs\" (default: no time limit)\n" +
-                "  --kmaxfile     pass a Kmax presence condition file (with unit_pc's and\n" +
-                "                 subdir_pc's) to consider build system constraints\n" +
-                "  --projectroot  when specifying a --kmaxfile, the project root directory\n" +
-                "                 relative to the unit_pc's/subdir_pc's must be specified\n" +
-                "  --explain      prints an explanation for how the presence condition\n" +
-                "                 or configuration space was located\n\n" +
+                "  --format       choose a configuration output format, possible values include:\n" +
+                "      human      output enabled features in a human-readable format (default)\n" +
+                "      flags      output configuration as -D flags which can be passed to GCC\n\n" +
                 "The location can have the form\n" +
                 "  <file>:<line>  in which case only the given line will be analyzed, or\n" +
                 "  <file>         in which case a tabular analysis of all lines in the file\n" +
@@ -142,6 +149,21 @@ public class Arguments {
         if (isAnnotating() && isExplain)
             throw new RuntimeException("only individual lines can be explained");
         return isExplain;
+    }
+
+    String getFormatKind() {
+        String format = get("--format");
+        if (format == null)
+            return "human";
+
+        if (getDimacsFilePath() == null)
+            throw new RuntimeException("--configure has to be specified when using --format");
+
+        String[] allowedArgs = {"human", "flags"};
+        if (allowed(format, allowedArgs))
+            return format;
+        else
+            throw new RuntimeException("invalid format " + format);
     }
 
     String getParserKind() {
@@ -203,11 +225,16 @@ public class Arguments {
 
     Integer getLimit() {
         String limit = get("--limit");
+        if (limit != null && getDimacsFilePath() == null)
+            throw new RuntimeException("--configure has to be specified when using --limit");
         return limit != null ? Integer.parseInt(limit) : null;
     }
 
     String getTimeLimit() {
-        return get("--timelimit");
+        String timeLimit = get("--timelimit");
+        if (timeLimit != null && getDimacsFilePath() == null)
+            throw new RuntimeException("--configure has to be specified when using --timelimit");
+        return timeLimit;
     }
 
     String getKmaxFilePath() {

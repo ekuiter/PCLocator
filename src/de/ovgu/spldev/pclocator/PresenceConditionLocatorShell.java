@@ -100,6 +100,7 @@ public class PresenceConditionLocatorShell {
                 timeLimit = args.getTimeLimit();
         Integer limit = args.getLimit();
         boolean isExplain = args.isExplain();
+        Configuration.setFormatKind(args);
 
         if (args.isHelp() || location == null) {
             System.out.println(args.getUsage());
