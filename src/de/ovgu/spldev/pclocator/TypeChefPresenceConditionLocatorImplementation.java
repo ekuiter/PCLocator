@@ -46,7 +46,7 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
         return new PresenceCondition[]{TypeChefPresenceCondition.fromDNF(formula)};
     }
 
-    private String getPostIncludes() {
+    private String getPreIncludes() {
         if (options == null || options.getIncludeDirectories() == null)
             return "";
         return String.join(",", options.getIncludeDirectories());
@@ -94,7 +94,7 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
         String arguments;
         try {
             ArrayList<String> args = new ArrayList<>();
-            args.add("--postIncludes=" + getPostIncludes());
+            args.add("--preIncludes=" + getPreIncludes());
             if (options.getPlatformHeaderFilePath() != null) {
                 args.add("-h");
                 args.add(options.getPlatformHeaderFilePath());

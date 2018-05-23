@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ ! -d busybox-1.18.5 ]; then
-    wget https://busybox.net/downloads/busybox-1.18.5.tar.bz2
+    wget --no-check-certificate http://busybox.net/downloads/busybox-1.18.5.tar.bz2
     tar -xvjf busybox-1.18.5.tar.bz2
-    rm busybox-1.18.5.tar.gz
+    rm busybox-1.18.5.tar.bz2
 fi
 
 ARGS=$@

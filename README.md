@@ -27,8 +27,9 @@ The easiest way to set up PCLocator is to download a prepared JAR distribution
 here (*TODO*).
 
 To build from source, additionally to cloning the repository, you need to
-download the libraries here (*TODO*) and copy them to the `lib` folder.
-Run the project in IntelliJ to generate the output JAR.
+download the libraries here (*TODO*) and copy them to the `lib` folder. Generate
+the output jar from IntelliJ using `Build > Build Artifacts...` and run
+`scripts/post_build.sh`.
 
 ## Usage
 
@@ -39,6 +40,27 @@ java -jar PCLocator.jar <arguments>
 ```
 
 If you don't provide any arguments, detailed usage information will be printed.
+
+## Virtual Machine
+
+PCLocator comes with a virtual machine for reproducible results. (It does not
+have to be used though.) To use it, install
+[Vagrant](https://www.vagrantup.com/). The JAR distribution ships with a
+`Vagrantfile`, so just run `vagrant up` while in thedistribution folder. You
+will be prompted to install the `hashicorp/precise64` box, a Ubuntu VM. As
+provider, we used VirtualBox.
+
+When the VM is running, use `vagrant ssh` to enter a shell. To set up PCLocator
+and its dependencies (notably Java), run:
+
+```
+cd PCLocator
+./setup.sh
+```
+
+After accepting the Java License Agreement, PCLocator can be used as described
+in this README. (Maybe consider adjusting the RAM size `vb.memory` in
+the `Vagrantfile`, then run `vagrant reload`.)
 
 ### Examples
 
@@ -151,6 +173,20 @@ configurations. Just pass them the location and any additional arguments, e.g.:
 ```
 ./busybox.sh --parser typechef busybox-1.18.5/modutils/modprobe.c:1
 ```
+
+With `busybox_compile.sh` you can compile some configuration that includes the
+given program location. It takes as first argument the program location to
+analyze, any following arguments are propagated to PCLocator, e.g.
+
+```
+./busybox_compile.sh busybox-1.18.5/modutils/lsmod.c:50 --parser featurecopp
+```
+
+The final binary can be executed with `busybox-1.18.5/busybox`. We have only
+tried random samples, so compilation might fail due to libraries missing. This
+can be resolved by installing the missing libraries. Also note that using SuperC
+or FeatureCoPP (see example) significantly speeds up the process (but may
+deliver not as accurate results).
 
 The Kmax files have been generated using
 [kmax-vm](https://github.com/ekuiter/kmax-vm). The DIMACS file from the
