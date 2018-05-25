@@ -24,10 +24,11 @@ Challenge Track.
 ## Getting started
 
 The easiest way to set up PCLocator is to download a prepared JAR distribution
-here (*TODO*).
+[here](https://github.com/ekuiter/PCLocator/releases).
 
 To build from source, additionally to cloning the repository, you need to
-download the libraries here (*TODO*) and copy them to the `lib` folder. Generate
+download the libraries [here](https://github.com/ekuiter/PCLocator/releases)
+(every JAR file but `PCLocator.jar`) and copy them to the `lib` folder. Generate
 the output jar from IntelliJ using `Build > Build Artifacts...` and run
 `scripts/post_build.sh`.
 
