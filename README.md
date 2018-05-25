@@ -42,6 +42,9 @@ java -jar PCLocator.jar <arguments>
 
 If you don't provide any arguments, detailed usage information will be printed.
 
+To use one of the shell scripts described below, run `chmod +x *.sh` to make
+them executable.
+
 ## Virtual Machine
 
 PCLocator comes with a virtual machine for reproducible results. (It does not

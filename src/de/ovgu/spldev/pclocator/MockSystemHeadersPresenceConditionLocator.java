@@ -57,7 +57,7 @@ public class MockSystemHeadersPresenceConditionLocator extends SimplePresenceCon
     private void processFile(Path filePath, ArrayList<String> includeDirectories) {
         seenFilePaths.add(filePath.toAbsolutePath().normalize());
         ArrayList<String> currentIncludeDirectories = (ArrayList<String>) includeDirectories.clone();
-        currentIncludeDirectories.add(filePath.getParent().toAbsolutePath().normalize().toString());
+        currentIncludeDirectories.add(filePath.toAbsolutePath().normalize().getParent().toString());
 
         try (Stream<String> lineContentsStream = Files.lines(filePath)) {
             lineContentsStream.forEach(line -> {
