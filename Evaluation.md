@@ -849,3 +849,114 @@ SuperC and FeatureCoPP parsers respectively.
 0m14.319s   0m15.215s 0m2.413s  0m1.251s  busybox-1.18.5/coreutils/logname.c:1
 0m14.237s   0m15.170s 0m2.148s  0m1.272s  busybox-1.18.5/console-tools/chvt.c:10
 ```
+
+The following results regarding the accuracy of our tool. `1` means
+the derived configuration comprised the given location, `0` the opposite.
+The columns show the Merge, TypeChef, SuperC and FeatureCoPP parsers
+respectively.
+
+From the 661 program locations above, we sampled 100 locations and
+checked inclusion of the location manually.
+
+```
+1 1 1 1 busybox-1.18.5/coreutils/nohup.c:63
+1 1 1 1 busybox-1.18.5/selinux/getsebool.c:34
+1 1 0 1 busybox-1.18.5/networking/ftpgetput.c:68
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/jfs.c:48
+1 0 0 1 busybox-1.18.5/archival/libarchive/bz/blocksort.c:214
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/getsize.c:15
+1 0 0 1 busybox-1.18.5/util-linux/fdisk_aix.c:10
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/blkid_getsize.c:28
+1 1 1 1 busybox-1.18.5/editors/diff.c:158
+1 1 0 1 busybox-1.18.5/archival/libarchive/lzo1x_1.c:14
+1 0 0 1 busybox-1.18.5/networking/udhcp/dhcpd.c:19
+1 1 1 1 busybox-1.18.5/libbb/signals.c:23
+1 1 1 1 busybox-1.18.5/libbb/simplify_path.c:22
+1 1 1 1 busybox-1.18.5/coreutils/logname.c:13
+1 0 0 1 busybox-1.18.5/archival/libarchive/decompress_unzip.c:881
+1 1 0 1 busybox-1.18.5/util-linux/volume_id/volume_id.c:186
+1 1 1 1 busybox-1.18.5/networking/libiproute/ll_types.c:18
+1 0 0 1 busybox-1.18.5/archival/libarchive/bz/huffman.c:201
+0 0 0 1 busybox-1.18.5/networking/ether-wake.c:232
+1 0 0 1 busybox-1.18.5/archival/libarchive/bz/blocksort.c:516
+1 1 0 1 busybox-1.18.5/networking/libiproute/ll_proto.c:45
+1 1 0 1 busybox-1.18.5/applets/usage.c:11
+1 1 1 1 busybox-1.18.5/console-tools/resize.c:24
+1 0 0 1 busybox-1.18.5/miscutils/nandwrite.c:198
+1 1 1 1 busybox-1.18.5/coreutils/wc.c:137
+1 1 1 1 busybox-1.18.5/util-linux/mkswap.c:85
+1 1 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/unpack.c:10
+1 1 1 1 busybox-1.18.5/coreutils/catv.c:71
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:5
+1 1 1 1 busybox-1.18.5/modutils/insmod.c:2
+1 1 1 1 busybox-1.18.5/editors/patch_bbox.c:6
+1 1 1 1 busybox-1.18.5/coreutils/who.c:68
+1 0 0 1 busybox-1.18.5/util-linux/fdisk_sun.c:166
+1 1 1 1 busybox-1.18.5/networking/zcip.c:490
+1 1 0 1 busybox-1.18.5/archival/libarchive/lzo1x_1.c:4
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/xfs.c:2
+1 1 1 1 busybox-1.18.5/libbb/setup_environment.c:58
+1 1 0 1 busybox-1.18.5/archival/libarchive/unxz/xz_dec_stream.c:751
+1 1 1 1 busybox-1.18.5/networking/dnsd.c:176
+1 1 1 1 busybox-1.18.5/printutils/lpd.c:170
+1 1 1 1 busybox-1.18.5/util-linux/fsck_minix.c:1266
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/link.c:86
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/ntfs.c:158
+1 0 0 1 busybox-1.18.5/util-linux/ipcs.c:497
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/unused_silicon_raid.c:50
+1 0 0 1 busybox-1.18.5/networking/udhcp/dumpleases.c:34
+1 0 0 1 busybox-1.18.5/coreutils/du.c:21
+1 1 1 1 busybox-1.18.5/selinux/load_policy.c:7
+1 1 1 1 busybox-1.18.5/networking/libiproute/ll_map.c:174
+1 1 0 1 busybox-1.18.5/miscutils/less.c:887
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/tag.c:203
+1 1 0 1 busybox-1.18.5/networking/tunctl.c:23
+1 1 1 1 busybox-1.18.5/loginutils/getty.c:587
+1 0 1 1 busybox-1.18.5/libbb/xconnect.c:276
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:5
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/res_gdt.c:114
+1 0 0 1 busybox-1.18.5/libbb/pw_encrypt_md5.c:32
+1 1 1 1 busybox-1.18.5/libbb/safe_gethostname.c:44
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/bb_compat.c:13
+1 0 0 1 busybox-1.18.5/sysklogd/syslogd_and_logger.c:45
+1 1 0 1 busybox-1.18.5/libbb/rtc.c:62
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/mkjournal.c:155
+1 1 1 1 busybox-1.18.5/util-linux/mkfs_vfat.c:392
+1 1 1 1 busybox-1.18.5/debianutils/mktemp.c:45
+1 1 1 1 busybox-1.18.5/libbb/xgetcwd.c:14
+1 1 1 1 busybox-1.18.5/libbb/safe_write.c:13
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/iso9660.c:53
+1 1 0 1 busybox-1.18.5/selinux/runcon.c:59
+1 1 1 1 busybox-1.18.5/mailutils/mime.c:198
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/badblocks.c:165
+1 1 1 1 busybox-1.18.5/libbb/fclose_nonstdin.c:11
+0 0 0 1 busybox-1.18.5/init/halt.c:77
+1 1 1 1 busybox-1.18.5/coreutils/sync.c:25
+1 0 0 1 busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:3
+1 1 0 1 busybox-1.18.5/networking/ftpgetput.c:280
+1 1 1 1 busybox-1.18.5/editors/vi.c:485
+1 0 0 1 busybox-1.18.5/networking/udhcp/dhcprelay.c:69
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/lookup.c:23
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dblist_dir.c:46
+1 1 1 1 busybox-1.18.5/libbb/login.c:119
+1 0 0 1 busybox-1.18.5/archival/libarchive/get_header_tar_bz2.c:4
+1 1 1 1 busybox-1.18.5/networking/libiproute/ll_map.c:104
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/ntfs.c:129
+0 0 0 1 busybox-1.18.5/archival/libarchive/unxz/xz_dec_bcj.c:394
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/unused_minix.c:43
+1 0 0 1 busybox-1.18.5/networking/udhcp/common.c:441
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/alloc.c:50
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirblock.c:81
+1 0 0 1 busybox-1.18.5/miscutils/flash_eraseall.c:190
+1 1 1 1 busybox-1.18.5/miscutils/ubi_attach_detach.c:38
+1 1 1 1 busybox-1.18.5/libbb/get_console.c:63
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/hashstr.c:62
+1 0 0 1 busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/newdir.c:44
+1 1 1 1 busybox-1.18.5/libbb/makedev.c:19
+1 0 0 1 busybox-1.18.5/networking/isrv.c:73
+1 1 1 1 busybox-1.18.5/util-linux/volume_id/xfs.c:55
+1 0 0 1 busybox-1.18.5/libbb/find_root_device.c:36
+1 1 0 1 busybox-1.18.5/networking/ntpd_simple.c:483
+1 0 0 1 busybox-1.18.5/archival/libarchive/bz/blocksort.c:177
+0 0 0 0 busybox-1.18.5/libbb/appletlib.c:349
+```
