@@ -73,6 +73,70 @@ used and the best presence condition was selected.
 That is 103.308s in total for 56 program locations, 1.84s average, 0.25s
 standard deviation.
 
+The following results regarding the accuracy of our tool. `1` means
+the derived configuration comprised the given location, `0` the opposite.
+The columns show the Merge, TypeChef, SuperC and FeatureCoPP parsers
+respectively.
+
+```
+1 1 1 1 splc18challengecase/vbdb/marlin/simple/2d22902.c:11
+1 1 0 1 splc18challengecase/vbdb/marlin/simple/7336e6d.c:44
+1 1 0 1 splc18challengecase/vbdb/marlin/simple/7336e6d.c:45
+omitted splc18challengecase/vbdb/marlin/simple/831016b.c:16 because of a syntax error
+1 1 1 1 splc18challengecase/vbdb/marlin/simple/8c4377d.c:16
+1 0 0 1 splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27
+1 1 1 1 splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/199501f.c:22
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/1b487ea.c:15
+1 0 0 1 splc18challengecase/vbdb/busybox/simple/2631486.c:42
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/5275b1e.c:25
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/5cd6461.c:23
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/9575518.c:48
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/df7b657.c:8
+1 1 1 1 splc18challengecase/vbdb/busybox/simple/ebee301.c:24
+1 1 1 1 splc18challengecase/vbdb/linux/simple/0988c4c.c:16
+1 1 1 1 splc18challengecase/vbdb/linux/simple/0dc77b6.c:38
+1 1 1 1 splc18challengecase/vbdb/linux/simple/0f8f809.c:39
+1 1 1 1 splc18challengecase/vbdb/linux/simple/1f758a4.c:40
+1 0 1 1 splc18challengecase/vbdb/linux/simple/208d898.c:32
+1 1 1 1 splc18challengecase/vbdb/linux/simple/221ac32.c:37
+1 1 1 1 splc18challengecase/vbdb/linux/simple/242f1a3.c:18
+1 1 1 1 splc18challengecase/vbdb/linux/simple/2f02c15.c:18
+1 1 1 1 splc18challengecase/vbdb/linux/simple/472a474.c:22
+1 1 1 0 splc18challengecase/vbdb/linux/simple/51fd36f.c:44
+1 1 1 1 splc18challengecase/vbdb/linux/simple/60e233a.c:27
+1 1 1 1 splc18challengecase/vbdb/linux/simple/6252547.c:13
+1 1 1 1 splc18challengecase/vbdb/linux/simple/63878ac.c:17
+1 1 1 1 splc18challengecase/vbdb/linux/simple/6515e48.c:11
+1 1 1 1 splc18challengecase/vbdb/linux/simple/657e964.c:69
+1 1 1 1 splc18challengecase/vbdb/linux/simple/6651791.c:17
+1 1 1 1 splc18challengecase/vbdb/linux/simple/6651791.c:25
+1 1 1 1 splc18challengecase/vbdb/linux/simple/6e2b757.c:66
+1 1 1 1 splc18challengecase/vbdb/linux/simple/76baeeb.c:40
+1 1 1 1 splc18challengecase/vbdb/linux/simple/76baeeb.c:45
+0 0 0 1 splc18challengecase/vbdb/linux/simple/7c6048b.c:24
+1 1 1 1 splc18challengecase/vbdb/linux/simple/8c82962.c:17
+1 1 1 1 splc18challengecase/vbdb/linux/simple/91ea820.c:40
+1 1 1 1 splc18challengecase/vbdb/linux/simple/ae249b5.c:20
+1 1 1 1 splc18challengecase/vbdb/linux/simple/bc8cec0.c:28
+1 1 1 1 splc18challengecase/vbdb/linux/simple/c708c57.c:21
+1 1 1 1 splc18challengecase/vbdb/linux/simple/d530db0.c:19
+1 1 1 1 splc18challengecase/vbdb/linux/simple/d549f55.c:14
+1 0 1 1 splc18challengecase/vbdb/linux/simple/d6c7e11.c:20
+1 1 1 1 splc18challengecase/vbdb/linux/simple/d7e9711.c:11
+1 1 1 1 splc18challengecase/vbdb/linux/simple/e1fbd92.c:17
+1 1 1 1 splc18challengecase/vbdb/linux/simple/e67bc51.c:12
+1 1 1 1 splc18challengecase/vbdb/linux/simple/e68bb91.c:10
+1 1 1 1 splc18challengecase/vbdb/linux/simple/eb91f1d.c:36
+1 1 1 1 splc18challengecase/vbdb/linux/simple/ee3f34e.c:46
+1 1 1 1 splc18challengecase/vbdb/linux/simple/f3d83e2.c:14
+1 1 1 1 splc18challengecase/vbdb/linux/simple/f48ec1d.c:10
+1 1 1 1 splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55
+```
+
 ## BusyBox
 
 This is an overview for our results on 661 random program locations
