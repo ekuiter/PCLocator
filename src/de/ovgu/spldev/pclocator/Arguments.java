@@ -110,7 +110,8 @@ public class Arguments {
                 "      kmax                 like deduceNotFound, but considers build system\n" +
                 "                           constraints, requires --kmaxfile and --projectroot\n" +
                 "  --explain      prints an explanation for how the presence condition\n" +
-                "                 or configuration space was located\n\n" +
+                "                 or configuration space was located\n" +
+                "  --legacy       use deprecated parser implementations, not recommended\n\n" +
                 "parser options:\n" +
                 "  -I             pass additional include directory to the parser\n" +
                 "  --platform     pass additional header file to the parser,\n" +
@@ -150,6 +151,10 @@ public class Arguments {
         if (isAnnotating() && isExplain)
             throw new RuntimeException("only individual lines can be explained");
         return isExplain;
+    }
+
+    boolean isLegacy() {
+        return has("--legacy");
     }
 
     String getFormatKind() {

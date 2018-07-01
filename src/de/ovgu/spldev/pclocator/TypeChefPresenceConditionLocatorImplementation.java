@@ -132,9 +132,7 @@ public class TypeChefPresenceConditionLocatorImplementation implements PresenceC
         if (line != -1)
             for (AST elem : getAllASTElems(ast)) {
                 if (elem.hasPosition() && elem.getPositionFrom().getFile().equals("file " + _filePath.toString())) {
-                    while (line < elem.getPositionFrom().getLine())
-                        if ((line = lineSupplier.next()) == -1)
-                            break;
+                    line = lineSupplier.catchUp(elem.getPositionFrom().getLine());
                     if (elem.getPositionFrom().getLine() == line) {
                         FeatureExpr featureExpr = env.featureExpr(elem);
                         TypeChefPresenceCondition presenceCondition = featureExpr.isTautology()

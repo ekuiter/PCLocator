@@ -1,5 +1,6 @@
 package de.ovgu.spldev.pclocator;
 
+import xtc.lang.cpp.LegacySuperCPresenceConditionLocatorImplementation;
 import xtc.lang.cpp.SuperCPresenceConditionLocatorImplementation;
 
 import java.util.ArrayList;
@@ -12,6 +13,12 @@ public class PresenceConditionLocatorShell {
         return new PresenceConditionLocator.Options(args.getIncludeDirectories(), args.getPlatformHeaderFilePath());
     }
 
+    private LegacySuperCPresenceConditionLocatorImplementation getSuperCPresenceConditionLocatorImplementation(Arguments args) {
+        return args.isLegacy()
+                ? new LegacySuperCPresenceConditionLocatorImplementation()
+                : new SuperCPresenceConditionLocatorImplementation();
+    }
+
     private PresenceConditionLocator.Implementation getPresenceConditionLocatorImplementation(Arguments args) {
         String kind = args.getParserKind();
         if (kind.equals("typechef"))
@@ -19,7 +26,7 @@ public class PresenceConditionLocatorShell {
         else if (kind.equals("featurecopp"))
             return new FeatureCoPPPresenceConditionLocatorImplementation();
         else if (kind.equals("xtc") || kind.equals("superc"))
-            return new SuperCPresenceConditionLocatorImplementation();
+            return getSuperCPresenceConditionLocatorImplementation(args);
         else
             throw new RuntimeException("unknown parser kind " + kind);
     }
@@ -110,7 +117,7 @@ public class PresenceConditionLocatorShell {
         PresenceConditionLocator.Options options = getPresenceConditionLocatorOptions(args);
         typeChef = getPresenceConditionLocator(args, new TypeChefPresenceConditionLocatorImplementation(), options);
         featureCoPP = getPresenceConditionLocator(args, new FeatureCoPPPresenceConditionLocatorImplementation(), options);
-        superC = getPresenceConditionLocator(args, new SuperCPresenceConditionLocatorImplementation(), options);
+        superC = getPresenceConditionLocator(args, getSuperCPresenceConditionLocatorImplementation(args), options);
         merge = new MergePresenceConditionLocator(typeChef, superC, featureCoPP);
         equivalenceChecker = new PresenceConditionEquivalenceChecker("TypeChef == SuperC", typeChef, superC);
 

@@ -12,7 +12,7 @@ import java.util.*;
  * A simplified version of the SuperC parser.
  */
 public class SuperCLite extends Tool {
-    private final SuperCPresenceConditionLocatorImplementation _superCPresenceConditionLocatorImplementation;
+    private final LegacySuperCPresenceConditionLocatorImplementation _superCPresenceConditionLocatorImplementation;
     /**
      * The user defined include paths
      */
@@ -43,7 +43,7 @@ public class SuperCLite extends Tool {
     /**
      * Create a new tool.
      */
-    public SuperCLite(SuperCPresenceConditionLocatorImplementation superCPresenceConditionLocatorImplementation) {
+    public SuperCLite(LegacySuperCPresenceConditionLocatorImplementation superCPresenceConditionLocatorImplementation) {
         _superCPresenceConditionLocatorImplementation = superCPresenceConditionLocatorImplementation;
     }
 
@@ -75,6 +75,8 @@ public class SuperCLite extends Tool {
                 word("U", "U", true, "Undefine a macro.  Occurs after all -D arguments "
                         + "which is a departure from gnu cpp.").
                 word("include", "include", true, "Include a header.").
+                bool("E", "E", false,
+                        "Just do configuration-preserving preprocessing.").
 
                 // Output and debugging
                         bool("showErrors", "showErrors", false,
@@ -279,47 +281,71 @@ public class SuperCLite extends Tool {
         ((Preprocessor) preprocessor)
                 .showErrors(runtime.test("showErrors"));
 
-        // Run the SuperC preprocessor and parser.
-        ForkMergeParser parser;
-        Object translationUnit;
+        if (runtime.test("E")) {
+            // Run the SuperC preprocessor only.
+            Syntax syntax = preprocessor.next();
+            LinkedList<PresenceConditionManager.PresenceCondition> parents
+                    = new LinkedList<PresenceConditionManager.PresenceCondition>();
 
-        // Only pass ordinary tokens and conditionals to the parser.
-        preprocessor = new TokenFilter(preprocessor);
+            parents.push(presenceConditionManager.new PresenceCondition(true));
+            while (syntax.kind() != Syntax.Kind.EOF) {
+                if (syntax.kind() == Syntax.Kind.CONDITIONAL) {
+                    Syntax.ConditionalTag i = syntax.toConditional().tag();
+                    if (i == Syntax.ConditionalTag.START)
+                        parents.push(syntax.toConditional().presenceCondition.addRef());
+                    else if (i == Syntax.ConditionalTag.NEXT) {
+                        parents.pop();
+                        parents.push(syntax.toConditional().presenceCondition.addRef());
+                    } else if (i == Syntax.ConditionalTag.END)
+                        parents.pop();
+                }
 
-        // Create a new semantic values class for C.
-        SemanticValues semanticValues = CSemanticValues.getInstance();
-        CSemanticActions actions = CSemanticActions.getInstance();
-        CParsingContext initialParsingContext = new CParsingContext();
-
-        parser = new ForkMergeParser(CParseTables.getInstance(), semanticValues,
-                actions, initialParsingContext,
-                preprocessor, presenceConditionManager);
-        parser.saveLayoutTokens(true);
-        parser.setSharedReductions(true);
-        parser.setEarlyReduce(true);
-        parser.setFollowSetCaching(true);
-        parser.showErrors(runtime.test("showErrors"));
-
-        translationUnit = parser.parse();
-
-        if (null != translationUnit
-                && !((Node) translationUnit).getName().equals("TranslationUnit")) {
-            GNode tu = GNode.create("TranslationUnit");
-            tu.add(translationUnit);
-            translationUnit = tu;
-        }
-
-        initialParsingContext.free();
-
-        for (Object o : runtime.getList("pc")) {
-            if (o instanceof String) {
-                int line = Integer.parseInt((String) o);
-                _superCPresenceConditionLocatorImplementation.locatePresenceCondition(
-                        (Node) translationUnit, line, presenceConditionManager);
+                _superCPresenceConditionLocatorImplementation.locatePresenceConditionRevised(parents, syntax, presenceConditionManager);
+                syntax = preprocessor.next();
             }
-        }
+        } else {
+            // Run the SuperC preprocessor and parser.
+            ForkMergeParser parser;
+            Object translationUnit;
 
-        result = (Node) translationUnit;
+            // Only pass ordinary tokens and conditionals to the parser.
+            preprocessor = new TokenFilter(preprocessor);
+
+            // Create a new semantic values class for C.
+            SemanticValues semanticValues = CSemanticValues.getInstance();
+            CSemanticActions actions = CSemanticActions.getInstance();
+            CParsingContext initialParsingContext = new CParsingContext();
+
+            parser = new ForkMergeParser(CParseTables.getInstance(), semanticValues,
+                    actions, initialParsingContext,
+                    preprocessor, presenceConditionManager);
+            parser.saveLayoutTokens(true);
+            parser.setSharedReductions(true);
+            parser.setEarlyReduce(true);
+            parser.setFollowSetCaching(true);
+            parser.showErrors(runtime.test("showErrors"));
+
+            translationUnit = parser.parse();
+
+            if (null != translationUnit
+                    && !((Node) translationUnit).getName().equals("TranslationUnit")) {
+                GNode tu = GNode.create("TranslationUnit");
+                tu.add(translationUnit);
+                translationUnit = tu;
+            }
+
+            initialParsingContext.free();
+
+            for (Object o : runtime.getList("pc")) {
+                if (o instanceof String) {
+                    int line = Integer.parseInt((String) o);
+                    _superCPresenceConditionLocatorImplementation.locatePresenceCondition(
+                            (Node) translationUnit, line, presenceConditionManager);
+                }
+            }
+
+            result = (Node) translationUnit;
+        }
 
         return result;
     }
