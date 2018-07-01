@@ -13,6 +13,12 @@ public class PresenceConditionLocatorShell {
         return new PresenceConditionLocator.Options(args.getIncludeDirectories(), args.getPlatformHeaderFilePath());
     }
 
+    private LegacyTypeChefPresenceConditionLocatorImplementation getTypeChefPresenceConditionLocatorImplementation(Arguments args) {
+        return args.isLegacy()
+                ? new LegacyTypeChefPresenceConditionLocatorImplementation()
+                : new TypeChefPresenceConditionLocatorImplementation();
+    }
+
     private LegacySuperCPresenceConditionLocatorImplementation getSuperCPresenceConditionLocatorImplementation(Arguments args) {
         return args.isLegacy()
                 ? new LegacySuperCPresenceConditionLocatorImplementation()
@@ -22,7 +28,7 @@ public class PresenceConditionLocatorShell {
     private PresenceConditionLocator.Implementation getPresenceConditionLocatorImplementation(Arguments args) {
         String kind = args.getParserKind();
         if (kind.equals("typechef"))
-            return new TypeChefPresenceConditionLocatorImplementation();
+            return getTypeChefPresenceConditionLocatorImplementation(args);
         else if (kind.equals("featurecopp"))
             return new FeatureCoPPPresenceConditionLocatorImplementation();
         else if (kind.equals("xtc") || kind.equals("superc"))
@@ -115,7 +121,7 @@ public class PresenceConditionLocatorShell {
         }
 
         PresenceConditionLocator.Options options = getPresenceConditionLocatorOptions(args);
-        typeChef = getPresenceConditionLocator(args, new TypeChefPresenceConditionLocatorImplementation(), options);
+        typeChef = getPresenceConditionLocator(args, getTypeChefPresenceConditionLocatorImplementation(args), options);
         featureCoPP = getPresenceConditionLocator(args, new FeatureCoPPPresenceConditionLocatorImplementation(), options);
         superC = getPresenceConditionLocator(args, getSuperCPresenceConditionLocatorImplementation(args), options);
         merge = new MergePresenceConditionLocator(typeChef, superC, featureCoPP);
