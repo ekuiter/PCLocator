@@ -47,7 +47,7 @@ public class PresenceConditionLocatorShell {
         else if (kind.equals("ignorePreprocessor"))
             return new IgnorePreprocessorPresenceConditionLocator(implementation, options);
         else if (kind.equals("kmax")) {
-            String filePath = PresenceConditionLocator.getFilePathFromLocation(args.getLocation());
+            String filePath = Location.getFilePathFromLocation(args.getLocation());
             KmaxFileGrepper kmaxFileGrepper = new KmaxFileGrepper(implementation, args.getKmaxFilePath(), args.getProjectRootPath(), filePath);
             return new KmaxPresenceConditionLocator(implementation, options, kmaxFileGrepper);
         } else if (kind.equals("deduceNotFound"))
@@ -92,8 +92,8 @@ public class PresenceConditionLocatorShell {
     private void analyze(PresenceConditionLocator presenceConditionLocator,
                          AnnotatedFile.FileAnnotator[] fileAnnotators, String location,
                          String dimacsFilePath, Integer limit, String timeLimit, boolean isExplain) {
-        if (PresenceConditionLocator.isValidLocation(location)) {
-            PresenceCondition presenceCondition = presenceConditionLocator.locatePresenceCondition(location);
+        if (Location.isValidLocation(location)) {
+            PresenceCondition presenceCondition = presenceConditionLocator.locatePresenceCondition(new Location(location));
             if (dimacsFilePath != null)
                 presenceCondition.getSatisfyingConfigurationSpace(dimacsFilePath, limit, timeLimit).print(isExplain);
             else

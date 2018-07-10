@@ -22,7 +22,7 @@ public class AnnotatedFile {
     public static int columnWidth = 25;
 
     AnnotatedFile(String filePath) {
-        this.filePath = PresenceConditionLocator.validateFilePath(filePath);
+        this.filePath = Location.validateFilePath(filePath);
     }
 
     public AnnotatedFile addFileAnnotator(FileAnnotator fileAnnotator) {

@@ -181,7 +181,7 @@ public class MergePresenceConditionLocator extends PresenceConditionLocator {
     }
 
     protected HashMap<Integer, PresenceCondition> locatePresenceConditions(String _filePath) {
-        final String filePath = validateFilePath(_filePath);
+        final String filePath = Location.validateFilePath(_filePath);
         try (Stream<String> lineContentsStream = Files.lines(Paths.get(filePath))) {
             String[] lineContents = lineContentsStream.toArray(String[]::new);
             int[] lines = IntStream.rangeClosed(1, lineContents.length).toArray();

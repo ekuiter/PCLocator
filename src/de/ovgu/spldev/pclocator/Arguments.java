@@ -143,7 +143,7 @@ public class Arguments {
     }
 
     boolean isAnnotating() {
-        return getLocation() != null && !PresenceConditionLocator.isValidLocation(getLocation());
+        return getLocation() != null && !Location.isValidLocation(getLocation());
     }
 
     boolean isExplain() {
@@ -225,7 +225,7 @@ public class Arguments {
     String getDimacsFilePath() {
         String dimacsFilePath = get("--configure");
         if (dimacsFilePath != null)
-            return PresenceConditionLocator.validateFilePath(dimacsFilePath);
+            return Location.validateFilePath(dimacsFilePath);
         return null;
     }
 
@@ -250,7 +250,7 @@ public class Arguments {
                 throw new RuntimeException("--projectroot has to be specified when using --kmaxfile");
             if (!getLocatorKind().equals("kmax"))
                 throw new RuntimeException("--locator kmax has to be specified when using --kmaxfile");
-            return PresenceConditionLocator.validateFilePath(kmaxFilePath);
+            return Location.validateFilePath(kmaxFilePath);
         }
         return null;
     }
@@ -299,7 +299,7 @@ public class Arguments {
     String getPlatformHeaderFilePath() {
         String platformHeaderFilePath = get("--platform");
         if (platformHeaderFilePath != null)
-            return PresenceConditionLocator.validateFilePath(platformHeaderFilePath);
+            return Location.validateFilePath(platformHeaderFilePath);
         return null;
     }
 
