@@ -9,6 +9,10 @@ public abstract class Configuration {
         formatKind = args.getFormatKind();
     }
 
+    public static void setFormatKind(String _formatKind) {
+        formatKind = _formatKind;
+    }
+
     public String toString() {
         if (formatKind.equals("human"))
             return toHumanString();

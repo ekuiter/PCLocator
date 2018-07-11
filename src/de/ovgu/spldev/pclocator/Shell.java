@@ -5,7 +5,7 @@ import xtc.lang.cpp.SuperCPresenceConditionLocatorImplementation;
 
 import java.util.ArrayList;
 
-public class PresenceConditionLocatorShell {
+public class Shell {
     PresenceConditionLocator typeChef, featureCoPP, superC, merge;
     AnnotatedFile.FileAnnotator equivalenceChecker;
 
@@ -53,7 +53,7 @@ public class PresenceConditionLocatorShell {
         } else if (kind.equals("deduceNotFound"))
             return new DeduceNotFoundPresenceConditionLocator(implementation, options);
         else
-            throw new RuntimeException("unknown annotator kind " + kind);
+            throw new RuntimeException("unknown locator kind " + kind);
     }
 
     private AnnotatedFile.FileAnnotator extendPresenceConditionLocator(Arguments args, PresenceConditionLocator presenceConditionLocator) {
@@ -112,7 +112,7 @@ public class PresenceConditionLocatorShell {
                 dimacsFilePath = args.getDimacsFilePath(),
                 timeLimit = args.getTimeLimit();
         Integer limit = args.getLimit();
-        boolean isExplain = args.isExplain();
+        boolean isExplain = args.isExplain(), isEvaluate = args.isEvaluate();
         Configuration.setFormatKind(args);
 
         if (args.isHelp() || location == null) {
@@ -135,7 +135,10 @@ public class PresenceConditionLocatorShell {
         args.ensureValidUsage();
 
         try {
-            analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, limit, timeLimit, isExplain);
+            if (isEvaluate)
+                new Evaluator().run(presenceConditionLocator, new Location(location), dimacsFilePath);
+            else
+                analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, limit, timeLimit, isExplain);
         } catch (Exception e) {
             Log.error("%s", e);
             System.exit(1);

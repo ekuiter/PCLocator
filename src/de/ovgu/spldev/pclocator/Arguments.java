@@ -111,6 +111,7 @@ public class Arguments {
                 "                           constraints, requires --kmaxfile and --projectroot\n" +
                 "  --explain      prints an explanation for how the presence condition\n" +
                 "                 or configuration space was located\n" +
+                "  --evaluate     collects information useful for statistical evaluation\n" +
                 "  --legacy       use deprecated parser implementations, not recommended\n\n" +
                 "parser options:\n" +
                 "  -I             pass additional include directory to the parser\n" +
@@ -155,6 +156,17 @@ public class Arguments {
 
     boolean isLegacy() {
         return has("--legacy");
+    }
+
+    boolean isEvaluate() {
+        boolean isEvaluate = has("--evaluate");
+        if (isEvaluate && isAnnotating())
+            throw new RuntimeException("only individual lines can be evaluated");
+        if (isEvaluate && getDimacsFilePath() == null)
+            throw new RuntimeException("--configure has to be specified when using --evaluate");
+        if (isEvaluate && (isExplain() || has("--annotator") || has("--limit") || has("timelimit") || has("format")))
+            throw new RuntimeException("given options not allowed with --evaluate");
+        return isEvaluate;
     }
 
     String getFormatKind() {
