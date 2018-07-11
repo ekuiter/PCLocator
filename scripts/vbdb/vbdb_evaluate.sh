@@ -6,12 +6,12 @@ fi
 
 rm -rf challenge
 
+echo locator,location,time,Nall,Nmissed,Ncorrect,Nwrong,mergeEquivalent,mergeSuperCSubSpace,mergeTypeChefSubSpace,mergeDisjointOrOverlapping
 for LEGACY in '' --legacy; do
 for PARSER in typechef superc featurecopp merge; do
 for LOCATION in $(cat locations.txt); do
     FILE=$(echo $LOCATION | tr ':' '\n' | sed \$d | tr '\n' ':' | sed 's/.$//')
     LINE=$(echo $LOCATION | tr ':' '\n' | tail -n 1)
-    ARGS=$@
     if [[ $FILE = *"marlin"* ]]; then
         MODEL=marlin.dimacs
     elif [[ $FILE = *"busybox"* ]]; then

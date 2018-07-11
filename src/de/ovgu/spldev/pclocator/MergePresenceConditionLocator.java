@@ -119,15 +119,18 @@ public class MergePresenceConditionLocator extends PresenceConditionLocator {
 
                 // compare the results from TypeChef and SuperC and use the more constrained one - see (c) above
                 if (_typeChefPresenceCondition.equivalentTo(_superCPresenceCondition)) {
+                    Evaluator.addMergeEquivalent(line);
                     presenceCondition = superCPresenceCondition;
                     explanation = "TypeChef and SuperC located equivalent presence conditions. SuperC has been " +
                             "preferred because it may also contain non-Boolean sub-expressions." + featureCoPPIgnoredExplanation;
                 } else if (_typeChefPresenceCondition.implies(_superCPresenceCondition)) {
+                    Evaluator.addMergeSuperCSubSpace(line);
                     presenceCondition = superCPresenceCondition;
                     explanation = "SuperC located a more constrained presence condition than TypeChef. SuperC has been " +
                             "preferred because it delivered a configuration sub-space consistent with TypeChef. " +
                             "The result may not include every satisfying configuration." + featureCoPPIgnoredExplanation;
                 } else if (_superCPresenceCondition.implies(_typeChefPresenceCondition)) {
+                    Evaluator.addMergeTypeChefSubSpace(line);
                     presenceCondition = typeChefPresenceCondition;
                     explanation = "TypeChef located a more constrained presence condition than SuperC. TypeChef has been " +
                             "preferred because it delivered a configuration sub-space consistent with SuperC. " +
@@ -138,14 +141,17 @@ public class MergePresenceConditionLocator extends PresenceConditionLocator {
                 // result and chances are high that the results from TypeChef and SuperC are not accurate.
                 // Therefore we fall back to FeatureCoPP if possible (it usually is). Otherwise we use
                 // SuperC because it handles non-Boolean constraints and more edge cases than TypeChef.
-                else if (featureCoPPPresenceCondition.isPresent()) {
-                    explanation = "TypeChef and SuperC located inconsistent presence conditions. " +
-                            "Falling back to FeatureCoPP." + featureCoPPIgnoredExplanation;
-                    presenceCondition = featureCoPPPresenceCondition;
-                } else {
-                    presenceCondition = superCPresenceCondition;
-                    explanation = "TypeChef and SuperC located inconsistent presence conditions. SuperC has been " +
-                            "preferred because it may also contain non-Boolean sub-expressions." + featureCoPPIgnoredExplanation;
+                else {
+                    Evaluator.addMergeDisjointOrOverlapping(line);
+                    if (featureCoPPPresenceCondition.isPresent()) {
+                        explanation = "TypeChef and SuperC located inconsistent presence conditions. " +
+                                "Falling back to FeatureCoPP." + featureCoPPIgnoredExplanation;
+                        presenceCondition = featureCoPPPresenceCondition;
+                    } else {
+                        presenceCondition = superCPresenceCondition;
+                        explanation = "TypeChef and SuperC located inconsistent presence conditions. SuperC has been " +
+                                "preferred because it may also contain non-Boolean sub-expressions." + featureCoPPIgnoredExplanation;
+                    }
                 }
             }
 
