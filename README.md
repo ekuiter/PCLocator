@@ -168,6 +168,9 @@ For convenience, `vbdb_challenge_peek.sh` enumerates every location given in the
 challenge and analyzes only one configuration using `vbdb_challenge.sh`. It
 takes no arguments.
 
+Evaluation has been done using `vbdb_evaluate.sh`. This generates CSV files and
+preprocessed C files with statistical information.
+
 #### BusyBox
 
 To analyze BusyBox, build PCLocator and `cd` into `scripts/busybox`. Use
@@ -188,9 +191,11 @@ analyze, any following arguments are propagated to PCLocator, e.g.
 
 The final binary can be executed with `busybox-1.18.5/busybox`. We have only
 tried random samples, so compilation might fail due to libraries missing. This
-can be resolved by installing the missing libraries. Also note that using SuperC
-or FeatureCoPP (see example) significantly speeds up the process (but may
-deliver not as accurate results).
+can be resolved by installing the missing libraries.
+
+Evaluation has been done using `busybox_evaluate.sh` and `busybox_sample.sh`.
+Like with VBDB, this generates statistical information. Some evaluation results
+can be found in the `evaluation` directory.
 
 The Kmax files have been generated using
 [kmax-vm](https://github.com/ekuiter/kmax-vm). The DIMACS file from the

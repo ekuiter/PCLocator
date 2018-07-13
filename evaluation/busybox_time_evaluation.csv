@@ -1,0 +1,961 @@
+locator,location,time,Nall,Nmissed,Ncorrect,Nwrong,mergeEquivalent,mergeSuperCSubSpace,mergeTypeChefSubSpace,mergeDisjointOrOverlapping,isTrue
+TypeChef + Kmax,busybox-1.18.5/archival/bbunzip.c:171,2203,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/bbunzip.c:384,2096,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,2032,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,2003,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,2095,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,2112,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,2201,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,2098,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,2070,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/archival/rpm2cpio.c:27,2180,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/archival/tar.c:642,2439,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/console-tools/resize.c:1,2047,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/console-tools/setconsole.c:24,2004,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/console-tools/setconsole.c:27,2016,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/console-tools/setlogcons.c:21,1979,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/chroot.c:29,1959,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/cksum.c:62,2013,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/comm.c:83,1981,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/date.c:281,1925,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/fsync.c:8,1968,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,1952,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/nice.c:18,2209,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/sleep.c:66,2271,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/stty.c:357,2554,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/stty.c:7,2506,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/sum.c:58,2228,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/sum.c:8,2092,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/sync.c:4,2112,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/tail.c:286,1958,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/test_ptr_hack.c:9,1256,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/tr.c:197,2134,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/uniq.c:85,2302,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/coreutils/whoami.c:23,2455,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,1478,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,1395,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,2011,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,1497,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,1506,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,1659,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,1474,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,1480,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,1454,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,1521,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,1551,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,1452,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,1351,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,1604,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,1510,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,2807,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,1385,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/editors/awk.c:2237,2407,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/editors/ed.c:223,2159,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/editors/patch.c:423,2098,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/init/halt.c:64,1973,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/init/mesg.c:20,1979,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/libbb/compare_string_array.c:82,1993,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/copy_file.c:37,2042,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/copyfd.c:61,1944,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/dump.c:288,2053,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/fgets_str.c:57,2018,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/find_pid_by_name.c:2,1979,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/obscure.c:138,1987,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/obscure.c:20,1967,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/perror_nomsg.c:21,1432,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/platform.c:42,1963,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/libbb/printable.c:12,1978,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/progress.c:141,2014,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/remove_file.c:51,1952,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/run_shell.c:75,2088,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/selinux_common.c:32,2268,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/libbb/str_tolower.c:13,2077,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/libbb/update_passwd.c:250,2347,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/libbb/xregcomp.c:31,2144,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,2276,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/loginutils/cryptpw.c:75,2244,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/loginutils/login.c:61,2141,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/loginutils/su.c:28,2267,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/mailutils/sendmail.c:36,2208,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/beep.c:10,2232,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/chrt.c:113,2305,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/crontab.c:86,2009,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/flashcp.c:138,2034,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/inotifyd.c:138,2107,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/man.c:95,2054,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/rfkill.c:107,2243,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/taskset.c:71,2084,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/volname.c:29,1966,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/miscutils/wall.c:24,2270,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/modutils/modprobe-small.c:542,2643,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,2332,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,2483,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/libiproute/iptunnel.c:441,2392,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/nameif.c:83,2397,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/nbd-client.c:14,2092,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:1,2155,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:47,2075,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/networking/wget.c:709,1923,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/procps/sysctl.c:88,2018,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/procps/watch.c:30,2037,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/runit/runsvdir.c:79,2122,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/selinux/selinuxenabled.c:11,2081,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/shell/shell_common.c:92,2050,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/sysklogd/klogd.c:37,2202,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,2291,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,2041,1,1,0,0,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/fdformat.c:69,2093,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/fdisk_sgi.c:357,1475,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:549,2264,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:865,2340,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/hexdump.c:6,2216,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/mkfs_ext2.c:596,2405,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/mkfs_reiser.c:270,2179,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/mkswap.c:135,2043,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/more.c:76,2074,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/more.c:95,2070,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/rdev.c:17,1969,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,2044,1,0,?,?,0,0,0,0,0
+TypeChef + Kmax,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,2008,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,2107,1,0,?,?,0,0,0,0,1
+TypeChef + Kmax,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,2094,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/archival/bbunzip.c:171,1676,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/bbunzip.c:384,1589,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,1452,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,1488,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,1600,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,1483,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,1560,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,1341,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,1364,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/archival/rpm2cpio.c:27,1545,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/archival/tar.c:642,1782,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/console-tools/resize.c:1,1320,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/console-tools/setconsole.c:24,1329,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/console-tools/setconsole.c:27,1389,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/console-tools/setlogcons.c:21,1347,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/chroot.c:29,1358,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/cksum.c:62,1336,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/comm.c:83,1334,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/date.c:281,1423,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/fsync.c:8,1508,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,1351,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/nice.c:18,1468,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/sleep.c:66,1507,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/stty.c:357,1902,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/stty.c:7,1949,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/sum.c:58,1342,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/sum.c:8,1409,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/sync.c:4,1414,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/tail.c:286,1494,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/test_ptr_hack.c:9,1112,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/tr.c:197,1451,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/uniq.c:85,1351,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/coreutils/whoami.c:23,1373,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,1260,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,1231,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,1442,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,1255,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,1211,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,1257,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,1219,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,1229,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,1217,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,1291,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,1281,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,1203,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,1260,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,1324,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,1219,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,1638,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,1243,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/editors/awk.c:2237,1951,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/editors/ed.c:223,1597,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/editors/patch.c:423,1459,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/init/halt.c:64,1362,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/init/mesg.c:20,1384,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/libbb/compare_string_array.c:82,1398,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/copy_file.c:37,1388,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/copyfd.c:61,1405,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/dump.c:288,1477,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/fgets_str.c:57,1416,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/find_pid_by_name.c:2,1400,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/obscure.c:138,1428,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/obscure.c:20,1438,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/perror_nomsg.c:21,1230,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/platform.c:42,1422,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/libbb/printable.c:12,1363,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/progress.c:141,1413,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/remove_file.c:51,1324,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/run_shell.c:75,1366,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/selinux_common.c:32,1421,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/libbb/str_tolower.c:13,1401,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/libbb/update_passwd.c:250,1449,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/libbb/xregcomp.c:31,1392,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,1681,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/loginutils/cryptpw.c:75,1473,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/loginutils/login.c:61,1532,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/loginutils/su.c:28,1536,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/mailutils/sendmail.c:36,1517,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/beep.c:10,1598,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/chrt.c:113,1493,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/crontab.c:86,1377,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/flashcp.c:138,1462,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/inotifyd.c:138,1529,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/man.c:95,2110,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/rfkill.c:107,1819,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/taskset.c:71,1429,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/volname.c:29,1480,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/miscutils/wall.c:24,1533,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/modutils/modprobe-small.c:542,1667,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,1444,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,1486,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/libiproute/iptunnel.c:441,1889,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/nameif.c:83,1620,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/nbd-client.c:14,1523,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:1,1507,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:47,1442,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/networking/wget.c:709,1639,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/procps/sysctl.c:88,1428,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/procps/watch.c:30,1374,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/runit/runsvdir.c:79,1488,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/selinux/selinuxenabled.c:11,1405,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/shell/shell_common.c:92,1178,1,1,0,0,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/sysklogd/klogd.c:37,1457,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,1082,1,1,0,0,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,997,1,1,0,0,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/fdformat.c:69,1451,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/fdisk_sgi.c:357,1268,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:549,1692,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:865,1730,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/hexdump.c:6,1447,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/mkfs_ext2.c:596,1520,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/mkfs_reiser.c:270,1485,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/mkswap.c:135,1435,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/more.c:76,1509,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/more.c:95,1494,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/rdev.c:17,1413,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,1412,1,0,?,?,0,0,0,0,0
+SuperC + Kmax,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,1318,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,1336,1,0,?,?,0,0,0,0,1
+SuperC + Kmax,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,1400,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/archival/bbunzip.c:171,959,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/bbunzip.c:384,968,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,906,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,862,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,903,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,899,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,973,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,881,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,839,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/archival/rpm2cpio.c:27,899,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/tar.c:642,1042,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/resize.c:1,874,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/setconsole.c:24,880,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/setconsole.c:27,858,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/setlogcons.c:21,872,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/chroot.c:29,880,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/cksum.c:62,886,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/comm.c:83,891,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/date.c:281,940,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/fsync.c:8,888,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,876,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/nice.c:18,883,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sleep.c:66,918,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/stty.c:357,1106,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/stty.c:7,1106,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sum.c:58,890,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sum.c:8,891,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sync.c:4,863,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/tail.c:286,933,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/test_ptr_hack.c:9,861,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/tr.c:197,927,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/uniq.c:85,892,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/whoami.c:23,866,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,937,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,914,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,872,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,961,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,874,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,941,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,865,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,858,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,854,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,950,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,929,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,873,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,930,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,991,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,854,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,1008,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,941,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/editors/awk.c:2237,1156,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/editors/ed.c:223,1008,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/editors/patch.c:423,983,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/init/halt.c:64,922,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/init/mesg.c:20,903,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/compare_string_array.c:82,1030,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/copy_file.c:37,1153,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/copyfd.c:61,937,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/dump.c:288,1249,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/fgets_str.c:57,916,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/find_pid_by_name.c:2,1009,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/obscure.c:138,960,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/obscure.c:20,885,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/perror_nomsg.c:21,838,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/platform.c:42,926,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/printable.c:12,887,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/progress.c:141,924,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/remove_file.c:51,885,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/run_shell.c:75,887,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/selinux_common.c:32,872,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/str_tolower.c:13,843,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/update_passwd.c:250,923,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/xregcomp.c:31,863,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,1012,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/loginutils/cryptpw.c:75,894,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/loginutils/login.c:61,950,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/loginutils/su.c:28,898,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/mailutils/sendmail.c:36,932,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/beep.c:10,896,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/chrt.c:113,897,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/crontab.c:86,923,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/flashcp.c:138,905,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/inotifyd.c:138,895,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/man.c:95,936,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/rfkill.c:107,892,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/taskset.c:71,887,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/volname.c:29,882,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/wall.c:24,883,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/modutils/modprobe-small.c:542,997,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,877,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,869,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/libiproute/iptunnel.c:441,978,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/nameif.c:83,932,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/nbd-client.c:14,896,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:1,881,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:47,882,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/wget.c:709,1023,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/procps/sysctl.c:88,923,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/procps/watch.c:30,893,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/runit/runsvdir.c:79,944,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/selinux/selinuxenabled.c:11,857,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/shell/shell_common.c:92,873,1,1,0,0,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/sysklogd/klogd.c:37,924,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,783,1,1,0,0,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,797,1,1,0,0,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fdformat.c:69,894,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fdisk_sgi.c:357,998,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:549,1049,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:865,1036,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/hexdump.c:6,898,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/mkfs_ext2.c:596,979,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/mkfs_reiser.c:270,933,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/mkswap.c:135,901,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/more.c:76,909,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/more.c:95,896,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/rdev.c:17,854,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,883,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,860,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,875,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,860,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/archival/bbunzip.c:171,2534,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/bbunzip.c:384,2442,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,2441,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,2351,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,2350,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,2423,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,2532,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,2378,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,2373,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/archival/rpm2cpio.c:27,2309,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/archival/tar.c:642,2672,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/console-tools/resize.c:1,2460,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/console-tools/setconsole.c:24,3041,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/console-tools/setconsole.c:27,2404,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/console-tools/setlogcons.c:21,2271,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/chroot.c:29,2312,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/cksum.c:62,2343,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/comm.c:83,2217,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/date.c:281,2343,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/coreutils/fsync.c:8,2220,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,2457,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/coreutils/nice.c:18,2841,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/sleep.c:66,2774,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/stty.c:357,3138,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/stty.c:7,2844,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/sum.c:58,2366,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/sum.c:8,2273,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/sync.c:4,2337,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/tail.c:286,2336,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/coreutils/test_ptr_hack.c:9,1279,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/tr.c:197,2324,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/uniq.c:85,2211,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/whoami.c:23,2186,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,1588,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,1466,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,2307,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,1588,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,1472,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,1617,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,1451,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,1511,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,1406,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,1799,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,1990,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,1735,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,1544,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,1778,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,1492,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,3119,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,1519,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/editors/awk.c:2237,3372,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/editors/ed.c:223,2465,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/editors/patch.c:423,2313,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/init/halt.c:64,2323,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/init/mesg.c:20,2414,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/libbb/compare_string_array.c:82,2243,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/copy_file.c:37,2509,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/copyfd.c:61,2344,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/dump.c:288,2967,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/fgets_str.c:57,2318,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/find_pid_by_name.c:2,2375,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/obscure.c:138,2333,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/obscure.c:20,2617,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/perror_nomsg.c:21,1578,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/platform.c:42,2547,1,0,?,?,0,0,0,1,0
+Merge,busybox-1.18.5/libbb/printable.c:12,2307,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/progress.c:141,2396,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/remove_file.c:51,2219,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/run_shell.c:75,2373,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/selinux_common.c:32,2227,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/libbb/str_tolower.c:13,2209,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/update_passwd.c:250,2257,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/libbb/xregcomp.c:31,2261,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,2430,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/loginutils/cryptpw.c:75,2350,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/loginutils/login.c:61,2395,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/loginutils/su.c:28,2516,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/mailutils/sendmail.c:36,2239,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/beep.c:10,2369,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/chrt.c:113,2394,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/crontab.c:86,2873,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/miscutils/flashcp.c:138,2592,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/inotifyd.c:138,2299,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/man.c:95,2566,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/rfkill.c:107,2291,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/taskset.c:71,2268,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/volname.c:29,2433,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/wall.c:24,2421,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/modutils/modprobe-small.c:542,2864,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,2382,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,2473,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/libiproute/iptunnel.c:441,2562,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/networking/nameif.c:83,2299,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/nbd-client.c:14,2241,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/udhcp/dumpleases.c:1,2402,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/udhcp/dumpleases.c:47,2470,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/wget.c:709,2421,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/procps/sysctl.c:88,2351,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/procps/watch.c:30,2278,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/runit/runsvdir.c:79,2313,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/selinux/selinuxenabled.c:11,2280,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/shell/shell_common.c:92,2415,1,1,0,0,0,0,0,0,0
+Merge,busybox-1.18.5/sysklogd/klogd.c:37,2517,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,2683,1,1,0,0,0,0,0,0,0
+Merge,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,2755,1,1,0,0,0,0,0,0,0
+Merge,busybox-1.18.5/util-linux/fdformat.c:69,2308,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/fdisk_sgi.c:357,1727,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/fsck_minix.c:549,2656,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/fsck_minix.c:865,2554,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/util-linux/hexdump.c:6,2310,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/mkfs_ext2.c:596,2523,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/mkfs_reiser.c:270,2489,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/mkswap.c:135,2379,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/more.c:76,2417,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/more.c:95,2348,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/rdev.c:17,2410,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,2345,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,2349,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,2459,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,2404,1,0,?,?,1,0,0,0,1
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/bbunzip.c:171,5387,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/bbunzip.c:384,5272,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,5271,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,15207,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,5342,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,5153,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,5264,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,14657,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,16302,1,0,?,?,0,0,0,0,1
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/rpm2cpio.c:27,6369,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/archival/tar.c:642,20044,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/console-tools/resize.c:1,13628,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/console-tools/setconsole.c:24,14030,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/console-tools/setconsole.c:27,14261,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/console-tools/setlogcons.c:21,14837,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/chroot.c:29,14916,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/cksum.c:62,14641,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/comm.c:83,6287,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/date.c:281,6830,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/fsync.c:8,14848,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,14370,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/nice.c:18,14486,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/sleep.c:66,6175,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/stty.c:357,5895,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/stty.c:7,6114,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/sum.c:58,6441,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/sum.c:8,6392,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/sync.c:4,14643,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/tail.c:286,6695,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/test_ptr_hack.c:9,1557,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/tr.c:197,6623,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/uniq.c:85,14654,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/coreutils/whoami.c:23,14286,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,2268,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,2411,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,5423,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,1963,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,1972,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,1944,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,2001,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,2046,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,1993,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,2353,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,2111,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,1880,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,2002,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,2268,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,1939,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,8815,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,3443,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/editors/awk.c:2237,5753,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/editors/ed.c:223,7057,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/editors/patch.c:423,6701,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/init/halt.c:64,6393,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/init/mesg.c:20,14591,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/compare_string_array.c:82,15487,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/copy_file.c:37,7263,1,0,?,?,0,0,0,0,1
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/copyfd.c:61,16454,1,0,?,?,0,0,0,0,1
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/dump.c:288,7266,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/fgets_str.c:57,14291,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/find_pid_by_name.c:2,14735,1,0,?,?,0,0,0,0,1
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/obscure.c:138,6325,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/obscure.c:20,6411,1,0,?,?,0,0,0,0,1
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/perror_nomsg.c:21,2941,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/platform.c:42,17897,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/printable.c:12,14840,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/progress.c:141,23656,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/remove_file.c:51,14583,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/run_shell.c:75,17488,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/selinux_common.c:32,7143,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/str_tolower.c:13,14812,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/update_passwd.c:250,15630,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libbb/xregcomp.c:31,16662,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,7584,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/loginutils/cryptpw.c:75,14390,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/loginutils/login.c:61,6891,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/loginutils/su.c:28,6537,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/mailutils/sendmail.c:36,6217,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/beep.c:10,6286,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/chrt.c:113,6313,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/crontab.c:86,6372,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/flashcp.c:138,6563,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/inotifyd.c:138,6510,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/man.c:95,6462,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/rfkill.c:107,6378,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/taskset.c:71,13120,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/volname.c:29,14292,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/miscutils/wall.c:24,6385,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/modutils/modprobe-small.c:542,7056,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,22267,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,23884,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/libiproute/iptunnel.c:441,76923,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/nameif.c:83,6652,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/nbd-client.c:14,6464,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:1,18362,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:47,19583,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/networking/wget.c:709,6837,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/procps/sysctl.c:88,6277,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/procps/watch.c:30,14436,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/runit/runsvdir.c:79,5056,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/selinux/selinuxenabled.c:11,14435,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/shell/shell_common.c:92,14099,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/sysklogd/klogd.c:37,18979,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,5993,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,5870,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/fdformat.c:69,5236,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/fdisk_sgi.c:357,1590,1,1,0,0,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:549,7500,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:865,7385,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/hexdump.c:6,6158,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/mkfs_ext2.c:596,7402,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/mkfs_reiser.c:270,7561,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/mkswap.c:135,6510,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/more.c:76,6012,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/more.c:95,6199,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/rdev.c:17,12753,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,5996,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,6088,1,0,?,?,0,0,0,0,0
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,6190,1,0,?,?,0,0,0,0,1
+TypeChef (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,5999,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/bbunzip.c:171,934,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/bbunzip.c:384,932,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,916,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,910,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,926,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,932,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,902,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,906,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,903,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/rpm2cpio.c:27,942,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/archival/tar.c:642,975,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/console-tools/resize.c:1,1997,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/console-tools/setconsole.c:24,1885,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/console-tools/setconsole.c:27,1932,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/console-tools/setlogcons.c:21,1803,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/chroot.c:29,1994,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/cksum.c:62,2003,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/comm.c:83,2011,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/date.c:281,3212,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/fsync.c:8,1911,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,2018,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/nice.c:18,1880,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/sleep.c:66,2096,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/stty.c:357,973,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/stty.c:7,992,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/sum.c:58,2036,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/sum.c:8,2068,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/sync.c:4,1845,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/tail.c:286,3050,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/test_ptr_hack.c:9,1081,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/tr.c:197,2854,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/uniq.c:85,2064,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/coreutils/whoami.c:23,1796,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,577,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,565,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,943,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,503,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,504,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,518,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,551,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,541,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,529,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,579,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,551,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,492,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,524,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,605,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,509,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,664,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,1537,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/editors/awk.c:2237,978,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/editors/ed.c:223,5387,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/editors/patch.c:423,3639,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/init/halt.c:64,2377,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/init/mesg.c:20,2037,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/compare_string_array.c:82,2214,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/copy_file.c:37,3064,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/copyfd.c:61,2182,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/dump.c:288,4787,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/fgets_str.c:57,2036,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/find_pid_by_name.c:2,2280,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/obscure.c:138,2350,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/obscure.c:20,2366,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/perror_nomsg.c:21,1278,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/platform.c:42,2343,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/printable.c:12,1783,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/progress.c:141,2347,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/remove_file.c:51,2105,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/run_shell.c:75,2140,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/selinux_common.c:32,1938,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/str_tolower.c:13,1638,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/update_passwd.c:250,2850,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/libbb/xregcomp.c:31,906,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,5348,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/loginutils/cryptpw.c:75,2364,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/loginutils/login.c:61,3476,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/loginutils/su.c:28,2234,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/mailutils/sendmail.c:36,2851,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/beep.c:10,2045,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/chrt.c:113,2133,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/crontab.c:86,2370,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/flashcp.c:138,2274,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/inotifyd.c:138,2316,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/man.c:95,2745,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/rfkill.c:107,2179,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/taskset.c:71,907,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/volname.c:29,1960,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/miscutils/wall.c:24,1781,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/modutils/modprobe-small.c:542,5062,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,2073,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,2069,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/libiproute/iptunnel.c:441,3992,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/nameif.c:83,2492,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/nbd-client.c:14,2361,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:1,930,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:47,922,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/networking/wget.c:709,5166,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/procps/sysctl.c:88,2675,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/procps/watch.c:30,2098,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/runit/runsvdir.c:79,920,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/selinux/selinuxenabled.c:11,1705,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/shell/shell_common.c:92,976,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/sysklogd/klogd.c:37,2728,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,1548,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,1499,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/fdformat.c:69,908,1,1,0,0,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/fdisk_sgi.c:357,1273,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:549,6311,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:865,6440,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/hexdump.c:6,2299,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/mkfs_ext2.c:596,4320,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/mkfs_reiser.c:270,2949,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/mkswap.c:135,2263,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/more.c:76,2718,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/more.c:95,2650,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/rdev.c:17,1799,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,2108,1,0,?,?,0,0,0,0,0
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,2078,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,2205,1,0,?,?,0,0,0,0,1
+SuperC (legacy) + Kmax,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,1951,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/archival/bbunzip.c:171,927,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/bbunzip.c:384,930,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,881,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,827,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,870,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,879,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,931,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,832,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,816,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/archival/rpm2cpio.c:27,853,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/archival/tar.c:642,1000,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/resize.c:1,840,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/setconsole.c:24,832,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/setconsole.c:27,836,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/console-tools/setlogcons.c:21,824,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/chroot.c:29,844,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/cksum.c:62,853,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/comm.c:83,860,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/date.c:281,914,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/fsync.c:8,846,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,846,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/nice.c:18,834,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sleep.c:66,868,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/stty.c:357,1066,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/stty.c:7,1047,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sum.c:58,855,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sum.c:8,852,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/sync.c:4,832,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/tail.c:286,891,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/test_ptr_hack.c:9,842,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/tr.c:197,887,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/uniq.c:85,862,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/coreutils/whoami.c:23,833,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,891,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,876,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,840,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,861,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,863,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,893,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,832,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,843,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,824,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,909,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,889,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,819,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,888,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,943,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,812,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,978,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,895,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/editors/awk.c:2237,1068,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/editors/ed.c:223,957,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/editors/patch.c:423,943,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/init/halt.c:64,873,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/init/mesg.c:20,846,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/compare_string_array.c:82,850,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/copy_file.c:37,914,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/copyfd.c:61,871,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/dump.c:288,942,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/fgets_str.c:57,847,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/find_pid_by_name.c:2,847,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/obscure.c:138,869,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/obscure.c:20,859,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/perror_nomsg.c:21,821,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/platform.c:42,853,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/printable.c:12,818,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/progress.c:141,862,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/remove_file.c:51,846,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/run_shell.c:75,843,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/selinux_common.c:32,833,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/str_tolower.c:13,811,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/update_passwd.c:250,903,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libbb/xregcomp.c:31,839,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,979,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/loginutils/cryptpw.c:75,873,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/loginutils/login.c:61,922,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/loginutils/su.c:28,875,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/mailutils/sendmail.c:36,905,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/beep.c:10,854,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/chrt.c:113,863,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/crontab.c:86,908,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/flashcp.c:138,871,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/inotifyd.c:138,873,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/man.c:95,901,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/rfkill.c:107,849,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/taskset.c:71,853,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/volname.c:29,840,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/miscutils/wall.c:24,883,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/modutils/modprobe-small.c:542,951,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,848,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,847,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/libiproute/iptunnel.c:441,944,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/nameif.c:83,896,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/nbd-client.c:14,860,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:1,854,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/udhcp/dumpleases.c:47,845,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/networking/wget.c:709,970,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/procps/sysctl.c:88,883,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/procps/watch.c:30,850,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/runit/runsvdir.c:79,905,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/selinux/selinuxenabled.c:11,820,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/shell/shell_common.c:92,842,1,1,0,0,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/sysklogd/klogd.c:37,893,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,761,1,1,0,0,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,766,1,1,0,0,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fdformat.c:69,856,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fdisk_sgi.c:357,952,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:549,997,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/fsck_minix.c:865,1011,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/hexdump.c:6,864,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/mkfs_ext2.c:596,927,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/mkfs_reiser.c:270,905,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/mkswap.c:135,852,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/more.c:76,874,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/more.c:95,867,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/rdev.c:17,833,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,850,1,0,?,?,0,0,0,0,0
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,833,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,851,1,0,?,?,0,0,0,0,1
+FeatureCoPP + Kmax,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,818,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/archival/bbunzip.c:171,5678,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/bbunzip.c:384,5745,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/data_extract_to_command.c:88,5447,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/filter_accept_list_reassign.c:7,13170,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/archival/libarchive/get_header_cpio.c:157,5432,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/get_header_cpio.c:57,5475,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/get_header_tar.c:260,5319,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/get_header_tar_gz.c:27,13011,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/libarchive/seek_by_read.c:16,14893,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/archival/rpm2cpio.c:27,6035,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/archival/tar.c:642,22926,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/console-tools/resize.c:1,13513,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/console-tools/setconsole.c:24,13360,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/console-tools/setconsole.c:27,13385,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/console-tools/setlogcons.c:21,15294,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/coreutils/chroot.c:29,13497,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/cksum.c:62,13770,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/coreutils/comm.c:83,6206,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/coreutils/date.c:281,6871,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/fsync.c:8,13753,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/libcoreutils/getopt_mk_fifo_nod.c:47,13307,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/coreutils/nice.c:18,15043,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/coreutils/sleep.c:66,6536,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/coreutils/stty.c:357,6103,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/coreutils/stty.c:7,5985,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/coreutils/sum.c:58,6686,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/sum.c:8,6471,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/sync.c:4,13820,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/tail.c:286,7343,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/test_ptr_hack.c:9,1845,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/tr.c:197,8490,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/coreutils/uniq.c:85,15331,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/coreutils/whoami.c:23,17002,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devname.c:138,3783,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/blkid/devno.c:41,3364,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/e2p/parse_num.c:33,6671,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/dirhash.c:191,2720,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/expanddir.c:76,2543,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/fileio.c:197,2569,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:35,2620,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/gen_bitmap.c:36,2711,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/inline.c:14,2667,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/ismounted.c:12,3031,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/openfs.c:128,2777,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/sparse.c:9,2454,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/swapfs.c:111,2931,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/unix_io.c:628,3030,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/ext2fs/write_bb_file.c:16,2461,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/fsck.c:837,9668,1,0,?,?,0,0,0,0,1
+Merge,busybox-1.18.5/e2fsprogs/old_e2fsprogs/uuid/gen_uuid.c:210,4661,1,0,?,?,0,0,1,0,0
+Merge,busybox-1.18.5/editors/awk.c:2237,7311,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/editors/ed.c:223,9494,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/editors/patch.c:423,7832,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/init/halt.c:64,7166,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/init/mesg.c:20,14144,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/libbb/compare_string_array.c:82,14673,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/copy_file.c:37,7380,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/copyfd.c:61,13964,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/dump.c:288,7574,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/fgets_str.c:57,14656,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/find_pid_by_name.c:2,15090,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/obscure.c:138,6785,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/obscure.c:20,6350,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/libbb/perror_nomsg.c:21,3033,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/platform.c:42,17524,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/libbb/printable.c:12,13932,1,0,?,?,0,0,0,1,0
+Merge,busybox-1.18.5/libbb/progress.c:141,26822,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/remove_file.c:51,13907,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/run_shell.c:75,15766,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/selinux_common.c:32,6410,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/libbb/str_tolower.c:13,14526,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/libbb/update_passwd.c:250,14812,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/libbb/xregcomp.c:31,15269,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/libpwdgrp/pwd_grp.c:696,8266,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/loginutils/cryptpw.c:75,14274,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/loginutils/login.c:61,7496,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/loginutils/su.c:28,6320,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/mailutils/sendmail.c:36,6296,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/beep.c:10,6416,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/chrt.c:113,6331,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/crontab.c:86,6676,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/flashcp.c:138,6751,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/miscutils/inotifyd.c:138,6716,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/miscutils/man.c:95,7048,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/rfkill.c:107,6847,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/taskset.c:71,13208,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/miscutils/volname.c:29,14519,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/miscutils/wall.c:24,6158,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/modutils/modprobe-small.c:542,8076,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:70,23790,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/networking/libiproute/ip_parse_common_args.c:74,22748,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/libiproute/iptunnel.c:441,86579,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/networking/nameif.c:83,6854,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/networking/nbd-client.c:14,6760,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/networking/udhcp/dumpleases.c:1,20232,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/networking/udhcp/dumpleases.c:47,19530,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/networking/wget.c:709,7804,1,0,?,?,0,0,1,0,0
+Merge,busybox-1.18.5/procps/sysctl.c:88,7512,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/procps/watch.c:30,14650,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/runit/runsvdir.c:79,6733,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/selinux/selinuxenabled.c:11,13883,1,0,?,?,0,0,0,1,0
+Merge,busybox-1.18.5/shell/shell_common.c:92,13990,1,1,0,0,0,0,0,0,0
+Merge,busybox-1.18.5/sysklogd/klogd.c:37,16261,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/sysklogd/syslogd_and_logger.c:34,6140,1,1,0,0,0,0,0,0,0
+Merge,busybox-1.18.5/sysklogd/syslogd_and_logger.c:36,6260,1,1,0,0,0,0,0,0,0
+Merge,busybox-1.18.5/util-linux/fdformat.c:69,5836,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/util-linux/fdisk_sgi.c:357,2042,1,0,?,?,0,0,0,0,0
+Merge,busybox-1.18.5/util-linux/fsck_minix.c:549,8381,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/util-linux/fsck_minix.c:865,8661,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/util-linux/hexdump.c:6,6360,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/mkfs_ext2.c:596,7842,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/mkfs_reiser.c:270,7094,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/mkswap.c:135,6505,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/util-linux/more.c:76,6586,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/util-linux/more.c:95,6701,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/rdev.c:17,14382,1,0,?,?,0,1,0,0,0
+Merge,busybox-1.18.5/util-linux/volume_id/linux_swap.c:2,6500,1,0,?,?,1,0,0,0,0
+Merge,busybox-1.18.5/util-linux/volume_id/unused_lvm.c:72,6498,1,0,?,?,0,1,0,0,1
+Merge,busybox-1.18.5/util-linux/volume_id/unused_mac.c:109,6527,1,0,?,?,1,0,0,0,1
+Merge,busybox-1.18.5/util-linux/volume_id/unused_nvidia_raid.c:19,6367,1,0,?,?,1,0,0,0,1

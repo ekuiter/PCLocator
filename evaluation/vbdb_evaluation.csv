@@ -1,0 +1,449 @@
+locator,location,time,Nall,Nmissed,Ncorrect,Nwrong,mergeEquivalent,mergeSuperCSubSpace,mergeTypeChefSubSpace,mergeDisjointOrOverlapping,isTrue
+TypeChef,splc18challengecase/vbdb/marlin/simple/2d22902.c:11,757,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,859,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,824,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/marlin/simple/831016b.c:16,627,1,1,0,0,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,755,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,725,1,1,0,0,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,711,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/busybox/simple/199501f.c:22,812,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,765,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/busybox/simple/2631486.c:42,782,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,749,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,769,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/busybox/simple/9575518.c:48,788,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,719,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,759,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,753,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/busybox/simple/df7b657.c:8,726,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/busybox/simple/ebee301.c:24,738,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/linux/simple/0988c4c.c:16,747,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,773,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/0f8f809.c:39,870,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/1f758a4.c:40,737,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/208d898.c:32,772,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/221ac32.c:37,816,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/242f1a3.c:18,710,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/2f02c15.c:18,706,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/472a474.c:22,736,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/linux/simple/51fd36f.c:44,792,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/60e233a.c:27,778,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/linux/simple/6252547.c:13,729,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/63878ac.c:17,734,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/6515e48.c:11,708,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/657e964.c:69,763,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/linux/simple/6651791.c:17,732,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/6651791.c:25,735,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/6e2b757.c:66,775,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/76baeeb.c:40,811,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/76baeeb.c:45,817,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/7c6048b.c:24,730,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/8c82962.c:17,784,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/91ea820.c:40,796,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/ae249b5.c:20,794,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,737,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/c708c57.c:21,742,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/d530db0.c:19,760,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/d549f55.c:14,774,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,732,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/d7e9711.c:11,795,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,774,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/e67bc51.c:12,719,1,0,?,?,0,0,0,0,1
+TypeChef,splc18challengecase/vbdb/linux/simple/e68bb91.c:10,714,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,789,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,789,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,762,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,725,1,0,?,?,0,0,0,0,0
+TypeChef,splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,758,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/marlin/simple/2d22902.c:11,785,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,801,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,805,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/marlin/simple/831016b.c:16,246,1,1,0,0,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,766,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,803,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,745,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/busybox/simple/199501f.c:22,790,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,792,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/busybox/simple/2631486.c:42,818,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,787,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,814,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/busybox/simple/9575518.c:48,811,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,788,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,808,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,807,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/busybox/simple/df7b657.c:8,776,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/busybox/simple/ebee301.c:24,798,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/linux/simple/0988c4c.c:16,820,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,809,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/0f8f809.c:39,827,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/1f758a4.c:40,801,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/208d898.c:32,833,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/221ac32.c:37,832,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/242f1a3.c:18,784,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/2f02c15.c:18,768,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/472a474.c:22,784,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/linux/simple/51fd36f.c:44,825,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/60e233a.c:27,814,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/linux/simple/6252547.c:13,784,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/63878ac.c:17,902,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/6515e48.c:11,780,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/657e964.c:69,837,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/linux/simple/6651791.c:17,818,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/6651791.c:25,799,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/6e2b757.c:66,898,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/76baeeb.c:40,832,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/76baeeb.c:45,834,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/7c6048b.c:24,779,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/8c82962.c:17,817,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/91ea820.c:40,836,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/ae249b5.c:20,830,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,790,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/c708c57.c:21,823,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/d530db0.c:19,792,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/d549f55.c:14,852,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,802,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/d7e9711.c:11,820,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,798,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/e67bc51.c:12,770,1,0,?,?,0,0,0,0,1
+SuperC,splc18challengecase/vbdb/linux/simple/e68bb91.c:10,768,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,829,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,825,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,799,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,774,1,0,?,?,0,0,0,0,0
+SuperC,splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,793,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/2d22902.c:11,642,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,677,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,663,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/831016b.c:16,101,1,1,0,0,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,647,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,644,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,632,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/199501f.c:22,647,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,643,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/2631486.c:42,665,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,645,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,680,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/9575518.c:48,662,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,663,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,654,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,650,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/df7b657.c:8,643,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/ebee301.c:24,660,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/0988c4c.c:16,659,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,680,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/0f8f809.c:39,665,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/1f758a4.c:40,671,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/208d898.c:32,657,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/221ac32.c:37,652,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/242f1a3.c:18,654,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/2f02c15.c:18,654,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/472a474.c:22,667,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/51fd36f.c:44,671,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/60e233a.c:27,646,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6252547.c:13,670,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/63878ac.c:17,672,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6515e48.c:11,658,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/657e964.c:69,653,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6651791.c:17,656,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6651791.c:25,670,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6e2b757.c:66,659,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/76baeeb.c:40,678,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/76baeeb.c:45,690,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/7c6048b.c:24,662,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/8c82962.c:17,659,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/91ea820.c:40,687,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/ae249b5.c:20,772,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,684,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/c708c57.c:21,667,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d530db0.c:19,669,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d549f55.c:14,651,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,658,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d7e9711.c:11,650,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,648,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/e67bc51.c:12,647,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/e68bb91.c:10,659,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,676,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,672,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,662,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,637,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,663,1,0,?,?,0,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/2d22902.c:11,651,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,750,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,728,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/831016b.c:16,615,1,1,0,0,0,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,661,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,665,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,633,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/199501f.c:22,696,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,694,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/2631486.c:42,753,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,702,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,729,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/9575518.c:48,759,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,679,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,723,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,705,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/df7b657.c:8,653,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/ebee301.c:24,701,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/0988c4c.c:16,699,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,833,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/0f8f809.c:39,831,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/1f758a4.c:40,698,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/208d898.c:32,741,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/221ac32.c:37,761,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/242f1a3.c:18,661,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/2f02c15.c:18,666,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/472a474.c:22,667,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/51fd36f.c:44,771,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/60e233a.c:27,715,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/6252547.c:13,679,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/63878ac.c:17,746,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/6515e48.c:11,669,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/657e964.c:69,718,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/6651791.c:17,672,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/6651791.c:25,677,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/6e2b757.c:66,752,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/76baeeb.c:40,820,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/76baeeb.c:45,802,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/7c6048b.c:24,674,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/8c82962.c:17,752,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/91ea820.c:40,767,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/ae249b5.c:20,764,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,704,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/c708c57.c:21,692,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d530db0.c:19,708,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d549f55.c:14,722,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,657,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d7e9711.c:11,726,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,720,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/e67bc51.c:12,651,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/e68bb91.c:10,658,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,793,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,778,1,0,?,?,1,1,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,728,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,672,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,772,1,0,?,?,1,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/marlin/simple/2d22902.c:11,1312,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,1468,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,1522,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/marlin/simple/831016b.c:16,846,1,1,0,0,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,1175,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,1213,1,1,0,0,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,1087,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/199501f.c:22,1548,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,1427,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/2631486.c:42,1199,1,1,0,0,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,1431,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,1575,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/9575518.c:48,1675,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,1317,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,1585,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,1455,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/df7b657.c:8,1310,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/busybox/simple/ebee301.c:24,1421,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/0988c4c.c:16,1371,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,1356,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/0f8f809.c:39,1782,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/1f758a4.c:40,1224,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/208d898.c:32,1441,1,1,0,0,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/221ac32.c:37,1772,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/242f1a3.c:18,1106,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/2f02c15.c:18,1089,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/472a474.c:22,1215,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/51fd36f.c:44,1598,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/60e233a.c:27,1594,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/6252547.c:13,1140,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/63878ac.c:17,1275,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/6515e48.c:11,1117,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/657e964.c:69,1436,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/6651791.c:17,1141,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/6651791.c:25,1150,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/6e2b757.c:66,1508,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/76baeeb.c:40,1684,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/76baeeb.c:45,1680,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/7c6048b.c:24,1111,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/8c82962.c:17,1598,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/91ea820.c:40,1582,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/ae249b5.c:20,1645,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,1245,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/c708c57.c:21,1413,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/d530db0.c:19,1369,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/d549f55.c:14,1564,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,1105,1,1,0,0,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/d7e9711.c:11,1600,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,1545,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/e67bc51.c:12,1116,1,0,?,?,0,0,0,0,1
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/e68bb91.c:10,1100,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,1723,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,1532,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,1559,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,1111,1,0,?,?,0,0,0,0,0
+TypeChef (legacy),splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,1357,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/marlin/simple/2d22902.c:11,807,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,511,1,1,0,0,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,500,1,1,0,0,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/marlin/simple/831016b.c:16,252,1,1,0,0,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,777,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,487,1,1,0,0,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,760,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/199501f.c:22,851,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,876,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/2631486.c:42,311,1,1,0,0,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,877,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,924,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/9575518.c:48,971,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,858,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,871,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,857,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/df7b657.c:8,842,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/busybox/simple/ebee301.c:24,895,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/0988c4c.c:16,875,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,900,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/0f8f809.c:39,877,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/1f758a4.c:40,824,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/208d898.c:32,892,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/221ac32.c:37,958,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/242f1a3.c:18,804,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/2f02c15.c:18,807,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/472a474.c:22,862,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/51fd36f.c:44,952,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/60e233a.c:27,920,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/6252547.c:13,860,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/63878ac.c:17,955,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/6515e48.c:11,855,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/657e964.c:69,952,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/6651791.c:17,874,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/6651791.c:25,878,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/6e2b757.c:66,874,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/76baeeb.c:40,928,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/76baeeb.c:45,927,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/7c6048b.c:24,802,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/8c82962.c:17,909,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/91ea820.c:40,879,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/ae249b5.c:20,898,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,821,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/c708c57.c:21,863,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/d530db0.c:19,855,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/d549f55.c:14,855,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,798,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/d7e9711.c:11,871,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,858,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/e67bc51.c:12,800,1,0,?,?,0,0,0,0,1
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/e68bb91.c:10,789,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,916,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,899,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,883,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,794,1,0,?,?,0,0,0,0,0
+SuperC (legacy),splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,840,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/2d22902.c:11,662,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,653,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,659,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/831016b.c:16,104,1,1,0,0,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,662,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,658,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,635,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/199501f.c:22,655,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,662,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/2631486.c:42,661,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,655,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,651,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/9575518.c:48,656,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,635,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,655,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,645,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/df7b657.c:8,647,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/busybox/simple/ebee301.c:24,641,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/0988c4c.c:16,672,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,675,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/0f8f809.c:39,658,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/1f758a4.c:40,660,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/208d898.c:32,669,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/221ac32.c:37,649,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/242f1a3.c:18,637,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/2f02c15.c:18,638,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/472a474.c:22,644,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/51fd36f.c:44,676,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/60e233a.c:27,653,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6252547.c:13,660,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/63878ac.c:17,672,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6515e48.c:11,652,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/657e964.c:69,668,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6651791.c:17,661,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6651791.c:25,651,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/6e2b757.c:66,664,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/76baeeb.c:40,703,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/76baeeb.c:45,685,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/7c6048b.c:24,668,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/8c82962.c:17,660,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/91ea820.c:40,666,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/ae249b5.c:20,670,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,658,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/c708c57.c:21,650,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d530db0.c:19,652,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d549f55.c:14,656,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,657,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/d7e9711.c:11,652,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,649,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/e67bc51.c:12,630,1,0,?,?,0,0,0,0,1
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/e68bb91.c:10,644,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,673,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,663,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,660,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,648,1,0,?,?,0,0,0,0,0
+FeatureCoPP,splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,675,1,0,?,?,0,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/2d22902.c:11,1281,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/7336e6d.c:44,1448,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/7336e6d.c:45,1428,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/831016b.c:16,847,1,1,0,0,0,0,0,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/8c4377d.c:16,1232,1,0,?,?,1,0,0,1,0
+Merge,splc18challengecase/vbdb/marlin/simple/b8e79dc.c:27,1345,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/marlin/simple/fdac8f6.c:9,1030,1,0,?,?,1,1,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/199501f.c:22,1549,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/1b487ea.c:15,1395,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/2631486.c:42,1383,1,0,?,?,0,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/5275b1e.c:25,1389,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/5cd6461.c:23,1546,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/9575518.c:48,1726,1,0,?,?,1,0,1,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/b7ebc61.c:17,1263,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/bc0ffc0.c:44,1559,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/busybox/simple/cf1f2ac.c:29,1437,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/df7b657.c:8,1269,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/busybox/simple/ebee301.c:24,1388,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/0988c4c.c:16,1355,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/linux/simple/0dc77b6.c:38,1370,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/0f8f809.c:39,1638,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/1f758a4.c:40,1176,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/208d898.c:32,1464,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/221ac32.c:37,1793,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/linux/simple/242f1a3.c:18,1072,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/2f02c15.c:18,1051,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/472a474.c:22,1173,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/51fd36f.c:44,1578,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/linux/simple/60e233a.c:27,1531,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/6252547.c:13,1108,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/linux/simple/63878ac.c:17,1275,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/linux/simple/6515e48.c:11,1084,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/657e964.c:69,1391,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/6651791.c:17,1109,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/6651791.c:25,1122,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/6e2b757.c:66,1472,1,0,?,?,1,0,1,0,0
+Merge,splc18challengecase/vbdb/linux/simple/76baeeb.c:40,1682,1,0,?,?,1,1,0,1,0
+Merge,splc18challengecase/vbdb/linux/simple/76baeeb.c:45,1660,1,0,?,?,1,1,0,1,0
+Merge,splc18challengecase/vbdb/linux/simple/7c6048b.c:24,1096,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/8c82962.c:17,1554,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/91ea820.c:40,1565,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/ae249b5.c:20,1624,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/bc8cec0.c:28,1199,1,0,?,?,1,0,0,1,0
+Merge,splc18challengecase/vbdb/linux/simple/c708c57.c:21,1400,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d530db0.c:19,1338,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d549f55.c:14,1519,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d6c7e11.c:20,1134,1,0,?,?,1,1,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/d7e9711.c:11,1540,1,0,?,?,1,0,1,0,1
+Merge,splc18challengecase/vbdb/linux/simple/e1fbd92.c:17,1509,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/e67bc51.c:12,1071,1,0,?,?,1,0,0,0,1
+Merge,splc18challengecase/vbdb/linux/simple/e68bb91.c:10,1062,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/eb91f1d.c:36,1677,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/ee3f34e.c:46,1521,1,0,?,?,1,1,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/f3d83e2.c:14,1429,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/f48ec1d.c:10,1066,1,0,?,?,1,0,0,0,0
+Merge,splc18challengecase/vbdb/linux/simple/f7ab9b4.c:55,1384,1,0,?,?,1,1,0,0,0
