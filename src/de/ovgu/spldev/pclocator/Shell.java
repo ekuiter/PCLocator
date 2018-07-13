@@ -136,7 +136,7 @@ public class Shell {
 
         try {
             if (isEvaluate)
-                new Evaluator().run(presenceConditionLocator, new Location(location), dimacsFilePath, args.isLegacy());
+                new Evaluator().run(presenceConditionLocator, new Location(location), dimacsFilePath, args.isLegacy(), options);
             else
                 analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, limit, timeLimit, isExplain);
         } catch (Exception e) {

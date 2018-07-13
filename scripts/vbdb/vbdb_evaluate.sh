@@ -6,7 +6,7 @@ fi
 
 rm -rf challenge
 
-echo locator,location,time,Nall,Nmissed,Ncorrect,Nwrong,mergeEquivalent,mergeSuperCSubSpace,mergeTypeChefSubSpace,mergeDisjointOrOverlapping
+echo locator,location,time,Nall,Nmissed,Ncorrect,Nwrong,mergeEquivalent,mergeSuperCSubSpace,mergeTypeChefSubSpace,mergeDisjointOrOverlapping,isTrue
 for LEGACY in '' --legacy; do
 for PARSER in typechef superc featurecopp merge; do
 for LOCATION in $(cat locations.txt); do
