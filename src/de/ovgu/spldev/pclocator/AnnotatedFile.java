@@ -60,12 +60,13 @@ public class AnnotatedFile {
         System.out.format("-----+------------------------------------------+%s\n", s2);
     }
 
-    public void print() {
+    public void print(boolean isRaw) {
         annotate();
 
         try (Stream<String> lineContentsStream = Files.lines(Paths.get(filePath))) {
             String[] lineContents = lineContentsStream.toArray(String[]::new);
-            printDivider(true);
+            if (!isRaw)
+                printDivider(true);
 
             for (int line = 1; line <= lineContents.length; line++) {
                 String lineContent = lineContents[line - 1].replace('\t', ' ');
@@ -80,23 +81,32 @@ public class AnnotatedFile {
                     } catch (Exception e) {
                         annotationString = e.toString();
                     }
-                    s.append(String.format("%-25s | ",
-                            annotationString.substring(0, Math.min(columnWidth, annotationString.length())).replace('\n', ' ')));
+                    if (isRaw)
+                        (s.length() == 0 ? s : s.append(",")).append(annotationString);
+                    else
+                        s.append(String.format("%-25s | ",
+                                annotationString.substring(0, Math.min(columnWidth, annotationString.length())).replace('\n', ' ')));
                 }
-                System.out.format("%4d | %-40s | %s\n", line,
-                        lineContent.substring(0, Math.min(40, lineContent.length())), s);
+                if (isRaw)
+                    System.out.println(s);
+                else
+                    System.out.format("%4d | %-40s | %s\n", line,
+                            lineContent.substring(0, Math.min(40, lineContent.length())), s);
             }
 
-            printDivider(false);
-            StringBuffer s = new StringBuffer();
-            for (FileAnnotator fileAnnotator : fileAnnotators) {
-                String measurementString =
-                        measurements.get(fileAnnotator) != null ? measurements.get(fileAnnotator).toString() :
-                        annotations.get(fileAnnotator) != null ? "" : "FAILED";
-                s.append(String.format("%-25s | ",
-                        measurementString.substring(0, Math.min(columnWidth, measurementString.length()))));
+            if (!isRaw) {
+                printDivider(false);
+                StringBuffer s = new StringBuffer();
+                for (FileAnnotator fileAnnotator : fileAnnotators) {
+                    String measurementString =
+                            measurements.get(fileAnnotator) != null ? measurements.get(fileAnnotator).toString() :
+                                    annotations.get(fileAnnotator) != null ? "" : "FAILED";
+                    s.append(String.format("%-25s | ",
+                            measurementString.substring(0, Math.min(columnWidth, measurementString.length()))));
+                }
+                System.out.format("%4s | %-40s | %s\n", "", "", s);
             }
-            System.out.format("%4s | %-40s | %s\n", "", "", s);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -112,7 +112,8 @@ public class Arguments {
                 "  --explain      prints an explanation for how the presence condition\n" +
                 "                 or configuration space was located\n" +
                 "  --evaluate     collects information useful for statistical evaluation\n" +
-                "  --legacy       use deprecated parser implementations, not recommended\n\n" +
+                "  --legacy       use deprecated parser implementations, not recommended\n" +
+                "  --raw          do not print tabular output for <file> locations\n\n" +
                 "parser options:\n" +
                 "  -I             pass additional include directory to the parser\n" +
                 "  --platform     pass additional header file to the parser,\n" +
@@ -167,6 +168,13 @@ public class Arguments {
         if (isEvaluate && (isExplain() || has("--annotator") || has("--limit") || has("timelimit") || has("format")))
             throw new RuntimeException("given options not allowed with --evaluate");
         return isEvaluate;
+    }
+
+    boolean isRaw() {
+        boolean isRaw = has("--raw");
+        if (!isAnnotating() && isRaw)
+            throw new RuntimeException("--raw can only be used when annotating a whole file");
+        return isRaw;
     }
 
     String getFormatKind() {

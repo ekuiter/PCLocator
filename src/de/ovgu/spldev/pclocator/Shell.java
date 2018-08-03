@@ -91,7 +91,8 @@ public class Shell {
 
     private void analyze(PresenceConditionLocator presenceConditionLocator,
                          AnnotatedFile.FileAnnotator[] fileAnnotators, String location,
-                         String dimacsFilePath, Integer limit, String timeLimit, boolean isExplain) {
+                         String dimacsFilePath, Integer limit, String timeLimit,
+                         boolean isExplain, boolean isRaw) {
         if (Location.isValidLocation(location)) {
             PresenceCondition presenceCondition = presenceConditionLocator.locatePresenceCondition(new Location(location));
             if (dimacsFilePath != null)
@@ -102,7 +103,7 @@ public class Shell {
             AnnotatedFile annotatedFile = new AnnotatedFile(location);
             for (AnnotatedFile.FileAnnotator fileAnnotator : fileAnnotators)
                 annotatedFile.addFileAnnotator(fileAnnotator);
-            annotatedFile.print();
+            annotatedFile.print(isRaw);
         }
     }
 
@@ -112,7 +113,7 @@ public class Shell {
                 dimacsFilePath = args.getDimacsFilePath(),
                 timeLimit = args.getTimeLimit();
         Integer limit = args.getLimit();
-        boolean isExplain = args.isExplain(), isEvaluate = args.isEvaluate();
+        boolean isExplain = args.isExplain(), isEvaluate = args.isEvaluate(), isRaw = args.isRaw();
         Configuration.setFormatKind(args);
 
         if (args.isHelp() || location == null) {
@@ -138,7 +139,7 @@ public class Shell {
             if (isEvaluate)
                 new Evaluator().run(presenceConditionLocator, new Location(location), dimacsFilePath, args.isLegacy(), options);
             else
-                analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, limit, timeLimit, isExplain);
+                analyze(presenceConditionLocator, fileAnnotators, location, dimacsFilePath, limit, timeLimit, isExplain, isRaw);
         } catch (Exception e) {
             Log.error("%s", e);
             System.exit(1);

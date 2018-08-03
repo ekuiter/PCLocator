@@ -35,7 +35,7 @@ public class TypeChefPresenceConditionLocatorImplementation extends LegacyTypeCh
             while (!tokenReader.atEnd()) {
                 CToken token = tokenReader.first();
                 TokenPosition position = token.getPosition();
-                if (position.getFile().equals("file " + _filePath.toString())) {
+                if (position != null && position.getFile() != null && position.getFile().equals("file " + _filePath.toString())) {
                     line = lineSupplier.catchUp(position.getLine());
                     if (position.getLine() == line) {
                         putPresenceCondition(line, token.getFeature());
