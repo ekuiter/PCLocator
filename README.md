@@ -17,9 +17,11 @@ integrates the following tools:
 - [Kmax](https://github.com/paulgazz/kmax), a variability-aware analyzer
   Kconfig/Kbuild Makefiles
 
-This tool addresses [this challenge
+This tool addresses a [challenge
 case](https://github.com/paulgazz/splc18challengecase) of the SPLC 2018
-Challenge Track.
+Challenge Track and is mentioned in our paper [PCLocator: A Tool Suite to
+Automatically Identify Configurations for Code
+Locations](http://elias-kuiter.de/splc18-pclocator).
 
 ## Getting started
 
