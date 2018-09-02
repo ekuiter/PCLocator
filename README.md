@@ -1,5 +1,7 @@
 # PCLocator
 
+![PCLocator architecture](./architecture.svg)
+
 PCLocator is a Java tool that analyzes presence conditions in variable software
 systems written in the programming language C.
 
