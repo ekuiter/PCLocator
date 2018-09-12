@@ -3,7 +3,8 @@
 ![PCLocator architecture](./architecture.svg)
 
 PCLocator is a Java tool that analyzes presence conditions in variable software
-systems written in the programming language C.
+systems written in the programming language C. (There are some slides [available
+online](http://elias-kuiter.de/splc18-pclocator-slides).)
 
 A presence condition describes under which circumstances a file or block of code
 is included in the compiled product. A naive, but slow solution is enumerating
